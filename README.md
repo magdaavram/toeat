@@ -1,6 +1,6 @@
 # Recipes Finder
 
-Exercising ReactJS with a simple recipes application.
+Exercising ReactJS with a simple recipe manager application.
 
 ## Business Requirements
 ### Model & Actions
