@@ -1,7 +1,7 @@
 # Recipes Finder
 
-Exercising TypeScript, ReactJS and styled components with a simple 
-recipe manager application. 
+Exercising **TypeScript, ReactJS and styled components** with a 
+simple recipe manager application. 
 
 In the application, you can create **your collection of recipes** 
 in a simple and easy to understand way. 
