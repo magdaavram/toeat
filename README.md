@@ -21,6 +21,7 @@ Also, you can **adapt the ingredient quantities** based on the
 desired **number of servings**.  
 
 
+
 ## Business Requirements
 ### Model & Actions
 * **create** (title, ingredients, preparation, equipment, 
@@ -31,3 +32,6 @@ cooking time, servings, course type, difficulty);
 by courses, by number of ingredients, by difficulty);
 * **adapt quantities** based on the desired number of servings;
 * **delete**;
+
+## Design Framework
+![Recipes App](recipes-app-framework.png?raw=true "Recipes App")
