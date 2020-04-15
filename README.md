@@ -1,6 +1,7 @@
 # Recipes Finder
 
-Exercising ReactJS with a simple recipe manager application. 
+Exercising TypeScript, ReactJS and styled components with a simple 
+recipe manager application. 
 
 In the application, you can create **your collection of recipes** 
 in a simple and easy to understand way. 
@@ -21,7 +22,6 @@ Also, you can **adapt the ingredient quantities** based on the
 desired **number of servings**.  
 
 
-
 ## Business Requirements
 ### Model & Actions
 * **create** (title, ingredients, preparation, equipment, 
@@ -32,6 +32,7 @@ cooking time, servings, course type, difficulty);
 by courses, by number of ingredients, by difficulty);
 * **adapt quantities** based on the desired number of servings;
 * **delete**;
+
 
 ## Design Framework
 ![Recipes App](recipes-app-framework.png?raw=true "Recipes App")
