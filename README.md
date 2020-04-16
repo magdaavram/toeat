@@ -35,4 +35,4 @@ by courses, by number of ingredients, by difficulty);
 
 
 ## Design Framework
-![Recipes App](recipes-app-framework.png?raw=true "Recipes App")
+![Recipes App](recipes-app-framework.png?raw=true "Recipes App Framework")
