@@ -35,4 +35,6 @@ by courses, by number of ingredients, by difficulty);
 
 
 ## Design Framework
+<p style="text-align: center">
 ![Recipes App](recipes-app-framework.png?raw=true "Recipes App Framework")
+</p>
