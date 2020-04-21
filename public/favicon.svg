@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50" height="50">
+	<defs>
+		<image width="42" height="44" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAsCAMAAAAkRNp0AAAAAXNSR0IB2cksfwAAAblQTFRF8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unkx3pCuQAAAJN0Uk5TAEYtCI5LKLpNCQM30FgeD3QMLteIikEi3AWY6iUwu0VV4LN3Q9NIYPAVBIyHQOJhNf95XRzEDckBchYCUNFfF9h8PgumwHqSeJ6PZQchEe3v1k9K6P1pWWdqtvv+hT2++pYQHcH83jvaL2NkQoTV9NSVzefPFILLwzmi7iT5KVKg5s7f68ayTOn3GWzx7IlzfoB/qbuDpAAAAZ5JREFUeJyN1OdTwjAcgOEf4qKKCi4UEFHUioviYgiCGwfiRAU37oETJ27Fvf5iC3gaz9Lk/ZI091wuyYcC/E8Qx7HImTA+gZQmJiWTQRGVkioGSEvH0wyJNDMLhNk5WJkryxPlyxXKAhWWFqqFkFhUrCkpxdIyuhy0FZVV1TVYqmP0FOhr6+plDThKVTSqDEaTuclixW7bbLObWwBa2+Kx1NDeAWZ27OzCUnBEX7Rbgac9vZFBY8AfQNGnEQhUcU78ppCS1E/TroFBAjo0zLCNjMYEeTr32Hgk/YSHYbyWyejXqDVH8leKpqZnGM68NrcJlVpjJjcMJ5+dQ+i8byE2ZRaXENpkWebLHlWUlm1ldY2v9bChYDKfsA3Y9BO2BY4JNjXPpX4uFz3wNjvd2Y2p9vbZnL80UBKTHiCPxVKP+5CU0kfHpPRE2k1KXad6Uho8G/MQUkZ87ielFwmXpPTKLiOlwesbUsoTSjv56S1CA15eeofQ0D2ffDAitM43wkNtOoTC41PqPf3M1YvtVQl/koTe3j84+uxym77/iV/psPm62equuwAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #4a4e69 } 
+	</style>
+	<path id="Shape 3" class="shp0" d="M5 0L45 0C47.77 0 50 2.23 50 5L50 45C50 47.77 47.77 50 45 50L5 50C2.23 50 0 47.77 0 45L0 5C0 2.23 2.23 0 5 0Z" />
+	<use id="Layer 1" href="#img1" x="4" y="2" />
+</svg>
