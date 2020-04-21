@@ -5,10 +5,6 @@ import './style/';
 
 const Page = styled.div`
   min-height: 100vh;
-  background-color: var(--color--beige);
-  color: var(--color--dark-purple);
-  font-family: 'Roboto Regular';
-  font-size: var(--font-size--regular);
   padding: 0 45px;
 `;
 
