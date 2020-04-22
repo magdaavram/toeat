@@ -45,6 +45,8 @@ Add and delete icon by scott desmond from the Noun Project.
 
 Edit icon by Vincencio from the Noun Project.
 
+Search icon by Kmg Design from the Noun Project.
+
 ___
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
