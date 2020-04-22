@@ -1,10 +1,10 @@
 import React from 'react';
 import Icons from "../Icons";
 
-const RightSideControls = () => (
+const TopControls = () => (
 	<div>
 		<Icons />
 	</div>
 );
 
-export default RightSideControls;
+export default TopControls;

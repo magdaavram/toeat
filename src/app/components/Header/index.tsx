@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import LogoIcon from "../../icons/Logo";
-import RightSideControls from '../RightSideControls';
+import TopControls from '../TopControls';
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ const Header = () => (
 		<a href='/#'>
 			<LogoIcon />
 		</a>
-		<RightSideControls />
+		<TopControls />
 	</ContentWrapper>
 );
 
