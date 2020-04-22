@@ -22,15 +22,15 @@ const IconWrapper = styled.button`
 
 const Icons = () => (
 	<>
-		<IconWrapper>
+		<IconWrapper onClick={() => console.log('pressed add')}>
 			<AddIcon />
 		</IconWrapper>
 
-		<IconWrapper>
+		<IconWrapper onClick={() => console.log('pressed delete')}>
 			<DeleteIcon />
 		</IconWrapper>
 
-		<IconWrapper>
+		<IconWrapper onClick={() => console.log('pressed edit')}>
 			<EditIcon />
 		</IconWrapper>
 	</>

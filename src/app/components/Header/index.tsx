@@ -10,7 +10,7 @@ const ContentWrapper = styled.div`
 
 const Header = () => (
 	<ContentWrapper>
-		<a href='/#'>
+		<a href='/#' onClick={() => console.log('pressed logo')}>
 			<LogoIcon />
 		</a>
 		<TopControls />
