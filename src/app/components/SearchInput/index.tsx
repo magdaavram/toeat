@@ -38,7 +38,7 @@ const StyledButton = styled.button`
 
 const SearchInput = () => (
 	<StyledWrapper>
-		<StyledInput />
+		<StyledInput placeholder={'Search recipe...'} />
 		<StyledButton onClick={() => console.log('pressed search')}>
 			<SearchIcon />
 		</StyledButton>
