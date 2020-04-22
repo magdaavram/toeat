@@ -41,6 +41,10 @@ by courses, by number of ingredients, by difficulty);
 ### Credits
 Favicon icon by Valeriy from the Noun Project.
 
+Add and delete icon by scott desmond from the Noun Project.
+
+Edit icon by Vincencio from the Noun Project.
+
 ___
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

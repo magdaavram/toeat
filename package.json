@@ -33,7 +33,9 @@
     ]
   },
   "devDependencies": {
+    "@types/styled-components": "^5.1.0",
     "babel-plugin-styled-components": "^1.10.7",
-    "css-loader": "^3.5.2"
+    "css-loader": "^3.5.2",
+    "typescript": "^3.8.3"
   }
 }
