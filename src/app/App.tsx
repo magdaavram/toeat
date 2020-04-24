@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Header from './components/Header';
 import SearchInput from './components/SearchInput';
+import Filters from './components/Filters';
 
 const ContentWrapper = styled.div`
   padding: 45px;
@@ -20,6 +21,7 @@ const App = () => {
       <Header />
       <Main>
         <SearchInput />
+        <Filters />
       </Main>
     </ContentWrapper>
   );

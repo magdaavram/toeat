@@ -10,7 +10,7 @@ const StyledWrapper = styled.div`
 `;
 
 const StyledInput = styled.input`
-  width: calc(100% - 30px);
+  width: 100%;
   height: 100%;
   border: 3px solid var(--color--light-purple);
   border-radius: 12px;
