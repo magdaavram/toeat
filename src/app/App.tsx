@@ -23,6 +23,6 @@ const App = () => {
       </Main>
     </ContentWrapper>
   );
-}
+};
 
 export default App;
