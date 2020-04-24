@@ -38,7 +38,7 @@ by courses, by number of ingredients, by difficulty);
 ![Recipes App](recipes-app-framework.png?raw=true "Recipes App Framework")
 
 
-### Credits
+## Credits
 Favicon icon by Valeriy from the Noun Project.
 
 Add and delete icon by scott desmond from the Noun Project.
