@@ -68,7 +68,7 @@ const Title = styled.a`
   }
 `;
 
-const ArticleThumbnail = (props: IProps) => {
+const RecipeThumbnail = (props: IProps) => {
   let levelName;
   const { difficultyLevel } = props;
 
@@ -102,4 +102,4 @@ const ArticleThumbnail = (props: IProps) => {
   );
 };
 
-export default ArticleThumbnail;
+export default RecipeThumbnail;

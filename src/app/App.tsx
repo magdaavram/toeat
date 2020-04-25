@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Header from './components/Header';
 import Search from './components/Search';
 import Filters from './components/Filters';
-import Articles from './components/Articles';
+import RecipesList from './components/RecipesList';
 
 const Container = styled.div`
   padding: 45px;
@@ -23,7 +23,7 @@ const App = () => {
       <Main>
         <Search />
         <Filters />
-        <Articles />
+        <RecipesList />
       </Main>
     </Container>
   );
