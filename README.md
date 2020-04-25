@@ -47,6 +47,10 @@ Edit icon by Vincencio from the Noun Project.
 
 Search icon by Kmg Design from the Noun Project.
 
+Clock icon by Flatart from the Noun Project.
+
+Stars icon by Three Six Five from the Noun Project.
+
 ___
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

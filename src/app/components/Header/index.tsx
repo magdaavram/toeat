@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import LogoIcon from '../../icons/Logo';
+import LogoIcon from '../../assets/icons/Logo';
 import TopControls from '../TopControls';
 
 const Container = styled.div`

@@ -21,3 +21,11 @@
     font-display: fallback;
     src: local('Roboto Regular'), local('RobotoRegular'), url('./Roboto-Regular.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'Roboto Medium';
+    font-style: normal;
+    font-weight: 600;
+    font-display: fallback;
+    src: local('Roboto Medium'), local('RobotoMedium'), url('./Roboto-Medium.ttf') format('truetype');
+}

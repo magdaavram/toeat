@@ -1,8 +1,8 @@
 import React from 'react';
 import Button from '../Button';
-import AddIcon from '../../icons/Add';
-import DeleteIcon from '../../icons/Delete';
-import EditIcon from '../../icons/Edit';
+import AddIcon from '../../assets/icons/Add';
+import DeleteIcon from '../../assets/icons/Delete';
+import EditIcon from '../../assets/icons/Edit';
 import styled from 'styled-components';
 
 const ButtonWithIcon = styled(Button)`
