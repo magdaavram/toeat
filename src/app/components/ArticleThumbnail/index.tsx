@@ -16,13 +16,6 @@ interface IProps extends InputHTMLAttributes<HTMLDivElement> {
   };
 }
 
-const Container = styled.div`
-  width: 30%;
-  max-width: 30%;
-  flex-grow: 1;
-  margin: 0 12px 45px 0;
-`;
-
 const Image = styled.div((props: IProps) => ({
   width: '100%',
   height: '250px',
@@ -86,7 +79,7 @@ const ArticleThumbnail = (props: IProps) => {
     : (levelName = '');
 
   return (
-    <Container>
+    <div>
       <Image {...props}>
         <ImageLink href={'/#'} title={props.title} />
       </Image>
@@ -103,7 +96,7 @@ const ArticleThumbnail = (props: IProps) => {
       <Title href={'/#'} title={props.title}>
         {props.title}
       </Title>
-    </Container>
+    </div>
   );
 };
 

@@ -10,21 +10,12 @@ import article6 from '../../assets/images/article6.png';
 
 const Container = styled.div`
   width: 70%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-items: space-between;
+  gap: 54px 36px;
   margin-top: 18px;
   padding-top: 27px;
-
-  & > :nth-child(3n) {
-    margin-right: 0;
-  }
-
-  &:after {
-    content: '';
-    display: block;
-    margin-left: 32%;
-  }
 `;
 
 const Articles = () => {
