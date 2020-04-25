@@ -7,19 +7,21 @@ interface IImageProps extends InputHTMLAttributes<HTMLDivElement> {
   url: string;
 }
 
-interface IProps extends InputHTMLAttributes<HTMLDivElement> {
-  image: IImageProps;
+interface IProps {
+  imageUrl: string;
   title: string;
-  details: {
-    duration: string;
-    difficultyLevel: number;
-  };
+  duration: string;
+  difficultyLevel: number;
 }
 
-const Image = styled.div((props: IProps) => ({
+const Container = styled.div`
+  max-width: 400px;
+`;
+
+const Image = styled.div((props: IImageProps) => ({
   width: '100%',
   height: '250px',
-  background: `url(${props.image.url}) no-repeat center`,
+  background: `url(${props.url}) no-repeat center`,
   backgroundSize: 'cover',
 }));
 
@@ -68,7 +70,7 @@ const Title = styled.a`
 
 const ArticleThumbnail = (props: IProps) => {
   let levelName;
-  const { difficultyLevel } = props.details;
+  const { difficultyLevel } = props;
 
   difficultyLevel === 1
     ? (levelName = 'Easy')
@@ -79,14 +81,14 @@ const ArticleThumbnail = (props: IProps) => {
     : (levelName = '');
 
   return (
-    <div>
-      <Image {...props}>
+    <Container>
+      <Image url={props.imageUrl}>
         <ImageLink href={'/#'} title={props.title} />
       </Image>
       <DetailsContainer>
         <Detail>
           <DurationIcon />
-          <DetailText>{props.details.duration}</DetailText>
+          <DetailText>{props.duration}</DetailText>
         </Detail>
         <Detail>
           <DifficultyIcon level={difficultyLevel} />
@@ -96,7 +98,7 @@ const ArticleThumbnail = (props: IProps) => {
       <Title href={'/#'} title={props.title}>
         {props.title}
       </Title>
-    </div>
+    </Container>
   );
 };
 
