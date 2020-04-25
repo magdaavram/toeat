@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import SearchIcon from '../../icons/Search';
 import Button from '../Button';
 
-const StyledWrapper = styled.div`
+const Container = styled.div`
   display: flex;
   width: 70%;
   height: 54px;
 `;
 
-const StyledInput = styled.input`
+const Input = styled.input`
   width: 100%;
   height: 100%;
   border: 3px solid var(--color--light-purple);
@@ -25,7 +25,7 @@ const StyledInput = styled.input`
   }
 `;
 
-const StyledButton = styled(Button)`
+const SearchButton = styled(Button)`
   width: 30px;
   height: 30px;
   margin: auto 0;
@@ -33,13 +33,13 @@ const StyledButton = styled(Button)`
   opacity: 0.6;
 `;
 
-const SearchInput = () => (
-  <StyledWrapper>
-    <StyledInput placeholder={'Find recipes by ingredients or name...'} />
-    <StyledButton onClick={() => console.log('pressed search')}>
+const Search = () => (
+  <Container>
+    <Input placeholder={'Find recipes by ingredients or name...'} />
+    <SearchButton onClick={() => console.log('pressed search')}>
       <SearchIcon />
-    </StyledButton>
-  </StyledWrapper>
+    </SearchButton>
+  </Container>
 );
 
-export default SearchInput;
+export default Search;

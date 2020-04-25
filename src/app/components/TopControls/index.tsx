@@ -19,9 +19,11 @@ const TopControls = () => (
     <ButtonWithIcon onClick={() => console.log('pressed add')}>
       <AddIcon />
     </ButtonWithIcon>
+
     <ButtonWithIcon onClick={() => console.log('pressed delete')}>
       <DeleteIcon />
     </ButtonWithIcon>
+
     <ButtonWithIcon onClick={() => console.log('pressed edit')}>
       <EditIcon />
     </ButtonWithIcon>

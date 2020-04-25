@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from './components/Header';
-import SearchInput from './components/SearchInput';
+import Search from './components/Search';
 import Filters from './components/Filters';
 
-const ContentWrapper = styled.div`
+const Container = styled.div`
   padding: 45px;
 `;
 
@@ -17,13 +17,13 @@ const Main = styled.div`
 
 const App = () => {
   return (
-    <ContentWrapper>
+    <Container>
       <Header />
       <Main>
-        <SearchInput />
+        <Search />
         <Filters />
       </Main>
-    </ContentWrapper>
+    </Container>
   );
 };
 
