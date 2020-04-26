@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from './components/Header';
-import Search from './components/Search';
-import Filters from './components/Filters';
-import RecipesList from './components/RecipesList';
+// import Search from './components/Search';
+// import Filters from './components/Filters';
+// import RecipesList from './components/RecipesList';
+import RecipeView from './components/RecipeView';
 
 const Container = styled.div`
   padding: 45px;
@@ -21,9 +22,10 @@ const App = () => {
     <Container>
       <Header />
       <Main>
-        <Search />
-        <Filters />
-        <RecipesList />
+        {/*<Search />*/}
+        {/*<Filters />*/}
+        {/*<RecipesList />*/}
+        <RecipeView />
       </Main>
     </Container>
   );
