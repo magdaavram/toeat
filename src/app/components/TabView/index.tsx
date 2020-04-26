@@ -6,7 +6,6 @@ import { IRecipe } from '../../api/recipes';
 const InfoTabList = styled(TabList)`
   display: flex;
   list-style-type: none;
-  padding: 0;
   margin-bottom: 0;
 `;
 
@@ -35,7 +34,7 @@ const InfoTabPanel = styled.div`
 
 const TabView = (props: IRecipe) => {
   return (
-    <Tabs defaultIndex={1}>
+    <Tabs>
       <InfoTabList>
         <InfoTab>Ingredients</InfoTab>
         <InfoTab>Preparation</InfoTab>
