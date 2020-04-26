@@ -1,5 +1,6 @@
 import React, { InputHTMLAttributes } from 'react';
 import styled from 'styled-components';
+import TabView from '../TabView';
 import { IRecipe } from '../../api/recipes';
 
 interface IImageProps extends InputHTMLAttributes<HTMLDivElement> {
@@ -97,7 +98,9 @@ const Recipe = (props: IRecipe) => {
         </DetailsContainer>
       </TopContainer>
 
-      <MainContainer>Main Container</MainContainer>
+      <MainContainer>
+        <TabView {...props} />
+      </MainContainer>
     </>
   );
 };
