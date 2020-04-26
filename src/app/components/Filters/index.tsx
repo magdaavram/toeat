@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Tag from '../Tag';
 import styled from 'styled-components';
+import getRecommendedFilters, { IFilter } from '../../api/filters';
 
 const Container = styled.div`
   width: 70%;
@@ -22,15 +23,25 @@ const TagContainer = styled.div`
 `;
 
 const Filters = () => {
+  const [filters, setFilters] = useState<IFilter[]>([]);
+
+  useEffect(() => {
+    setFilters(getRecommendedFilters());
+  }, []);
+
+  const filtersList = filters.map((filter: IFilter, index) => (
+    <Tag
+      name={filter.name}
+      active={filter.active}
+      key={`filter-${index}`}
+      onClick={() => console.log(`pressed ${filter.name}`)}
+    />
+  ));
+
   return (
     <Container>
       <Header>Recommended ingredients</Header>
-      <TagContainer>
-        <Tag name={'tomatoes'} active={true} />
-        <Tag name={'potatoes'} active={false} />
-        <Tag name={'garlic'} active={true} />
-        <Tag name={'spinach'} active={false} />
-      </TagContainer>
+      <TagContainer>{filtersList}</TagContainer>
     </Container>
   );
 };
