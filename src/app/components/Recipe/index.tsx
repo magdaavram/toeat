@@ -8,7 +8,8 @@ interface IImageProps extends InputHTMLAttributes<HTMLDivElement> {
 }
 
 const TopContainer = styled.div`
-  height: 450px;
+  height: auto;
+  min-height: 450px;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -18,15 +19,16 @@ const Image = styled.div((props: IImageProps) => ({
   maxWidth: '80%',
   width: '550px',
   minWidth: '450px',
-  height: '100%',
+  height: '450px',
   background: `url(${props.url}) no-repeat center`,
   backgroundSize: 'cover',
+  margin: '0 27px 27px 0',
 }));
 
 const DetailsContainer = styled.div`
   width: calc(100% - 580px);
   min-width: 300px;
-  margin-left: 30px;
+  max-width: 550px;
 `;
 
 const Title = styled.h2`
