@@ -2,11 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import { IRecipe } from '../../api/recipes';
+import Dropdown, { Option } from '../SelectDropdown';
+
+const TabsContainer = styled(Tabs)`
+  max-width: 900px;
+`;
 
 const InfoTabList = styled(TabList)`
   display: flex;
   list-style-type: none;
   margin-bottom: 0;
+  padding: 0 45px;
 `;
 
 const InfoTab = styled(Tab)`
@@ -22,7 +28,7 @@ const InfoTab = styled(Tab)`
   &[aria-selected='true'] {
     font-weight: 700;
     border: 2px solid var(--color--light-purple);
-    border-bottom: 3px solid var(--color--beige);
+    border-bottom: 4px solid var(--color--beige);
     border-radius: 3px 3px 0 0;
   }
 `;
@@ -32,23 +38,33 @@ const InfoTabPanel = styled.div`
   border: 2px solid var(--color--light-purple);
 `;
 
+const servingOptions: Option[] = Array.from({ length: 25 }, (value: undefined, index: number) => {
+  return { value: index + 1, label: `${index + 1} ${index + 1 === 1 ? 'serving' : 'servings'}` };
+});
+
 const TabView = (props: IRecipe) => {
   return (
-    <Tabs>
+    <TabsContainer>
       <InfoTabList>
         <InfoTab>Ingredients</InfoTab>
+        <InfoTab>Equipment</InfoTab>
         <InfoTab>Preparation</InfoTab>
       </InfoTabList>
 
       <TabPanel>
         <InfoTabPanel>
-          <p>Ingredients list</p>
+          <Dropdown selected={props.servings} options={servingOptions} />
+        </InfoTabPanel>
+      </TabPanel>
+      <TabPanel>
+        <InfoTabPanel>
+          <p>Equipment list</p>
         </InfoTabPanel>
       </TabPanel>
       <TabPanel>
         <InfoTabPanel>{props.preparation}</InfoTabPanel>
       </TabPanel>
-    </Tabs>
+    </TabsContainer>
   );
 };
 
