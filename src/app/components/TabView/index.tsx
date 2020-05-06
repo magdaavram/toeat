@@ -1,8 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
-import { IRecipe } from '../../api/recipes';
+import { IRecipe, Unit } from '../../api/recipes';
 import Dropdown, { Option } from '../SelectDropdown';
+import List from '../List';
+
+interface Ingredient {
+  ingredient: string;
+  quantity: number;
+  unit: Unit;
+}
 
 const TabsContainer = styled(Tabs)`
   max-width: 900px;
@@ -54,11 +61,17 @@ const TabView = (props: IRecipe) => {
       <TabPanel>
         <InfoTabPanel>
           <Dropdown selected={props.servings} options={servingOptions} />
+          <List
+            items={props.ingredients}
+            renderItem={(ingredient: Ingredient) =>
+              `${ingredient.quantity} ${ingredient.unit} of ${ingredient.ingredient}`
+            }
+          />
         </InfoTabPanel>
       </TabPanel>
       <TabPanel>
         <InfoTabPanel>
-          <p>Equipment list</p>
+          <List items={props.equipment} renderItem={(equipment: string) => equipment} />
         </InfoTabPanel>
       </TabPanel>
       <TabPanel>

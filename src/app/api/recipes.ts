@@ -13,9 +13,16 @@ export interface IRecipe {
   difficultyLevel: number;
   servings: number;
   course: string;
-  ingredients: {}[];
+  ingredients: {
+    ingredient: string;
+    quantity: number;
+    unit: Unit;
+  }[];
+  equipment: string[];
   preparation: string;
 }
+
+export type Unit = 'grams' | 'kg' | 'l' | 'ml' | 'sp' | 'tsp' | 'pinch' | 'pieces';
 
 const recipes: IRecipe[] = [
   {
@@ -26,7 +33,29 @@ const recipes: IRecipe[] = [
     difficultyLevel: 2,
     servings: 2,
     course: 'Lunch',
-    ingredients: [{}],
+    ingredients: [
+      {
+        ingredient: 'pork meat',
+        quantity: 400,
+        unit: 'grams',
+      },
+      {
+        ingredient: 'buns',
+        quantity: 4,
+        unit: 'pieces',
+      },
+      {
+        ingredient: 'jalapenos',
+        quantity: 6,
+        unit: 'pieces',
+      },
+      {
+        ingredient: 'burger sauce',
+        quantity: 100,
+        unit: 'ml',
+      },
+    ],
+    equipment: ['large pot', 'tongs', 'saute pan', 'ladle'],
     preparation:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ' +
       'tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ' +
@@ -43,7 +72,34 @@ const recipes: IRecipe[] = [
     difficultyLevel: 1,
     servings: 4,
     course: 'Lunch',
-    ingredients: [{}],
+    ingredients: [
+      {
+        ingredient: 'pasta',
+        quantity: 300,
+        unit: 'grams',
+      },
+      {
+        ingredient: 'sliced chicken breast',
+        quantity: 300,
+        unit: 'grams',
+      },
+      {
+        ingredient: 'sage',
+        quantity: 3,
+        unit: 'pieces',
+      },
+      {
+        ingredient: 'sliced mushrooms',
+        quantity: 200,
+        unit: 'grams',
+      },
+      {
+        ingredient: 'salt',
+        quantity: 1,
+        unit: 'pinch',
+      },
+    ],
+    equipment: ['large pot', 'tongs', 'saute pan', 'ladle'],
     preparation:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ' +
       'tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ' +
@@ -66,7 +122,29 @@ const recipes: IRecipe[] = [
     difficultyLevel: 2,
     servings: 6,
     course: 'Breakfast',
-    ingredients: [{}],
+    ingredients: [
+      {
+        ingredient: 'pork meat',
+        quantity: 400,
+        unit: 'grams',
+      },
+      {
+        ingredient: 'buns',
+        quantity: 4,
+        unit: 'pieces',
+      },
+      {
+        ingredient: 'jalapenos',
+        quantity: 6,
+        unit: 'pieces',
+      },
+      {
+        ingredient: 'burger sauce',
+        quantity: 100,
+        unit: 'ml',
+      },
+    ],
+    equipment: ['large pot', 'tongs', 'saute pan', 'ladle'],
     preparation:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ' +
       'tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ' +
@@ -83,7 +161,29 @@ const recipes: IRecipe[] = [
     difficultyLevel: 3,
     servings: 2,
     course: 'Lunch',
-    ingredients: [{}],
+    ingredients: [
+      {
+        ingredient: 'pork meat',
+        quantity: 400,
+        unit: 'grams',
+      },
+      {
+        ingredient: 'buns',
+        quantity: 4,
+        unit: 'pieces',
+      },
+      {
+        ingredient: 'jalapenos',
+        quantity: 6,
+        unit: 'pieces',
+      },
+      {
+        ingredient: 'burger sauce',
+        quantity: 100,
+        unit: 'ml',
+      },
+    ],
+    equipment: ['large pot', 'tongs', 'saute pan', 'ladle'],
     preparation:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ' +
       'tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ' +
@@ -100,7 +200,29 @@ const recipes: IRecipe[] = [
     difficultyLevel: 1,
     servings: 1,
     course: 'Dinner',
-    ingredients: [{}],
+    ingredients: [
+      {
+        ingredient: 'pork meat',
+        quantity: 400,
+        unit: 'grams',
+      },
+      {
+        ingredient: 'buns',
+        quantity: 4,
+        unit: 'pieces',
+      },
+      {
+        ingredient: 'jalapenos',
+        quantity: 6,
+        unit: 'pieces',
+      },
+      {
+        ingredient: 'burger sauce',
+        quantity: 100,
+        unit: 'ml',
+      },
+    ],
+    equipment: ['large pot', 'tongs', 'saute pan', 'ladle'],
     preparation:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ' +
       'tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ' +
@@ -117,7 +239,29 @@ const recipes: IRecipe[] = [
     difficultyLevel: 1,
     servings: 4,
     course: 'Lunch',
-    ingredients: [{}],
+    ingredients: [
+      {
+        ingredient: 'pork meat',
+        quantity: 400,
+        unit: 'grams',
+      },
+      {
+        ingredient: 'buns',
+        quantity: 4,
+        unit: 'pieces',
+      },
+      {
+        ingredient: 'jalapenos',
+        quantity: 6,
+        unit: 'pieces',
+      },
+      {
+        ingredient: 'burger sauce',
+        quantity: 100,
+        unit: 'ml',
+      },
+    ],
+    equipment: ['large pot', 'tongs', 'saute pan', 'ladle'],
     preparation:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ' +
       'tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ' +

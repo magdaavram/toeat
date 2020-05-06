@@ -9,7 +9,7 @@ export type Option = {
 const styles = {
   option: (provided: CSSProperties, { isSelected }: { isSelected: boolean }) => ({
     ...provided,
-    backgroundColor: 'var(--color--beige)',
+    backgroundColor: isSelected ? 'rgb(110, 37, 52, 0.1)' : 'var(--color--beige)',
     fontSize: 'var(--font-size--small)',
     fontWeight: isSelected ? 700 : 400,
     color: 'var(--color--dark-purple)',
