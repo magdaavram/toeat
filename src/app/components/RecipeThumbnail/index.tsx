@@ -1,16 +1,16 @@
-import React, { InputHTMLAttributes } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import DurationIcon from '../../assets/icons/Duration';
-import DifficultyIcon from '../../assets/icons/Difficulty';
+import DifficultyLevel from '../DifficultyLevel';
+import CookingTime from '../CookingTime';
 
-interface IImageProps extends InputHTMLAttributes<HTMLDivElement> {
+interface IImageProps {
   url: string;
 }
 
 interface IProps {
   imageUrl: string;
   title: string;
-  duration: string;
+  duration: number;
   difficultyLevel: number;
 }
 
@@ -46,10 +46,6 @@ const Detail = styled.div`
   margin-right: 27px;
 `;
 
-const DetailText = styled.span`
-  margin-left: 9px;
-`;
-
 const Title = styled.a`
   display: inline-block;
   width: 100%;
@@ -69,34 +65,23 @@ const Title = styled.a`
 `;
 
 const RecipeThumbnail = (props: IProps) => {
-  let levelName;
-  const { difficultyLevel } = props;
-
-  difficultyLevel === 1
-    ? (levelName = 'Easy')
-    : difficultyLevel === 2
-    ? (levelName = 'Medium')
-    : difficultyLevel === 3
-    ? (levelName = 'Complex')
-    : (levelName = '');
+  const { imageUrl, title, duration, difficultyLevel } = props;
 
   return (
     <Container>
-      <Image url={props.imageUrl}>
-        <ImageLink href={'/#'} title={props.title} />
+      <Image url={imageUrl}>
+        <ImageLink href={'/#'} title={title} />
       </Image>
       <DetailsContainer>
         <Detail>
-          <DurationIcon />
-          <DetailText>{props.duration}</DetailText>
+          <CookingTime duration={duration} hasIcon={true} />
         </Detail>
         <Detail>
-          <DifficultyIcon level={difficultyLevel} />
-          <DetailText>{levelName}</DetailText>
+          <DifficultyLevel level={difficultyLevel} hasIcon={true} />
         </Detail>
       </DetailsContainer>
-      <Title href={'/#'} title={props.title}>
-        {props.title}
+      <Title href={'/#'} title={title}>
+        {title}
       </Title>
     </Container>
   );

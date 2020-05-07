@@ -1,12 +1,39 @@
 import React from 'react';
+import styled from 'styled-components';
 
 interface IProps {
   level: number;
+  hasIcon: boolean;
 }
 
-const DifficultyIcon = (props: IProps) => {
-  const { level } = props;
+interface IIconProps {
+  level: number;
+}
 
+const IconContainer = styled.div`
+  margin-right: 9px;
+`;
+
+const DifficultyLevel = ({ level, hasIcon }: IProps) => {
+  const levels = ['Easy', 'Medium', 'Complex'];
+  const levelName = levels[level - 1];
+
+  return (
+    <>
+      {hasIcon && (
+        <IconContainer>
+          <DifficultyIcon level={level} />
+        </IconContainer>
+      )}
+
+      {levelName}
+    </>
+  );
+};
+
+export default DifficultyLevel;
+
+const DifficultyIcon = ({ level }: IIconProps) => {
   return level === 1 ? (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20">
       <defs>
@@ -47,5 +74,3 @@ const DifficultyIcon = (props: IProps) => {
     <></>
   );
 };
-
-export default DifficultyIcon;

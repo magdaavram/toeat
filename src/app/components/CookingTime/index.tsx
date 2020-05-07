@@ -1,4 +1,37 @@
 import React from 'react';
+import styled from 'styled-components';
+
+interface IProps {
+  duration: number;
+  hasIcon: boolean;
+}
+
+const IconContainer = styled.div`
+  margin-right: 9px;
+`;
+
+const CookingTime = ({ duration, hasIcon }: IProps) => {
+  let cookingTime;
+
+  if (duration < 60) {
+    cookingTime = `${duration} min`;
+  } else {
+    cookingTime = `${Math.floor(duration / 60)}h ${duration % 60 ? `${duration % 60}min` : ''} `;
+  }
+
+  return (
+    <>
+      {hasIcon && (
+        <IconContainer>
+          <DurationIcon />
+        </IconContainer>
+      )}
+      {cookingTime}
+    </>
+  );
+};
+
+export default CookingTime;
 
 const DurationIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20">
@@ -13,5 +46,3 @@ const DurationIcon = () => (
     <use href="#clock-icon" x="0" y="0" />
   </svg>
 );
-
-export default DurationIcon;

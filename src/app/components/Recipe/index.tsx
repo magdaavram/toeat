@@ -2,6 +2,8 @@ import React, { InputHTMLAttributes } from 'react';
 import styled from 'styled-components';
 import TabView from '../TabView';
 import { IRecipe } from '../../api/recipes';
+import DifficultyLevel from '../DifficultyLevel';
+import CookingTime from '../CookingTime';
 
 interface IImageProps extends InputHTMLAttributes<HTMLDivElement> {
   url: string;
@@ -65,36 +67,33 @@ const MainContainer = styled.div`
 `;
 
 const Recipe = (props: IRecipe) => {
-  let levelName;
-  const { difficultyLevel } = props;
-
-  difficultyLevel === 1
-    ? (levelName = 'Easy')
-    : difficultyLevel === 2
-    ? (levelName = 'Medium')
-    : difficultyLevel === 3
-    ? (levelName = 'Complex')
-    : (levelName = '');
+  const { imageUrl, title, difficultyLevel, duration, course } = props;
 
   return (
     <>
       <TopContainer>
-        <Image url={props.imageUrl} />
+        <Image url={imageUrl} />
 
         <DetailsContainer>
-          <Title>{props.title}</Title>
+          <Title>{title}</Title>
 
           <Details>
             <div>
-              Cooking Time: <DetailInfo>{props.duration}</DetailInfo>
+              Cooking Time:{' '}
+              <DetailInfo>
+                <CookingTime duration={duration} hasIcon={false} />
+              </DetailInfo>
             </div>
 
             <div>
-              Difficulty: <DetailInfo>{levelName}</DetailInfo>
+              Difficulty:{' '}
+              <DetailInfo>
+                <DifficultyLevel level={difficultyLevel} hasIcon={false} />
+              </DetailInfo>
             </div>
 
             <div>
-              Course Type: <DetailInfo>{props.course}</DetailInfo>
+              Course Type: <DetailInfo>{course}</DetailInfo>
             </div>
           </Details>
         </DetailsContainer>

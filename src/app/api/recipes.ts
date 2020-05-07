@@ -9,7 +9,7 @@ export interface IRecipe {
   id: number;
   imageUrl: string;
   title: string;
-  duration: string;
+  duration: number;
   difficultyLevel: number;
   servings: number;
   course: string;
@@ -29,7 +29,7 @@ const recipes: IRecipe[] = [
     id: 1,
     imageUrl: `${recipe1}`,
     title: 'Juicy Burgers',
-    duration: '1 hour',
+    duration: 60,
     difficultyLevel: 2,
     servings: 2,
     course: 'Lunch',
@@ -68,7 +68,7 @@ const recipes: IRecipe[] = [
     id: 2,
     imageUrl: `${recipe2}`,
     title: 'Chicken and Sage Pasta',
-    duration: '1 hour',
+    duration: 90,
     difficultyLevel: 1,
     servings: 4,
     course: 'Lunch',
@@ -118,7 +118,7 @@ const recipes: IRecipe[] = [
     id: 3,
     imageUrl: `${recipe3}`,
     title: 'Chili-Lime Chicken Fajita with Avocado',
-    duration: '1 hour',
+    duration: 60,
     difficultyLevel: 2,
     servings: 6,
     course: 'Breakfast',
@@ -157,7 +157,7 @@ const recipes: IRecipe[] = [
     id: 4,
     imageUrl: `${recipe4}`,
     title: 'Easy, Fall-Off-The-Bone Pork Ribs',
-    duration: '3 hours',
+    duration: 180,
     difficultyLevel: 3,
     servings: 2,
     course: 'Lunch',
@@ -196,7 +196,7 @@ const recipes: IRecipe[] = [
     id: 5,
     imageUrl: `${recipe5}`,
     title: 'Shrimp Salad',
-    duration: '<30 minutes',
+    duration: 30,
     difficultyLevel: 1,
     servings: 1,
     course: 'Dinner',
@@ -235,7 +235,7 @@ const recipes: IRecipe[] = [
     id: 6,
     imageUrl: `${recipe6}`,
     title: 'Best Roasted Potatoes',
-    duration: '1 hour',
+    duration: 60,
     difficultyLevel: 1,
     servings: 4,
     course: 'Lunch',
