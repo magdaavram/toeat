@@ -50,6 +50,8 @@ const servingOptions: Option[] = Array.from({ length: 25 }, (value: undefined, i
 });
 
 const TabView = (props: IRecipe) => {
+  const { servings, ingredients, equipment, preparation } = props;
+
   return (
     <TabsContainer>
       <InfoTabList>
@@ -60,9 +62,9 @@ const TabView = (props: IRecipe) => {
 
       <TabPanel>
         <InfoTabPanel>
-          <Dropdown selected={props.servings} options={servingOptions} />
+          <Dropdown selected={servings} options={servingOptions} />
           <List
-            items={props.ingredients}
+            items={ingredients}
             renderItem={(ingredient: Ingredient) =>
               `${ingredient.quantity} ${ingredient.unit} of ${ingredient.ingredient}`
             }
@@ -71,11 +73,11 @@ const TabView = (props: IRecipe) => {
       </TabPanel>
       <TabPanel>
         <InfoTabPanel>
-          <List items={props.equipment} renderItem={(equipment: string) => equipment} />
+          <List items={equipment} renderItem={(equipment: string) => equipment} />
         </InfoTabPanel>
       </TabPanel>
       <TabPanel>
-        <InfoTabPanel>{props.preparation}</InfoTabPanel>
+        <InfoTabPanel>{preparation}</InfoTabPanel>
       </TabPanel>
     </TabsContainer>
   );

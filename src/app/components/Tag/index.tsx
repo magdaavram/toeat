@@ -1,12 +1,12 @@
 import React, { InputHTMLAttributes } from 'react';
 import styled from 'styled-components';
 
-interface Props extends InputHTMLAttributes<HTMLDivElement> {
+interface IProps extends InputHTMLAttributes<HTMLDivElement> {
   name: string;
   active: boolean;
 }
 
-const TagContainer = styled.div((props: Props) => ({
+const TagContainer = styled.div((props: IProps) => ({
   display: 'inline-block',
   margin: '0 0 12px 12px',
   padding: '6px 12px 6px 12px',
@@ -17,10 +17,12 @@ const TagContainer = styled.div((props: Props) => ({
   cursor: 'pointer',
 }));
 
-const Tag = (props: Props) => {
+const Tag = (props: IProps) => {
+  const { name } = props;
+
   return (
-    <TagContainer {...props} onClick={() => console.log(`pressed ${props.name}`)}>
-      <span>{props.name}</span>
+    <TagContainer {...props} onClick={() => console.log(`pressed ${name}`)}>
+      <span>{name}</span>
     </TagContainer>
   );
 };
