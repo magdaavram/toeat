@@ -11,13 +11,7 @@ const IconContainer = styled.div`
 `;
 
 const CookingTime = ({ duration, hasIcon }: IProps) => {
-  let cookingTime;
-
-  if (duration < 60) {
-    cookingTime = `${duration} min`;
-  } else {
-    cookingTime = `${Math.floor(duration / 60)}h ${duration % 60 ? `${duration % 60}min` : ''} `;
-  }
+  const cookingTime = formatCookingTime(duration);
 
   return (
     <>
@@ -46,3 +40,18 @@ const DurationIcon = () => (
     <use href="#clock-icon" x="0" y="0" />
   </svg>
 );
+
+const formatCookingTime = (minutes: number): string => {
+  if (minutes < 60) {
+    return `${minutes} min`;
+  }
+
+  const hours = Math.floor(minutes / 60);
+  let hoursDisplay = `${hours}h`;
+
+  if (minutes % 60 !== 0) {
+    hoursDisplay += `${minutes % 60}min`;
+  }
+
+  return hoursDisplay;
+};
