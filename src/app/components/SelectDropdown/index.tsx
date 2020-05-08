@@ -6,6 +6,14 @@ export type Option = {
   label: string;
 };
 
+interface IProps {
+  selected: number;
+  placeholder?: string;
+  options: Option[];
+  width: string;
+  margin?: string;
+}
+
 const styles = {
   option: (provided: CSSProperties, { isSelected }: { isSelected: boolean }) => ({
     ...provided,
@@ -19,18 +27,19 @@ const styles = {
       color: 'var(--color--beige)',
     },
   }),
-  menu: (provided: CSSProperties) => ({
+  menu: (provided: CSSProperties, { selectProps }: { selectProps: IProps }) => ({
     ...provided,
     backgroundColor: 'var(--color--beige)',
     border: '1px solid var(--color--light-purple)',
     borderRadius: '3px',
-    width: '300px',
+    width: selectProps.width,
   }),
-  container: (provided: CSSProperties) => ({
+  container: (provided: CSSProperties, { selectProps }: { selectProps: IProps }) => ({
     ...provided,
-    width: '300px',
+    width: selectProps.width,
     border: '1px solid var(--color--light-purple)',
     borderRadius: '3px',
+    margin: selectProps.margin,
   }),
   control: (provided: CSSProperties) => ({
     ...provided,
@@ -48,12 +57,20 @@ const styles = {
   }),
 };
 
-const Dropdown = ({ selected, options }: { selected: number; options: Option[] }) => {
+const Dropdown = (props: IProps) => {
+  const { selected, options, placeholder, width, margin } = props;
   const selectedValue = options.find((item: Option) => item.value === selected);
 
   return (
     <>
-      <Select options={options} styles={styles} defaultValue={selectedValue} />
+      <Select
+        options={options}
+        styles={styles}
+        width={width}
+        margin={margin}
+        placeholder={placeholder}
+        defaultValue={selectedValue}
+      />
     </>
   );
 };

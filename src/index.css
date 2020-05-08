@@ -19,6 +19,10 @@ body {
   background-color: var(--color--beige);
 }
 
+.fileContainer .uploadPicturesWrapper .uploadPicture {
+  max-height: 81px;
+}
+
 .fileContainer .uploadPictureContainer .deleteImage {
   width: 27px;
   height: 27px;

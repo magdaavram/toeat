@@ -62,7 +62,7 @@ const TabView = (props: IRecipe) => {
 
       <TabPanel>
         <InfoTabPanel>
-          <Dropdown selected={servings} options={servingOptions} />
+          <Dropdown width={'300px'} selected={servings} options={servingOptions} />
           <List
             items={ingredients}
             renderItem={(ingredient: Ingredient) =>
