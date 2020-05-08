@@ -1,31 +1,33 @@
 @font-face {
-    font-family: 'Suisse SemiBold';
-    font-style: normal;
-    font-weight: 600;
-    font-display: fallback;
-    src: local('Suisse SemiBold'), local('SuisseSemiBold'), url('./SuisseIntl-SemiBold.ttf') format('truetype');
+  font-family: 'Suisse SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-display: fallback;
+  src: local('Suisse SemiBold'), local('SuisseSemiBold'),
+    url('./SuisseIntl-SemiBold.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Suisse Bold';
-    font-style: normal;
-    font-weight: 900;
-    font-display: fallback;
-    src: local('Suisse Bold'), local('SuisseBold'), url('./SuisseIntl-Bold.ttf') format('truetype');
+  font-family: 'Suisse Bold';
+  font-style: normal;
+  font-weight: 900;
+  font-display: fallback;
+  src: local('Suisse Bold'), local('SuisseBold'), url('./SuisseIntl-Bold.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Roboto Regular';
-    font-style: normal;
-    font-weight: 400;
-    font-display: fallback;
-    src: local('Roboto Regular'), local('RobotoRegular'), url('./Roboto-Regular.ttf') format('truetype');
+  font-family: 'Roboto Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: local('Roboto Regular'), local('RobotoRegular'),
+    url('./Roboto-Regular.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Roboto Medium';
-    font-style: normal;
-    font-weight: 600;
-    font-display: fallback;
-    src: local('Roboto Medium'), local('RobotoMedium'), url('./Roboto-Medium.ttf') format('truetype');
+  font-family: 'Roboto Medium';
+  font-style: normal;
+  font-weight: 600;
+  font-display: fallback;
+  src: local('Roboto Medium'), local('RobotoMedium'), url('./Roboto-Medium.ttf') format('truetype');
 }
