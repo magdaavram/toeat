@@ -11,3 +11,20 @@ body {
   background-color: var(--color--beige);
   color: var(--color--dark-purple);
 }
+
+.fileContainer .uploadPicturesWrapper .uploadPictureContainer {
+  width: 30%;
+  padding: 3px;
+  border: 0;
+  background-color: var(--color--beige);
+}
+
+.fileContainer .uploadPictureContainer .deleteImage {
+  width: 27px;
+  height: 27px;
+  line-height: 27px;
+  background-color: var(--color--medium-purple);
+  color: var(--color--beige);
+  font-family: 'Suisse SemiBold';
+  font-size: var(--font-size--small);
+}

@@ -4,7 +4,8 @@ import Header from './components/Header';
 // import Search from './components/Search';
 // import Filters from './components/Filters';
 // import RecipesList from './components/RecipesList';
-import RecipeView from './components/RecipeView';
+// import RecipeView from './components/RecipeView';
+import AddEditRecipeView from './components/AddEditRecipeView';
 
 const Container = styled.div`
   padding: 45px;
@@ -25,7 +26,8 @@ const App = () => {
         {/*<Search />*/}
         {/*<Filters />*/}
         {/*<RecipesList />*/}
-        <RecipeView />
+        {/*<RecipeView />*/}
+        <AddEditRecipeView />
       </Main>
     </Container>
   );

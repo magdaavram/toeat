@@ -9,6 +9,7 @@
     "@types/react-select": "^3.0.12",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-images-upload": "^1.2.8",
     "react-scripts": "3.4.1",
     "react-select": "^3.1.0",
     "styled-components": "^5.1.0"
@@ -17,7 +18,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "node ./node_modules/prettier/bin-prettier.js --write src/app"
   },
   "eslintConfig": {
     "extends": "universe"
