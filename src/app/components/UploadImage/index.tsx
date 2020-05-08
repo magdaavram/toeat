@@ -49,32 +49,14 @@ const errorStyle = {
 };
 
 const UploadImage = (props: IProps) => {
-  const {
-    singleImage,
-    imgExtension,
-    withPreview,
-    maxFileSize,
-    label,
-    fileSizeError,
-    fileTypeError,
-    withIcon,
-  } = props;
-
   return (
     <ImageUploader
       fileContainerStyle={containerStyle}
-      singleImage={singleImage}
-      imgExtension={imgExtension}
-      withPreview={withPreview}
       buttonText={'+'}
-      maxFileSize={maxFileSize}
-      label={label}
       labelStyles={labelStyle}
-      fileSizeError={fileSizeError}
-      fileTypeError={fileTypeError}
       errorStyle={errorStyle}
       buttonStyles={buttonStyle}
-      withIcon={withIcon}
+      {...props}
     />
   );
 };
