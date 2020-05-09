@@ -88,7 +88,7 @@ const AddEditRecipeView = () => {
           options={difficultyOptions}
           placeholder={'Difficulty'}
         />
-        <TimeInput type="number" min={0} max={1440} placeholder={'Mins (duration)'} required />
+        <TimeInput type="number" min={0} max={1440} placeholder={'Minutes (cooking)'} required />
       </DetailsContainer>
     </Form>
   );

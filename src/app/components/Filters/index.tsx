@@ -5,6 +5,7 @@ import getRecommendedFilters, { IFilter } from '../../api/filters';
 
 const Container = styled.div`
   width: 70%;
+  max-width: 1000px;
   margin: 18px;
   background-color: rgba(201, 173, 167, 0.3);
   padding: 18px;

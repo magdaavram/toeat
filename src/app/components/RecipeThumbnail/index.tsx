@@ -34,7 +34,7 @@ const ImageLink = styled.a`
 const DetailsContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 6px;
+  margin: 9px 0 0 3px;
   color: var(--color--medium-purple);
   font-size: var(--font-size--small);
   font-family: 'Roboto Medium';

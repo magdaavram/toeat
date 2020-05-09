@@ -5,6 +5,7 @@ import getRecipes, { IRecipe } from '../../api/recipes';
 
 const Container = styled.div`
   width: 70%;
+  max-width: 1000px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-items: space-between;

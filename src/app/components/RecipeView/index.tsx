@@ -5,6 +5,7 @@ import Recipe from '../Recipe';
 
 const Container = styled.div`
   width: 70%;
+  max-width: 1000px;
 `;
 
 const RecipeView = () => {

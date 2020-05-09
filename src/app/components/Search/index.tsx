@@ -7,6 +7,7 @@ import Input from '../Input';
 const Container = styled.div`
   display: flex;
   width: 70%;
+  max-width: 1000px;
   height: 54px;
 `;
 

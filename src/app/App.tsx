@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from './components/Header';
-// import Search from './components/Search';
-// import Filters from './components/Filters';
-// import RecipesList from './components/RecipesList';
-// import RecipeView from './components/RecipeView';
+import Search from './components/Search';
+import Filters from './components/Filters';
+import RecipesList from './components/RecipesList';
+import RecipeView from './components/RecipeView';
 import AddEditRecipeView from './components/AddEditRecipeView';
 
 const Container = styled.div`
