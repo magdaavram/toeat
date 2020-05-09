@@ -6,6 +6,7 @@ import Dropdown, { Option } from '../SelectDropdown';
 
 const Form = styled.form`
   width: 70%;
+  max-width: 700px;
 `;
 
 const TextInput = styled(Input)`

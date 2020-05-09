@@ -26,8 +26,8 @@ const containerStyle = {
 const buttonStyle = {
   width: '60px',
   height: '60px',
-  fontFamily: 'Suisse SemiBold',
-  fontSize: 'var(--font-size--xlarge)',
+  fontFamily: 'Roboto Regular',
+  fontSize: 'var(--font-size--xxlarge)',
   color: 'var(--color--beige)',
   padding: '0',
   borderRadius: '50%',
