@@ -22,7 +22,7 @@ export interface IRecipe {
   preparation: string;
 }
 
-export type Unit = 'grams' | 'kg' | 'l' | 'ml' | 'sp' | 'tsp' | 'pinch' | 'pieces';
+export type Unit = 'grams' | 'kg' | 'l' | 'ml' | 'sp' | 'tsp' | 'pinch' | 'pieces' | 'bunch';
 
 const recipes: IRecipe[] = [
   {

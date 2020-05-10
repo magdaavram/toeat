@@ -33,6 +33,7 @@ const styles = {
     border: '1px solid var(--color--light-purple)',
     borderRadius: '3px',
     width: selectProps.width,
+    fontFamily: 'Roboto Regular',
   }),
   container: (provided: CSSProperties, { selectProps }: { selectProps: IProps }) => ({
     ...provided,
@@ -40,6 +41,7 @@ const styles = {
     border: '1px solid var(--color--light-purple)',
     borderRadius: '3px',
     margin: selectProps.margin,
+    fontFamily: 'Roboto Regular',
   }),
   control: (provided: CSSProperties) => ({
     ...provided,
