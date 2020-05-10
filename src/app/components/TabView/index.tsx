@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import { IRecipe, Unit } from '../../api/recipes';
-import Dropdown, { Option } from '../SelectDropdown';
+import Dropdown from '../SelectDropdown';
+import { Option } from '../Dropdown';
 import List from '../List';
 
 interface Ingredient {

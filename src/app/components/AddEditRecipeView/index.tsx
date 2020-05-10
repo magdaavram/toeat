@@ -2,10 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import ImageUploader from '../UploadImage';
 import Input from '../Input';
-import Dropdown, { Option } from '../SelectDropdown';
+import Dropdown from '../SelectDropdown';
+import { Option } from '../Dropdown';
 import { Unit } from '../../api/recipes';
 import Button from '../Button';
 import Textarea from '../Textarea';
+import CreatableSelect from '../CreatableDropdown';
 
 const Form = styled.form`
   width: 70%;
@@ -83,7 +85,7 @@ const ActionButton = styled(Button)`
   margin-left: 9px;
   background-color: var(--color--medium-purple);
   color: var(--color--beige);
-  border-radius: 12px;
+  border-radius: 9px;
   padding: 0 18px;
   font-family: 'Roboto Regular';
   font-size: var(--font-size--regular);
@@ -197,11 +199,11 @@ const AddEditRecipeView = () => {
             required
           />
           <Dropdown selected={0} options={unitOptions} width={'150px'} placeholder={'Unit'} />
-          <Dropdown
-            selected={0}
+          <CreatableSelect
+            isClearable
             options={ingredientsOptions}
             width={'200px'}
-            placeholder={'Ingredient'}
+            placeholder={'Type ingredient'}
           />
         </Item>
         <AddButton type="button" onClick={() => console.log('clicked add ingredient')}>
@@ -212,18 +214,20 @@ const AddEditRecipeView = () => {
       <AddItemsContainer>
         <Subtitle>Equipment</Subtitle>
         <Item>
-          <Dropdown selected={0} options={equipmentOptions} width={'200px'} placeholder={'Item'} />
+          <CreatableSelect
+            isMulti
+            options={equipmentOptions}
+            width={'500px'}
+            placeholder={'Type tool'}
+          />
         </Item>
-        <AddButton type="button" onClick={() => console.log('clicked add equipment')}>
-          +
-        </AddButton>
       </AddItemsContainer>
 
       <Textarea placeholder={'Describe preparation details'} required />
       <ButtonsContainer>
         <ActionButton
           type="button"
-          style={{ backgroundColor: 'var(--color--light-brown)' }}
+          style={{ backgroundColor: 'var(--color--light-purple)' }}
           onClick={() => console.log('pressed Cancel')}>
           Cancel
         </ActionButton>
