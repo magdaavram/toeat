@@ -50,7 +50,6 @@ const Subtitle = styled.h3`
 
 const Item = styled.div`
   display: flex;
-  // justify-content: space-between;
   margin-bottom: 18px;
 
   & > *:not(:last-child) {
@@ -66,6 +65,28 @@ const AddButton = styled(Button)`
   color: var(--color--beige);
   padding: 0;
   border-radius: 50%;
+
+  &:hover {
+    opacity: 0.9;
+  }
+`;
+
+const ButtonsContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin: 9px 0;
+`;
+
+const ActionButton = styled(Button)`
+  width: auto;
+  height: 40px;
+  margin-left: 9px;
+  background-color: var(--color--medium-purple);
+  color: var(--color--beige);
+  border-radius: 12px;
+  padding: 0 18px;
+  font-family: 'Roboto Regular';
+  font-size: var(--font-size--regular);
 
   &:hover {
     opacity: 0.9;
@@ -199,6 +220,15 @@ const AddEditRecipeView = () => {
       </AddItemsContainer>
 
       <Textarea placeholder={'Describe preparation details'} required />
+      <ButtonsContainer>
+        <ActionButton
+          type="button"
+          style={{ backgroundColor: 'var(--color--light-brown)' }}
+          onClick={() => console.log('pressed Cancel')}>
+          Cancel
+        </ActionButton>
+        <ActionButton onClick={() => console.log('pressed Save')}>Save</ActionButton>
+      </ButtonsContainer>
     </Form>
   );
 };
