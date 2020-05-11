@@ -52,12 +52,29 @@ const Subtitle = styled.h3`
 
 const Item = styled.div`
   display: flex;
-  margin-bottom: 18px;
+  margin-bottom: 9px;
 
   & > *:not(:last-child) {
     margin-right: 9px;
   }
 `;
+
+const DeleteButton = styled(Button)`
+  width: 30px;
+  height: 30px;
+  color: var(--color--light-purple);
+  background-color: rgba(74, 78, 105, 0.1);
+
+  align-self: center;
+  font-size: var(--font-size--regular);
+  border-radius: 9px;
+
+  &:hover {
+    color: var(--color--beige);
+    background-color: rgba(110, 37, 52, 0.5);
+  }
+`;
+
 const AddButton = styled(Button)`
   width: 40px;
   height: 40px;
@@ -67,6 +84,7 @@ const AddButton = styled(Button)`
   color: var(--color--beige);
   padding: 0;
   border-radius: 50%;
+  margin-top: 9px;
 
   &:hover {
     opacity: 0.9;
@@ -206,6 +224,25 @@ const AddEditRecipeView = () => {
             placeholder={'Type ingredient'}
           />
         </Item>
+        <Item>
+          <NumberInput
+            style={{ width: '100px' }}
+            type="number"
+            min={0}
+            max={999}
+            placeholder={'Quantity'}
+            required
+          />
+          <Dropdown selected={0} options={unitOptions} width={'150px'} placeholder={'Unit'} />
+          <CreatableSelect
+            isClearable
+            options={ingredientsOptions}
+            width={'200px'}
+            placeholder={'Type ingredient'}
+          />
+          <DeleteButton onClick={() => console.log('clicked delete ingredient')}>x</DeleteButton>
+        </Item>
+
         <AddButton type="button" onClick={() => console.log('clicked add ingredient')}>
           +
         </AddButton>
