@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import ImageUploader from '../UploadImage';
-import Input from '../Input';
+import NumberInput from '../Input/Number';
+import TextInput from '../Input/Text';
 import Dropdown from '../SelectDropdown';
 import { Option } from '../Dropdown';
 import { Unit } from '../../api/recipes';
-import Button from '../Button';
+import DeleteButton from '../Button/Delete';
+import AddButton from '../Button/Add';
+import ActionButton from '../Button/Action';
 import Textarea from '../Textarea';
 import CreatableSelect from '../CreatableDropdown';
 
@@ -14,27 +17,10 @@ const Form = styled.form`
   max-width: 700px;
 `;
 
-const TextInput = styled(Input)`
-  min-width: 300px;
-  height: 45px;
-  margin: 18px 0;
-`;
-
 const DetailsContainer = styled.div`
   height: 40px;
   display: flex;
   justify-content: space-between;
-`;
-
-const NumberInput = styled(Input)`
-  width: 150px;
-  height: 40px;
-  padding: 0 9px;
-
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
 `;
 
 const AddItemsContainer = styled.div`
@@ -59,58 +45,10 @@ const Item = styled.div`
   }
 `;
 
-const DeleteButton = styled(Button)`
-  width: 30px;
-  height: 30px;
-  color: var(--color--light-purple);
-  background-color: rgba(74, 78, 105, 0.1);
-
-  align-self: center;
-  font-size: var(--font-size--regular);
-  border-radius: 9px;
-
-  &:hover {
-    color: var(--color--beige);
-    background-color: rgba(110, 37, 52, 0.5);
-  }
-`;
-
-const AddButton = styled(Button)`
-  width: 40px;
-  height: 40px;
-  background-color: var(--color--medium-purple);
-  font-family: Roboto Regular;
-  font-size: var(--font-size--xlarge);
-  color: var(--color--beige);
-  padding: 0;
-  border-radius: 50%;
-  margin-top: 9px;
-
-  &:hover {
-    opacity: 0.9;
-  }
-`;
-
 const ButtonsContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   margin: 9px 0;
-`;
-
-const ActionButton = styled(Button)`
-  width: auto;
-  height: 40px;
-  margin-left: 9px;
-  background-color: var(--color--medium-purple);
-  color: var(--color--beige);
-  border-radius: 9px;
-  padding: 0 18px;
-  font-family: 'Roboto Regular';
-  font-size: var(--font-size--regular);
-
-  &:hover {
-    opacity: 0.9;
-  }
 `;
 
 const servingOptions: Option[] = Array.from({ length: 25 }, (value: undefined, index: number) => {
@@ -151,6 +89,7 @@ const ingredients = [
   'sugar',
   'chocolate',
 ];
+
 const ingredientsOptions: Option[] = Array.from(
   { length: ingredients.length },
   (value: undefined, index: number) => {
@@ -240,7 +179,9 @@ const AddEditRecipeView = () => {
             width={'200px'}
             placeholder={'Type ingredient'}
           />
-          <DeleteButton onClick={() => console.log('clicked delete ingredient')}>x</DeleteButton>
+          <DeleteButton type="button" onClick={() => console.log('clicked delete ingredient')}>
+            x
+          </DeleteButton>
         </Item>
 
         <AddButton type="button" onClick={() => console.log('clicked add ingredient')}>
