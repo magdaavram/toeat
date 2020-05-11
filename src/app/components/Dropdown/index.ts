@@ -56,6 +56,27 @@ const dropdownStyles = {
     ...provided,
     color: 'var(--color--medium-purple)',
   }),
+  multiValue: (provided: CSSProperties) => ({
+    ...provided,
+    backgroundColor: 'rgba(110, 37, 52, 0.3)',
+    marginRight: '6px',
+    borderRadius: '3px',
+  }),
+  multiValueLabel: (provided: CSSProperties) => ({
+    ...provided,
+    color: 'var(--color--beige)',
+    paddingLeft: '9px',
+    paddingRight: '6px',
+  }),
+  multiValueRemove: (provided: CSSProperties) => ({
+    ...provided,
+    color: 'var(--color--beige)',
+
+    ':hover': {
+      backgroundColor: 'rgba(110, 37, 52, 0.2)',
+      opacity: 1,
+    },
+  }),
 };
 
 export default dropdownStyles;
