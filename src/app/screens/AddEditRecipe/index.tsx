@@ -17,7 +17,7 @@ import {
   getIngredients,
   getEquipments,
 } from '../../api/dropdownData';
-import ConfirmationModal, { IModalProps } from '../../components/ConfirmationModal';
+import ConfirmationModal, { IModalProps } from '../../components/Modal/ConfirmationModal';
 
 const Form = styled.form`
   width: 70%;

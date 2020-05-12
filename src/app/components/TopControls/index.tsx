@@ -4,7 +4,7 @@ import AddIcon from '../../assets/icons/Add';
 import DeleteIcon from '../../assets/icons/Delete';
 import EditIcon from '../../assets/icons/Edit';
 import styled from 'styled-components';
-import ConfirmationModal, { IModalProps } from '../ConfirmationModal';
+import ConfirmationModal, { IModalProps } from '../Modal/ConfirmationModal';
 
 const ButtonsContainer = styled.div`
   display: flex;

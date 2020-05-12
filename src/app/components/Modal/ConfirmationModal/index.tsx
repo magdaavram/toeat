@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Modal from 'react-modal';
-import Button from '../Button';
-import ActionButton from '../Button/Action';
+import ActionButton from '../../Button/Action';
+import CloseButton from '../../Button/Close';
 
 export interface IModalProps {
   title: string;
@@ -25,23 +25,6 @@ const modalStyles = {
     padding: '27px',
   },
 };
-
-const CloseButton = styled(Button)`
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 27px;
-  right: 27px;
-  font-size: var(--font-size--regular);
-  font-family: 'Roboto Regular';
-  color: var(--color--light-purple);
-  background-color: rgb(242, 233, 228, 0.4);
-  border-radius: 3px;
-
-  &:hover {
-    color: var(--color--medium-purple);
-  }
-`;
 
 const TextContainer = styled.div`
   padding: 54px 18px 36px 18px;
