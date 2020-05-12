@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from './components/Header';
-import Homepage from './screens/Homepage';
-import RecipeView from './screens/ViewRecipe';
-import AddEditRecipeView from './screens/AddEditRecipe';
+import Routes from './routes';
+import { Router } from 'react-router-dom';
+import history from './services/history';
 
 const Container = styled.div`
   padding: 45px;
@@ -21,9 +21,9 @@ const App = () => {
     <Container>
       <Header />
       <Main>
-        {/*<Homepage />*/}
-        {/*<RecipeView />*/}
-        <AddEditRecipeView />
+        <Router history={history}>
+          <Routes />
+        </Router>
       </Main>
     </Container>
   );
