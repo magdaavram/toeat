@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { IRecipe, getRecipe } from '../../api/recipes';
-import Recipe from '../Recipe';
+import Recipe from '../../components/Recipe';
 
 const Container = styled.div`
   width: 70%;

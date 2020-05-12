@@ -1,16 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import ImageUploader from '../UploadImage';
-import NumberInput from '../Input/Number';
-import TextInput from '../Input/Text';
-import Dropdown from '../SelectDropdown';
-import { Option } from '../Dropdown';
-import { Unit } from '../../api/recipes';
-import DeleteButton from '../Button/Delete';
-import AddButton from '../Button/Add';
-import ActionButton from '../Button/Action';
-import Textarea from '../Textarea';
-import CreatableSelect from '../CreatableDropdown';
+import ImageUploader from '../../components/UploadImage';
+import NumberInput from '../../components/Input/Number';
+import TextInput from '../../components/Input/Text';
+import Dropdown from '../../components/SelectDropdown';
+import { Option } from '../../components/Dropdown';
+import DeleteButton from '../../components/Button/Delete';
+import AddButton from '../../components/Button/Add';
+import ActionButton from '../../components/Button/Action';
+import Textarea from '../../components/Textarea';
+import CreatableSelect from '../../components/CreatableDropdown';
 import {
   getCourses,
   getDifficultyLevels,

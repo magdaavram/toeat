@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from './components/Header';
-import Search from './components/Search';
-import Filters from './components/Filters';
-import RecipesList from './components/RecipesList';
-import RecipeView from './components/RecipeView';
-import AddEditRecipeView from './components/AddEditRecipeView';
+import Homepage from './screens/Homepage';
+import RecipeView from './screens/ViewRecipe';
+import AddEditRecipeView from './screens/AddEditRecipe';
 
 const Container = styled.div`
   padding: 45px;
@@ -23,9 +21,7 @@ const App = () => {
     <Container>
       <Header />
       <Main>
-        {/*<Search />*/}
-        {/*<Filters />*/}
-        {/*<RecipesList />*/}
+        {/*<Homepage />*/}
         {/*<RecipeView />*/}
         <AddEditRecipeView />
       </Main>
