@@ -29,6 +29,10 @@ body {
   line-height: 27px;
   background-color: var(--color--medium-purple);
   color: var(--color--beige);
-  font-family: 'Suisse SemiBold';
+  font-family: 'Suisse SemiBold', sans-serif;
   font-size: var(--font-size--small);
+}
+
+.fileContainer .uploadPictureContainer .deleteImage:hover {
+  background-color: rgb(89, 94, 125);
 }
