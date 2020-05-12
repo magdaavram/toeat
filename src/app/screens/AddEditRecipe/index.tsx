@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ImageUploader from '../../components/UploadImage';
 import NumberInput from '../../components/Input/Number';
@@ -17,6 +17,7 @@ import {
   getIngredients,
   getEquipments,
 } from '../../api/dropdownData';
+import ConfirmationModal, { IModalProps } from '../../components/ConfirmationModal';
 
 const Form = styled.form`
   width: 70%;
@@ -82,6 +83,17 @@ const equipmentOptions: Option[] = getEquipments().map((item) => {
 });
 
 const AddEditRecipeView = () => {
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
+
+  const modalData: IModalProps = {
+    title: 'Discard changes',
+    message: 'Are you sure you want to discard all changes?',
+    show: modalIsOpen,
+    onClose: closeModal,
+  };
+
   return (
     <Form>
       <ImageUploader
@@ -179,13 +191,19 @@ const AddEditRecipeView = () => {
 
       <Textarea placeholder={'Describe preparation details'} required />
       <ActionButtonsContainer>
-        <ActionButton
-          type="button"
-          style={{ backgroundColor: 'var(--color--light-purple)' }}
-          onClick={() => console.log('pressed Cancel')}>
-          Cancel
-        </ActionButton>
-        <ActionButton onClick={() => console.log('pressed Save')}>Save</ActionButton>
+        <div>
+          <ActionButton
+            type="button"
+            style={{ backgroundColor: 'var(--color--light-purple)' }}
+            onClick={openModal}>
+            Cancel
+          </ActionButton>
+          <ConfirmationModal {...modalData} />
+        </div>
+
+        <div>
+          <ActionButton onClick={() => console.log('pressed Save')}>Save</ActionButton>
+        </div>
       </ActionButtonsContainer>
     </Form>
   );
