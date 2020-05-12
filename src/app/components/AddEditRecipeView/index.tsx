@@ -11,6 +11,13 @@ import AddButton from '../Button/Add';
 import ActionButton from '../Button/Action';
 import Textarea from '../Textarea';
 import CreatableSelect from '../CreatableDropdown';
+import {
+  getCourses,
+  getDifficultyLevels,
+  getUnits,
+  getIngredients,
+  getEquipments,
+} from '../../api/dropdownData';
 
 const Form = styled.form`
   width: 70%;
@@ -45,7 +52,7 @@ const Item = styled.div`
   }
 `;
 
-const ButtonsContainer = styled.div`
+const ActionButtonsContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   margin: 9px 0;
@@ -55,55 +62,25 @@ const servingOptions: Option[] = Array.from({ length: 25 }, (value: undefined, i
   return { value: index + 1, label: `${index + 1} ${index + 1 === 1 ? 'serving' : 'servings'}` };
 });
 
-const courses = ['Breakfast', 'Brunch', 'Lunch', 'Dinner', 'Snack'];
-const courseOptions: Option[] = Array.from(
-  { length: courses.length },
-  (value: undefined, index: number) => {
-    return { value: index + 1, label: `${courses[index]}` };
-  }
-);
+const courseOptions: Option[] = getCourses().map((item) => {
+  return { value: item.id, label: item.name };
+});
 
-const difficultyLevels = ['Easy', 'Medium', 'Complex'];
-const difficultyOptions: Option[] = Array.from(
-  { length: difficultyLevels.length },
-  (value: undefined, index: number) => {
-    return { value: index + 1, label: `${difficultyLevels[index]}` };
-  }
-);
+const difficultyOptions: Option[] = getDifficultyLevels().map((item) => {
+  return { value: item.id, label: item.name };
+});
 
-const units: Unit[] = ['grams', 'kg', 'l', 'ml', 'sp', 'tsp', 'pinch', 'pieces', 'bunch'];
-const unitOptions: Option[] = Array.from(
-  { length: units.length },
-  (value: undefined, index: number) => {
-    return { value: index + 1, label: `${units[index]}` };
-  }
-);
+const unitOptions: Option[] = getUnits().map((item) => {
+  return { value: item.id, label: item.name };
+});
 
-const ingredients = [
-  'tomatoes',
-  'potatoes',
-  'carrots',
-  'rice',
-  'salt',
-  'parsley',
-  'sugar',
-  'chocolate',
-];
+const ingredientsOptions: Option[] = getIngredients().map((item) => {
+  return { value: item.id, label: item.name };
+});
 
-const ingredientsOptions: Option[] = Array.from(
-  { length: ingredients.length },
-  (value: undefined, index: number) => {
-    return { value: index + 1, label: `${ingredients[index]}` };
-  }
-);
-
-const equipments = ['large pot', 'tongs', 'saute pan', 'ladle'];
-const equipmentOptions: Option[] = Array.from(
-  { length: equipments.length },
-  (value: undefined, index: number) => {
-    return { value: index + 1, label: `${equipments[index]}` };
-  }
-);
+const equipmentOptions: Option[] = getEquipments().map((item) => {
+  return { value: item.id, label: item.name };
+});
 
 const AddEditRecipeView = () => {
   return (
@@ -202,7 +179,7 @@ const AddEditRecipeView = () => {
       </AddItemsContainer>
 
       <Textarea placeholder={'Describe preparation details'} required />
-      <ButtonsContainer>
+      <ActionButtonsContainer>
         <ActionButton
           type="button"
           style={{ backgroundColor: 'var(--color--light-purple)' }}
@@ -210,7 +187,7 @@ const AddEditRecipeView = () => {
           Cancel
         </ActionButton>
         <ActionButton onClick={() => console.log('pressed Save')}>Save</ActionButton>
-      </ButtonsContainer>
+      </ActionButtonsContainer>
     </Form>
   );
 };
