@@ -50,7 +50,7 @@ const formatCookingTime = (minutes: number): string => {
   let hoursDisplay = `${hours}h`;
 
   if (minutes % 60 !== 0) {
-    hoursDisplay += `${minutes % 60}min`;
+    hoursDisplay += ` ${minutes % 60}min`;
   }
 
   return hoursDisplay;
