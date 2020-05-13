@@ -1,4 +1,4 @@
-# Recipes Finder
+# toeat - Your recipe collection
 
 Exercising **TypeScript, ReactJS and styled components** with a 
 simple recipe manager application. 
@@ -6,6 +6,17 @@ simple recipe manager application.
 In the application, you can create **your collection of recipes** 
 in a simple and easy to understand way. 
 
+## Features
+* **create** (title, ingredients, preparation, equipment, 
+cooking time, servings, course type, difficulty);
+* **edit**;
+* **search** (by title, by ingredients);
+* **filter** (by cooking time, by wanted/disliked ingredients, 
+by courses, by number of ingredients, by difficulty);
+* **adapt quantities** based on the desired number of servings;
+* **delete**;
+
+--
 Each recipe has a photo, a title, the ingredients' list, the 
 preparation details, the necessary equipment and some other 
 details that offer a better understanding of its complexity and 
@@ -21,22 +32,36 @@ ingredients**, you can **filter** them by **cooking time**, by
 Also, you can **adapt the ingredient quantities** based on the 
 desired **number of servings**.  
 
+## Requirements 
+* NodeJS
+* npm
 
-## Business Requirements
-### Model & Actions
-* **create** (title, ingredients, preparation, equipment, 
-cooking time, servings, course type, difficulty);
-* **edit**;
-* **search** (by title, by ingredients);
-* **filter** (by cooking time, by wanted/disliked ingredients, 
-by courses, by number of ingredients, by difficulty);
-* **adapt quantities** based on the desired number of servings;
-* **delete**;
+## Setup
+### Install
+```shell script
+git clone git@github.com:magdaavram/toeat.git
+cd toeat
+npm install
+```
 
+### Run
+```shell script
+npm start
+```
 
-## Design Framework
-![Recipes App](recipes-app-framework.png?raw=true "Recipes App Framework")
+### QA
+```shell script
+npm run prettier
+npm test
+```
 
+### Build
+```shell script
+npm build
+```
+
+## Contact
+If you want to contact me, you can reach me at magda.r.avram@gmail.com.
 
 ## Credits
 Favicon icon by Valeriy from the Noun Project.
@@ -55,30 +80,3 @@ Filter icon by Muhammad Tajudin from the Noun Project.
 
 ___
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-### Available Scripts
-
-In the project directory, you can run:
-
-#### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-#### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-#### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
