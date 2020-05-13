@@ -5,6 +5,7 @@ import DeleteIcon from 'assets/icons/Delete';
 import EditIcon from 'assets/icons/Edit';
 import styled from 'styled-components';
 import ConfirmationModal, { IModalProps } from 'components/Modal/ConfirmationModal';
+import { Link } from 'react-router-dom';
 
 const ButtonsContainer = styled.div`
   display: flex;
@@ -34,9 +35,11 @@ const TopControls = () => {
   return (
     <ButtonsContainer>
       <div>
-        <ButtonWithIcon onClick={() => console.log('pressed add')}>
-          <AddIcon />
-        </ButtonWithIcon>
+        <Link to="/add-recipe">
+          <ButtonWithIcon onClick={() => console.log('pressed add')}>
+            <AddIcon />
+          </ButtonWithIcon>
+        </Link>
       </div>
 
       <div>
@@ -47,9 +50,11 @@ const TopControls = () => {
       </div>
 
       <div>
-        <ButtonWithIcon onClick={() => console.log('pressed edit')}>
-          <EditIcon />
-        </ButtonWithIcon>
+        <Link to="/edit-recipe">
+          <ButtonWithIcon onClick={() => console.log('pressed edit')}>
+            <EditIcon />
+          </ButtonWithIcon>
+        </Link>
       </div>
     </ButtonsContainer>
   );

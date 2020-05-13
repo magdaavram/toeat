@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import LogoIcon from 'assets/icons/Logo';
 import TopControls from 'components/TopControls';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -10,9 +11,9 @@ const Container = styled.div`
 
 const Header = () => (
   <Container>
-    <a href="/#" onClick={() => console.log('pressed logo')}>
+    <Link to="/">
       <LogoIcon />
-    </a>
+    </Link>
     <TopControls />
   </Container>
 );

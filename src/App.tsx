@@ -19,12 +19,12 @@ const Main = styled.div`
 const App = () => {
   return (
     <Container>
-      <Header />
-      <Main>
-        <Router history={history}>
+      <Router history={history}>
+        <Header />
+        <Main>
           <Routes />
-        </Router>
-      </Main>
+        </Main>
+      </Router>
     </Container>
   );
 };

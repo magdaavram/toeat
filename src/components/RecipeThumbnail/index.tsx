@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import DifficultyLevel from 'components/DifficultyLevel';
 import CookingTime from 'components/CookingTime';
+import { Link } from 'react-router-dom';
 
 interface IImageProps {
   url: string;
@@ -18,18 +19,12 @@ const Container = styled.div`
   max-width: 400px;
 `;
 
-const Image = styled.div((props: IImageProps) => ({
+const ImageContainer = styled.div((props: IImageProps) => ({
   width: '100%',
   height: '250px',
   background: `url(${props.url}) no-repeat center`,
   backgroundSize: 'cover',
 }));
-
-const ImageLink = styled.a`
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-`;
 
 const DetailsContainer = styled.div`
   display: flex;
@@ -46,12 +41,11 @@ const Detail = styled.div`
   margin-right: 27px;
 `;
 
-const Title = styled.a`
+const Title = styled.span`
   display: inline-block;
   width: 100%;
   padding: 0;
   margin: 6px 0 9px 0;
-  text-decoration: none;
   color: var(--color--dark-purple);
   font-size: var(--font-size--large);
   font-family: 'Suisse SemiBold';
@@ -69,9 +63,9 @@ const RecipeThumbnail = (props: IProps) => {
 
   return (
     <Container>
-      <Image url={imageUrl}>
-        <ImageLink href={'/#'} title={title} />
-      </Image>
+      <Link to="/recipe" title={title}>
+        <ImageContainer url={imageUrl} />
+      </Link>
       <DetailsContainer>
         <Detail>
           <CookingTime duration={duration} hasIcon={true} />
@@ -80,9 +74,9 @@ const RecipeThumbnail = (props: IProps) => {
           <DifficultyLevel level={difficultyLevel} hasIcon={true} />
         </Detail>
       </DetailsContainer>
-      <Title href={'/#'} title={title}>
-        {title}
-      </Title>
+      <Link to="/recipe" title={title}>
+        <Title>{title}</Title>
+      </Link>
     </Container>
   );
 };
