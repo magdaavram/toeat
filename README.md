@@ -1,5 +1,5 @@
 # toeat - Your recipe collection
-#### Work in progress
+### Work in progress
 
 Exercising **TypeScript, ReactJS and styled components** with a 
 simple recipe manager application. 
