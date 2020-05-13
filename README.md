@@ -11,9 +11,9 @@ in a simple and easy to understand way.
 preparation details, necessary equipment** and other details for a 
 better understanding of its complexity and sizing;
 * **search** recipes based on **title or ingredients**;
-* **filter** them by **cooking time**, by **wanted or disliked 
-ingredients**, by **course meal**, by the **number of ingredients** 
-and by the degree of **difficulty**;
+* **filter** them by **cooking time**, **wanted or disliked 
+ingredients**, **course meal**, **number of ingredients** 
+and/or degree of **difficulty**;
 * **adapt the ingredient quantities** based on the desired 
 **number of servings**;
 * **edit or remove** existing recipes, if necessary.
