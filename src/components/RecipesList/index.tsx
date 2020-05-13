@@ -52,10 +52,9 @@ const RecipesList = () => {
   const closeModal = () => setIsOpen(false);
 
   const modalData: IFilterModalProps = {
-    title: 'Filter recipes (work in progress)',
+    title: 'Filter recipes',
     show: modalIsOpen,
     onClose: closeModal,
-    filters: [{ key: 1, value: 'string' }],
   };
 
   return (

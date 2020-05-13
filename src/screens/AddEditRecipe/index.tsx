@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import ImageUploader from 'components/UploadImage';
 import NumberInput from 'components/Input/Number';
 import TextInput from 'components/Input/Text';
-import Dropdown from 'components/SelectDropdown';
+import SelectDropdown from 'components/Dropdown/SelectDropdown';
 import { Option } from 'components/Dropdown';
 import DeleteButton from 'components/Button/Delete';
 import AddButton from 'components/Button/Add';
 import ActionButton from 'components/Button/Action';
 import Textarea from 'components/Textarea';
-import CreatableSelect from 'components/CreatableDropdown';
+import CreatableSelect from 'components/Dropdown/CreatableDropdown';
 import {
   getCourses,
   getDifficultyLevels,
@@ -108,21 +108,21 @@ const AddEditRecipeView = () => {
       />
       <TextInput type="text" placeholder={'Insert a recipe title'} required />
       <DetailsContainer>
-        <Dropdown
+        <SelectDropdown
           width={'150px'}
           margin={'0 9px 0 0'}
           selected={0}
           options={servingOptions}
           placeholder={'Servings'}
         />
-        <Dropdown
+        <SelectDropdown
           width={'150px'}
           margin={'0 9px 0 0'}
           selected={0}
           options={courseOptions}
           placeholder={'Course'}
         />
-        <Dropdown
+        <SelectDropdown
           width={'150px'}
           margin={'0 9px 0 0'}
           selected={0}
@@ -143,7 +143,7 @@ const AddEditRecipeView = () => {
             placeholder={'Quantity'}
             required
           />
-          <Dropdown selected={0} options={unitOptions} width={'150px'} placeholder={'Unit'} />
+          <SelectDropdown selected={0} options={unitOptions} width={'150px'} placeholder={'Unit'} />
           <CreatableSelect
             isClearable
             options={ingredientsOptions}
@@ -160,7 +160,7 @@ const AddEditRecipeView = () => {
             placeholder={'Quantity'}
             required
           />
-          <Dropdown selected={0} options={unitOptions} width={'150px'} placeholder={'Unit'} />
+          <SelectDropdown selected={0} options={unitOptions} width={'150px'} placeholder={'Unit'} />
           <CreatableSelect
             isClearable
             options={ingredientsOptions}
