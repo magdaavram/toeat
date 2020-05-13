@@ -16,6 +16,8 @@ by courses, by number of ingredients, by difficulty);
 * **adapt quantities** based on the desired number of servings;
 * **delete**;
 
+See the [framework design](./toeat-framework.png).
+
 --
 Each recipe has a photo, a title, the ingredients' list, the 
 preparation details, the necessary equipment and some other 
