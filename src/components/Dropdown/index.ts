@@ -14,6 +14,7 @@ export interface IProps {
   labelColor?: string;
   backgroundColor?: string;
   isMulti?: boolean;
+  isClearable?: boolean;
 }
 
 const dropdownStyles = {

@@ -59,25 +59,17 @@ const ActionButtonsContainer = styled.div`
   margin-bottom: 9px;
 `;
 
-const ingredientsOptions: Option[] = getIngredients().map((item) => {
-  return { value: item.id, label: item.name };
-});
+const mapOptions = (list: { id: number; name: string }[]): Option[] => {
+  return list.map((item) => {
+    return { value: item.id, label: item.name };
+  });
+};
 
-const cookingTimeOptions: Option[] = getCookingTime().map((item) => {
-  return { value: item.id, label: item.name };
-});
-
-const coursesOptions: Option[] = getCourses().map((item) => {
-  return { value: item.id, label: item.name };
-});
-
-const difficultyOptions: Option[] = getDifficultyLevels().map((item) => {
-  return { value: item.id, label: item.name };
-});
-
-const numberOfIngredientsOptions: Option[] = getNumberOfIngredients().map((item) => {
-  return { value: item.id, label: item.name };
-});
+const ingredientsOptions: Option[] = mapOptions(getIngredients());
+const cookingTimeOptions: Option[] = mapOptions(getCookingTime());
+const coursesOptions: Option[] = mapOptions(getCourses());
+const difficultyOptions: Option[] = mapOptions(getDifficultyLevels());
+const numberOfIngredientsOptions: Option[] = mapOptions(getNumberOfIngredients());
 
 const FiltersModal = ({ show, onClose, onConfirm, title }: IFilterModalProps) => {
   const filterStyle = {
@@ -113,6 +105,7 @@ const FiltersModal = ({ show, onClose, onConfirm, title }: IFilterModalProps) =>
             />
 
             <SelectDropdown
+              isClearable
               {...filterStyle}
               options={cookingTimeOptions}
               selected={0}
@@ -136,6 +129,7 @@ const FiltersModal = ({ show, onClose, onConfirm, title }: IFilterModalProps) =>
             />
 
             <SelectDropdown
+              isClearable
               {...filterStyle}
               options={numberOfIngredientsOptions}
               selected={0}

@@ -58,29 +58,21 @@ const ActionButtonsContainer = styled.div`
   margin: 9px 0;
 `;
 
+const mapOptions = (list: { id: number; name: string }[]): Option[] => {
+  return list.map((item) => {
+    return { value: item.id, label: item.name };
+  });
+};
+
 const servingOptions: Option[] = Array.from({ length: 25 }, (value: undefined, index: number) => {
   return { value: index + 1, label: `${index + 1} ${index + 1 === 1 ? 'serving' : 'servings'}` };
 });
 
-const courseOptions: Option[] = getCourses().map((item) => {
-  return { value: item.id, label: item.name };
-});
-
-const difficultyOptions: Option[] = getDifficultyLevels().map((item) => {
-  return { value: item.id, label: item.name };
-});
-
-const unitOptions: Option[] = getUnits().map((item) => {
-  return { value: item.id, label: item.name };
-});
-
-const ingredientsOptions: Option[] = getIngredients().map((item) => {
-  return { value: item.id, label: item.name };
-});
-
-const equipmentOptions: Option[] = getEquipments().map((item) => {
-  return { value: item.id, label: item.name };
-});
+const courseOptions: Option[] = mapOptions(getCourses());
+const difficultyOptions: Option[] = mapOptions(getDifficultyLevels());
+const unitOptions: Option[] = mapOptions(getUnits());
+const ingredientsOptions: Option[] = mapOptions(getIngredients());
+const equipmentOptions: Option[] = mapOptions(getEquipments());
 
 const AddEditRecipeView = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -106,7 +98,9 @@ const AddEditRecipeView = () => {
         fileTypeError={'is not supported. Please upload a .png or .jpg file.'}
         withIcon={false}
       />
+
       <TextInput type="text" placeholder={'Insert a recipe title'} required />
+
       <DetailsContainer>
         <SelectDropdown
           width={'150px'}
@@ -115,6 +109,7 @@ const AddEditRecipeView = () => {
           options={servingOptions}
           placeholder={'Servings'}
         />
+
         <SelectDropdown
           width={'150px'}
           margin={'0 9px 0 0'}
@@ -122,6 +117,7 @@ const AddEditRecipeView = () => {
           options={courseOptions}
           placeholder={'Course'}
         />
+
         <SelectDropdown
           width={'150px'}
           margin={'0 9px 0 0'}
@@ -129,11 +125,13 @@ const AddEditRecipeView = () => {
           options={difficultyOptions}
           placeholder={'Difficulty'}
         />
+
         <NumberInput type="number" min={0} max={1440} placeholder={'Minutes (cooking)'} required />
       </DetailsContainer>
 
       <AddItemsContainer>
         <Subtitle>Ingredients</Subtitle>
+
         <Item>
           <NumberInput
             style={{ width: '100px' }}
@@ -143,7 +141,9 @@ const AddEditRecipeView = () => {
             placeholder={'Quantity'}
             required
           />
+
           <SelectDropdown selected={0} options={unitOptions} width={'150px'} placeholder={'Unit'} />
+
           <CreatableSelect
             isClearable
             options={ingredientsOptions}
@@ -151,6 +151,7 @@ const AddEditRecipeView = () => {
             placeholder={'Type ingredient'}
           />
         </Item>
+
         <Item>
           <NumberInput
             style={{ width: '100px' }}
@@ -160,13 +161,16 @@ const AddEditRecipeView = () => {
             placeholder={'Quantity'}
             required
           />
+
           <SelectDropdown selected={0} options={unitOptions} width={'150px'} placeholder={'Unit'} />
+
           <CreatableSelect
             isClearable
             options={ingredientsOptions}
             width={'200px'}
             placeholder={'Type ingredient'}
           />
+
           <DeleteButton type="button" onClick={() => console.log('clicked delete ingredient')}>
             x
           </DeleteButton>
@@ -179,6 +183,7 @@ const AddEditRecipeView = () => {
 
       <AddItemsContainer>
         <Subtitle>Equipment</Subtitle>
+
         <Item>
           <CreatableSelect
             isMulti
@@ -190,6 +195,7 @@ const AddEditRecipeView = () => {
       </AddItemsContainer>
 
       <Textarea placeholder={'Describe preparation details'} required />
+
       <ActionButtonsContainer>
         <div>
           <ActionButton
@@ -198,6 +204,7 @@ const AddEditRecipeView = () => {
             onClick={openModal}>
             Cancel
           </ActionButton>
+
           <ConfirmationModal {...modalData} />
         </div>
 
