@@ -21,7 +21,7 @@ and/or degree of **difficulty**;
 See the [application framework](./toeat-framework.png).
 
 ## Requirements 
-* NodeJS
+* Node.js
 * npm
 
 ## Setup
@@ -52,19 +52,19 @@ npm build
 If you want to contact me, you can reach me at magda.r.avram@gmail.com.
 
 ## Credits
-Favicon icon by Valeriy from the Noun Project.
+**Favicon** by Valeriy from the Noun Project.
 
-Add and delete icon by scott desmond from the Noun Project.
+**Add and delete icons** by scott desmond from the Noun Project.
 
-Edit icon by Vincencio from the Noun Project.
+**Edit icon** by Vincencio from the Noun Project.
 
-Search icon by Kmg Design from the Noun Project.
+**Search icon** by Kmg Design from the Noun Project.
 
-Clock icon by Flatart from the Noun Project.
+**Clock icon** by Flatart from the Noun Project.
 
-Stars icon by Three Six Five from the Noun Project.
+**Stars icon** by Three Six Five from the Noun Project.
 
-Filter icon by Muhammad Tajudin from the Noun Project.
+**Filter icon** by Muhammad Tajudin from the Noun Project.
 
 ___
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
