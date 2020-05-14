@@ -21,7 +21,7 @@ const App = () => {
     <Container>
       <Router history={history}>
         <Header />
-        <Main>
+        <Main id="main">
           <Routes />
         </Main>
       </Router>

@@ -1,10 +1,16 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import App from 'App';
 
-test('renders recommended ingredients', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/Recommended ingredients/i);
+it('renders app without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<App />, div);
+});
 
-  expect(linkElement).toBeInTheDocument();
+it('renders router, header and main components', () => {
+  const wrapper = shallow(<App />);
+  expect(wrapper.find('Router')).toHaveLength(1);
+  expect(wrapper.find('Header')).toHaveLength(1);
+  expect(wrapper.find('#main').find('Routes')).toHaveLength(1);
 });
