@@ -45,7 +45,9 @@ const ActionButtonsContainer = styled.div`
   margin-bottom: 9px;
 `;
 
-Modal.setAppElement('#root');
+if (process.env.NODE_ENV !== 'test') {
+  Modal.setAppElement('#root');
+}
 
 const ConfirmationModal = ({ show, onClose, onConfirm, title, message }: IModalProps) => {
   return (
