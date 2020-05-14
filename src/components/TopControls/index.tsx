@@ -5,7 +5,7 @@ import DeleteIcon from 'assets/icons/Delete';
 import EditIcon from 'assets/icons/Edit';
 import styled from 'styled-components';
 import ConfirmationModal, { IModalProps } from 'components/Modal/ConfirmationModal';
-import { Link } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 
 const ButtonsContainer = styled.div`
   display: flex;
@@ -34,28 +34,34 @@ const TopControls = () => {
 
   return (
     <ButtonsContainer>
-      <div>
-        <Link to="/add-recipe">
-          <ButtonWithIcon onClick={() => console.log('pressed add')}>
-            <AddIcon />
-          </ButtonWithIcon>
-        </Link>
-      </div>
+      <Switch>
+        <Route exact path="/">
+          <div>
+            <Link to="/add-recipe">
+              <ButtonWithIcon onClick={() => console.log('pressed add')}>
+                <AddIcon />
+              </ButtonWithIcon>
+            </Link>
+          </div>
+        </Route>
 
-      <div>
-        <ButtonWithIcon onClick={openModal}>
-          <DeleteIcon />
-        </ButtonWithIcon>
-        <ConfirmationModal {...modalData} />
-      </div>
+        <Route path="/recipe">
+          <div>
+            <ButtonWithIcon onClick={openModal}>
+              <DeleteIcon />
+            </ButtonWithIcon>
+            <ConfirmationModal {...modalData} />
+          </div>
 
-      <div>
-        <Link to="/edit-recipe">
-          <ButtonWithIcon onClick={() => console.log('pressed edit')}>
-            <EditIcon />
-          </ButtonWithIcon>
-        </Link>
-      </div>
+          <div>
+            <Link to="/edit-recipe">
+              <ButtonWithIcon onClick={() => console.log('pressed edit')}>
+                <EditIcon />
+              </ButtonWithIcon>
+            </Link>
+          </div>
+        </Route>
+      </Switch>
     </ButtonsContainer>
   );
 };
