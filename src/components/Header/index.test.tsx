@@ -1,17 +1,21 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import Header from 'components/Header/index';
+import { shallow, ShallowWrapper } from 'enzyme';
+import Header from './index';
 import LogoIcon from 'assets/icons/Logo';
 
-it('renders logo and top controls component', () => {
-  const wrapper = shallow(<Header />);
+let wrapper: ShallowWrapper;
 
-  expect(wrapper.find('Link').find(LogoIcon)).toHaveLength(1);
+beforeEach(() => {
+  wrapper = shallow(<Header />);
+});
+
+it('should render logo and top controls component', () => {
+  expect(wrapper.find(LogoIcon)).toHaveLength(1);
   expect(wrapper.find('TopControls')).toHaveLength(1);
 });
 
-it('renders link to homepage', () => {
-  const wrapper = shallow(<Header />);
+it('should render link to homepage', () => {
+  const link = wrapper.find('Link');
 
-  expect(wrapper.find('Link').prop('to')).toEqual('/');
+  expect(link.prop('to')).toEqual('/');
 });

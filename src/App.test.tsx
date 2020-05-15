@@ -1,16 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
+import { render } from 'react-dom';
 import App from 'App';
+import { create } from 'react-test-renderer';
 
-it('renders app without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+it('should render app without crashing', () => {
+  const container = document.createElement('div');
+
+  render(<App />, container);
 });
 
-it('renders router, header and main components', () => {
-  const wrapper = shallow(<App />);
-  expect(wrapper.find('Router')).toHaveLength(1);
-  expect(wrapper.find('Header')).toHaveLength(1);
-  expect(wrapper.find('#main').find('Routes')).toHaveLength(1);
+it('should render app correctly', () => {
+  const tree = create(<App />);
+
+  expect(tree.toJSON()).toMatchSnapshot();
 });
