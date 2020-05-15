@@ -70,7 +70,6 @@ exports[`should render app correctly 1`] = `
   </div>
   <div
     className="sc-fzowVh jZOZfG"
-    id="main"
   >
     <div
       className="sc-fzpans bBiHDh"
