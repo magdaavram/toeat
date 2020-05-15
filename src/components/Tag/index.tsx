@@ -21,7 +21,7 @@ const Tag = (props: IProps) => {
   const { name } = props;
 
   return (
-    <TagContainer {...props} onClick={() => console.log(`pressed ${name}`)}>
+    <TagContainer {...props}>
       <span>{name}</span>
     </TagContainer>
   );
