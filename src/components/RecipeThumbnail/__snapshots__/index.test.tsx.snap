@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<div
+  className="sc-fzpans dfnlZo"
+>
+  <a
+    href="/recipe"
+    onClick={[Function]}
+    title="Pasta"
+  >
+    <div
+      className="sc-fzplWN kOVwiM"
+    />
+  </a>
+  <div
+    className="sc-fznyAO flguBq"
+  >
+    <div
+      className="sc-fznKkj kXNoFJ"
+    >
+      <div
+        className="sc-fzoLsD cUrqaJ"
+      >
+        <svg
+          height="20"
+          viewBox="0 0 20 20"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <image
+              height="20"
+              href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAAXNSR0IB2cksfwAAAOpQTFRFAAAASk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pfrZ05wAAAE50Uk5TAAESOGim1O73I3G94/z/CFnJ/dKzpySR+sdwE5Cs9dx2IAar4m4JVQREiz7C9g1ByvmuEAJSGJnr+A+Wz2Kk8B0Hc8MLh+BbJm93yCJYgSwx+QAAAWlJREFUeJx9k+l2gjAQhQMIBJBBgigCoiCiXe1i99rW7nV5/9dpWQMe6fxKzpdzM8sdhNJgWK7BCyLGosA3OJZB1ZBkpalCEmpTkaUK1Fo6BiBG2zTbBgHAekujtNO1gPRsJ705do+A5RYCnb4Hg6Ef5PfAHw7AG2Vc63oQjqPyZ9E4BM9N9VsWhJNpNdPpJASrFVck6TAYZzQ6ODxKa5qOB6BLDGJlTIa5Mnd8wp9mL4cEyyziFOj5uebs7PziMjv7PVA41GiCHezDgQxhA/EqcdA+jByi8kgAA+3HyAABidCuw20QEQazDpuAK3h+Zezisvj1ze1d/74iXkpt/uDB44K2N06NFuY8ATy/0ESSwoq2LF8t8ragNG1L0dT3D/j8oh9nTS1Gwnz/zJaURiuCbbY6UBrxQNebeLi1dtgmR83910xIGu1acVWy4h93K0aWq0beswbrbWkNULJEYb5EoWJvdgqpWcFfq5ArMTOrWiwAAAAASUVORK5CYII="
+              id="clock-icon"
+              width="20"
+            />
+          </defs>
+          <use
+            href="#clock-icon"
+            x="0"
+            y="0"
+          />
+        </svg>
+      </div>
+      1h 18 min
+    </div>
+    <div
+      className="sc-fznKkj kXNoFJ"
+    >
+      <div
+        className="sc-fzozJi dQGQRf"
+      >
+        <svg
+          height="20"
+          viewBox="0 0 20 20"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <image
+              height="20"
+              href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAcCAMAAABBJv+bAAAAAXNSR0IB2cksfwAAAexQTFRFAAAASk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk1oSU1qSk5pSk5pSk5pR1JmUFBwSk5pSk5pSU1pSU9qSk5pSk5pRlFoTk5iSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pS0tpSExrSk1oSk5qS01qSU1oTExmSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSU9qSU5pSU1pS05qSk9pSk5pSk5pSk5pSk1pTFBoAAAASk5pSk5pSk5pTU1mSk1pSUltSk5pSk5pTExrSVBmSk5pSk5pSk5pSk5pSk5pSk1qSk5nSk5pSk5pSk5pSk5pSk5pSk5pSk5qSU9qQFVqR1VjSk9pSU5oSk5pS09oRkZ0S0tpS01p0U8fqgAAAKR0Uk5TAFhSFODcEXK9xWoN5UBH4gogQmWMv7gDBL68i2RBH8Puro9xJSiQr+/hYGY9Ot9s3jU/REzGNDvEBTLMFRorVdFiws5h00/0Ww8QXsgOZ11GXUYZ6dkZEHr/el4W2hYNIkNojrqKYx4iQ466Y0Iez/b+9bZN7ElN7ElB4O02Ae02Ad3JBxTJB+QjMiP8+7vHRWBFgPdXDBL4gFcMEmRiC0cLEWbeEiVEAAABdklEQVR4nGNgQAGMTAx4ADMLKxseaXYOTi7cstw8vHz8AlilBIWERUTFxCUkpaRlZOUwpOUVFJWUVRgYVNnV1DU4MKSFNLXEISxxbRYdTNN19fTB8uLsBobYbDdiNQZRJqy6WB0nYGoGoswtLLFKW1nbSMhoidta22GVtndwdBB1cnZxdcMqze5u6uHp5e3jro9VWlbGF0R5+mF6yz8AlR8YhMwLDgn1QuaHhYSGI3EjIiO9kaWjIiOjEbwYhcjIWG4EPw7EjwczExKTki0igSAlNU0onYEhIzMpC8zPTs3JzWPIL4iEgcKiYgZ0fkkpnBvJX8bAUF6BxK8EehcuzyILsq0KLl9dBeKX1UB4mrV1YNdU1kP5DY0gLnMThNvcAnF3K5Tf1g7mWkF1d3RCpLuguju6wVytnsjevv6eyIIJEOmJMP4kMHfyFM6p06bL5M9whEjPnMI5a/acufkz5oG5fN7zQRSbdi1EekH0QhC1aHEDAwMAujBwrZPrJrUAAAAASUVORK5CYII="
+              id="medium-icon"
+              width="20"
+            />
+          </defs>
+          <use
+            href="#medium-icon"
+            x="0"
+            y="1"
+          />
+        </svg>
+      </div>
+      Medium
+    </div>
+  </div>
+  <a
+    href="/recipe"
+    onClick={[Function]}
+    title="Pasta"
+  >
+    <span
+      className="sc-fznZeY imEnIf"
+    >
+      Pasta
+    </span>
+  </a>
+</div>
+`;

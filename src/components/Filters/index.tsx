@@ -19,7 +19,7 @@ const Header = styled.h3`
   font-size: var(--font-size--large);
 `;
 
-const TagContainer = styled.div`
+const TagsContainer = styled.div`
   flex: flex wrap;
 `;
 
@@ -42,7 +42,7 @@ const Filters = () => {
   return (
     <Container>
       <Header>Recommended ingredients</Header>
-      <TagContainer>{filtersList}</TagContainer>
+      <TagsContainer>{filtersList}</TagsContainer>
     </Container>
   );
 };
