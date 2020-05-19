@@ -81,6 +81,7 @@ exports[`should render app correctly 1`] = `
       <button
         className="sc-AxjAm sc-fznyAO Icmgm"
         onClick={[Function]}
+        type="button"
       >
         <svg
           height="30"

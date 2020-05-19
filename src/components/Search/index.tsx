@@ -4,6 +4,10 @@ import SearchIcon from 'assets/icons/Search';
 import Button from 'components/Button';
 import Input from 'components/Input';
 
+interface IProps {
+  handleClick: () => void;
+}
+
 const Container = styled.div`
   display: flex;
   width: 70%;
@@ -26,10 +30,10 @@ const SearchButton = styled(Button)`
   opacity: 0.6;
 `;
 
-const Search = () => (
+const Search = (props: IProps) => (
   <Container>
     <SearchInput placeholder={'Find recipes by ingredients or name...'} />
-    <SearchButton onClick={() => console.log('pressed search')}>
+    <SearchButton type="button" onClick={props.handleClick}>
       <SearchIcon />
     </SearchButton>
   </Container>

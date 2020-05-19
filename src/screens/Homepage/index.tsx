@@ -6,7 +6,7 @@ import RecipesList from 'components/RecipesList';
 const Homepage = () => {
   return (
     <>
-      <Search />
+      <Search handleClick={() => console.log('pressed search')} />
       <Filters />
       <RecipesList />
     </>
