@@ -25,7 +25,7 @@ const SearchButton = styled(Button)`
   width: 30px;
   height: 30px;
   margin: auto 0;
-  margin-left: -45px;
+  margin-left: -50px;
   opacity: 0.6;
 `;
 
@@ -37,8 +37,8 @@ const Search = (props: IProps) => (
       onClick={props.handleClick}
       hasIcon={true}
       icon={'search'}
-      iconWidth={'30px'}
-      iconHeight={'30px'}
+      iconWidth={'27px'}
+      iconHeight={'27px'}
     />
   </Container>
 );
