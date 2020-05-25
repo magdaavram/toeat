@@ -9,7 +9,7 @@ const DeleteButton = styled(Button)`
 
   align-self: center;
   font-size: var(--font-size--regular);
-  border-radius: 9px;
+  border-radius: 6px;
 
   &:hover {
     color: var(--color--beige);

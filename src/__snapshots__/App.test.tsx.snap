@@ -2,10 +2,10 @@
 
 exports[`should render app correctly 1`] = `
 <div
-  className="sc-fzqMdD iWIANf"
+  className="sc-fzoVTD QlNhO"
 >
   <div
-    className="sc-fzozJi gEVIIe"
+    className="sc-fzoLsD lgjcow"
   >
     <a
       href="/"
@@ -32,7 +32,7 @@ exports[`should render app correctly 1`] = `
       </svg>
     </a>
     <div
-      className="sc-Axmtr htsbRQ"
+      className="sc-AxmLO MKJBh"
     >
       <div>
         <a
@@ -40,21 +40,22 @@ exports[`should render app correctly 1`] = `
           onClick={[Function]}
         >
           <button
-            className="sc-AxjAm sc-AxmLO cmsjBX"
+            className="sc-AxjAm ewqDcP sc-fzozJi Jilpr top-icon"
             onClick={[Function]}
+            type="button"
           >
             <svg
-              height="50"
-              viewBox="0 0 50 50"
-              width="50"
+              height="50px"
+              viewBox="0 0 50px 50px"
+              width="50px"
               xmlns="http://www.w3.org/2000/svg"
             >
               <defs>
                 <image
-                  height="50"
+                  height="50px"
                   href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAAXNSR0IB2cksfwAAAPZQTFRFAAAASk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pgAA4OAAAAFJ0Uk5TAB9cnsnj9f4dg97/HCy1/RSp4MGaqBNX8uqXPwsMVgSbzUoDS84KScDMlgjL+To79jAvd3bP0Cu0guvdmB5AW53C9/R1yJxagadYVZm/ygni/BkwfscAAAJfSURBVHicnVbpQtpAEB4RSHE4TLgERCoQSou2iAjIpYhcglXf/2U6EwIkmw2Ezg/YndkvOzs3gINOfKf+QFBRggH/qe/EKRfpW+gMbXQWCu8FRKIxdFAsGnEFnKuKeUiLq4mEGtfMDyjJlByRvjDkmWzucsPK57IZg3lxJQEUvhuy62LJzi+VdUOQKIiISpz5gR+y64sBllUrAuInc3/V5CrXsiy9sWEKfMdtWg5gSt/yPVbd+B3B3+4IgD91fo/lG3yHgLhrCBi+Z2u3c7auoNU9YlPQjW298U+SXy4o8oCoCyy2QXK9jJDPA6KtWogtgVUjWyttYxkltMMfEggU6WCHF2EKpGtRKoUAxUGM4zpE2KI3SJmOPtI/5Uem5A1S6iL2KAcJmXUI5RDo0+EB+Og35xUypMNP8ExPuvQKyZM/nsGPqDllLhDQEP1A/ol7h4zI6xBEVM39/UNrSy+I9d1O38SbijiG2Dam75zFZUdmXCfo5RZIwyvEolhT36lStyv2alXsP55/tJEnhivzXiHsyik8HRswMxgcH5bQOzr44ZGQZW8QTrE5rBNZLCYHEhk6skzeWy6gfXxRMkqfaDTdqS2ba2GuU5IC20R8tXPerAUWriRlvCEr48vdfkXb+uFmsbIwCtUDLemN73i3tcvKDedR1q3x8cvx74edW6ka7dVZaWHTXt8/RH5hZSSsXnZp4itHEydarkeFbn+4zZ/8sN9djwpLCYAotTAHEkUb8UAy0jb7hctAQtTuyMaeTtsVwBSe9+yA3nz/cGXQYDadfI6/vsafk+ls4JT/Aw+fVYXLsMSIAAAAAElFTkSuQmCC"
                   id="add-icon"
-                  width="50"
+                  width="50px"
                 />
               </defs>
               <use
@@ -69,32 +70,32 @@ exports[`should render app correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzowVh jZOZfG"
+    className="sc-fzpisO gCauuN"
   >
     <div
-      className="sc-fzpans bBiHDh"
+      className="sc-fzplWN emtqnU"
     >
       <input
-        className="sc-fzoLsD sc-fzplWN cBBicj"
+        className="sc-fzpans sc-fznyAO ggHIiT"
         placeholder="Find recipes by ingredients or name..."
       />
       <button
-        className="sc-AxjAm sc-fznyAO Icmgm"
+        className="sc-AxjAm ewqDcP sc-fznKkj bKEzIC"
         onClick={[Function]}
         type="button"
       >
         <svg
-          height="30"
-          viewBox="0 0 30 30"
-          width="30"
+          height="30px"
+          viewBox="0 0 30px 30px"
+          width="30px"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
             <image
-              height="30"
+              height="30px"
               href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAAXNSR0IB2cksfwAAARRQTFRFAAAASk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pVwjv/QAAAFx0Uk5TADWDv+P19ufLh0YFAyuM2vr/++GfOQJf1/7qUFvYWDIvTHX590sBMLQ8IKruPhG34pmlTdMWLOvoKRnzMxg0JuUbi6gE0E61/Mx5VBKakwv9DT+QsQeSdwgPsNTBV9X7AAABhUlEQVR4nHWS61aCQBSF8RokBhutxJq0TNRMK6+V3bQ0ukMqqb3/ezQ1BjhrsX/tMx+Lc+bsEQSmUDgSjcXXRGk9IfCSkxuKij9pqfTmFoe3Mzo8ZXdWf7Cr0UMi7eXy+wdiATgM+7i8TSkpGqwySmUdmiS7OJkBxIrbzziqAsc1F2/oIBV/rzoBTv6LkAIUV2ctnkIPLX1YBTFWL2KcAY1l9wgg8Xtoqmi1mY0CezzudHF+wWwMyPH4kqB3xWwcyPP4OoPeDbNrQJPHt3foJpkVgQMe1+JQ+sxKGkT+YgPg/oH59RQKpVVeGkIfLX0iDTwe+elW2cSTm8lmFnq17qPPOswXr9w5pIHu+wMFefU+T4Rp4NG3Zufy+rY2GJr0bajvHz4uHf8edUnmji4JJlFhpW2Py58n7mPTn15e3y1YY984NPZG67zX6yr3IzrzR9qCNpn6udy+uLpJ9tk27LEGy7GFINUnFtSvWSCfOnQ+Zx7I7S8L5iIQCzPHhBqMhflC/f4BU6Uw/3BpkC8AAAAASUVORK5CYII="
               id="search-icon"
-              width="30"
+              width="30px"
             />
           </defs>
           <use
@@ -106,45 +107,44 @@ exports[`should render app correctly 1`] = `
       </button>
     </div>
     <div
-      className="sc-fznZeY dteejt"
+      className="sc-fzokOt cLyWOW"
     >
       <h3
-        className="sc-fzokOt jQZbjR"
+        className="sc-fzqBZW dCxikg"
       >
         Recommended ingredients
       </h3>
       <div
-        className="sc-fzqBZW ivnciF"
+        className="sc-fzqNJr dMSFGw"
       />
     </div>
     <div
-      className="sc-fzoyTs hYJcZZ"
+      className="sc-fzoXWK fcvBj"
     >
       <div
-        className="sc-fzoNJl bcIANF"
+        className="sc-fzpmMD LQApm"
       >
         <button
-          className="sc-AxjAm sc-AxirZ sc-fzoXWK jWACJr"
+          className="sc-AxjAm ewqDcP sc-AxirZ sc-fznxKY hhAPVW"
           onClick={[Function]}
           type="button"
         >
           <svg
-            height="20"
-            viewBox="0 0 20 20"
-            width="20"
+            height="20px"
+            viewBox="0 0 20px 20px"
+            width="20px"
             xmlns="http://www.w3.org/2000/svg"
           >
             <defs>
               <image
-                height="20"
+                height="20px"
                 href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAAXNSR0IB2cksfwAAAQ5QTFRF8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unkQ40o0AAAAFp0Uk5TADnX8/KwE4j/9lWN+VoshozL/LSLSeL90vcbYma6+5xlMQZ6sbOTEYX1UjyEHp7GB0YUh7lZKMzg/jWsz1Mrd3lqGkKOFtQPvtwm378ELzPmMg7h7Nn62CW1Gbu+JwAAAQ5JREFUeJxjYCAMGJmYQYCFlY0IxRDAzgEBnFxEa+GGauHhHX5a+PgFCAFBqBYhYSBHRJRBjINEIM4gQaoWSQYpaRlCQBaqWE4eyFFQHLyBPHBalJRVVEFATR3M1YBq0dTCrUVbHKpIB8zV1dMHA2UD3FoMYdGmRrTjh6oWIy5eDGAM02KCKWdqxmBOauJnZrAgVYslgxU7Zs61hknbYMqJ2A7eQKanFjt7BxBwdALznGFaXHDrcHWDqrEGc909IBnG0wu3Fi9vqBYfoh0/TLT4+vn7+2sFQLWY+xMCgUEMKqQm/mCGEFK1cDCYSoSGhnqHQbmaoYRAOPvgDWQ6aomAafEgWotBJESHJT8RigH0OlVdPf84OAAAAABJRU5ErkJggg=="
                 id="filter-icon"
-                width="20"
+                width="20px"
               />
             </defs>
             <use
               href="#filter-icon"
-              id="filter-icon"
               x="0"
               y="0"
             />
@@ -154,7 +154,7 @@ exports[`should render app correctly 1`] = `
         <div />
       </div>
       <div
-        className="sc-fzpmMD fqvQSx"
+        className="sc-fznMAR sXPit"
       />
     </div>
   </div>

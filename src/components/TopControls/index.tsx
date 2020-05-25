@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import Button from 'components/Button';
-import AddIcon from 'assets/icons/Add';
-import DeleteIcon from 'assets/icons/Delete';
-import EditIcon from 'assets/icons/Edit';
 import styled from 'styled-components';
 import ConfirmationModal, { IModalProps } from 'components/Modal/ConfirmationModal';
 import { Link, Route, Switch } from 'react-router-dom';
@@ -11,7 +8,7 @@ const ButtonsContainer = styled.div`
   display: flex;
 `;
 
-const ButtonWithIcon = styled(Button)`
+const TopButton = styled(Button)`
   margin-left: 9px;
   border-radius: 50%;
 
@@ -19,6 +16,13 @@ const ButtonWithIcon = styled(Button)`
     opacity: 0.9;
   }
 `;
+
+const buttonProps = {
+  hasIcon: true,
+  iconWidth: '50px',
+  iconHeight: '50px',
+  className: 'top-icon',
+};
 
 const TopControls = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -38,26 +42,24 @@ const TopControls = () => {
         <Route exact path="/">
           <div>
             <Link to="/add-recipe">
-              <ButtonWithIcon onClick={() => console.log('pressed add')}>
-                <AddIcon />
-              </ButtonWithIcon>
+              <TopButton onClick={() => console.log('pressed add')} icon={'add'} {...buttonProps} />
             </Link>
           </div>
         </Route>
 
         <Route path="/recipe">
           <div>
-            <ButtonWithIcon onClick={openModal}>
-              <DeleteIcon />
-            </ButtonWithIcon>
+            <TopButton onClick={openModal} icon={'delete'} {...buttonProps} />
             <ConfirmationModal {...modalData} />
           </div>
 
           <div>
             <Link to="/edit-recipe">
-              <ButtonWithIcon onClick={() => console.log('pressed edit')}>
-                <EditIcon />
-              </ButtonWithIcon>
+              <TopButton
+                onClick={() => console.log('pressed edit')}
+                icon={'edit'}
+                {...buttonProps}
+              />
             </Link>
           </div>
         </Route>

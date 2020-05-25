@@ -45,33 +45,28 @@ const ActionButtonsContainer = styled.div`
   margin-bottom: 9px;
 `;
 
-if (process.env.NODE_ENV !== 'test') {
-  Modal.setAppElement('#root');
+const CancelButton = styled(ActionButton)`
+  background-color: var(--color--light-purple);
+`;
+
+if (process.env.NODE_ENV !== "test") {
+  Modal.setAppElement("#root");
 }
 
 const ConfirmationModal = ({ show, onClose, onConfirm, title, message }: IModalProps) => {
   return (
     <div>
       <Modal isOpen={show} onRequestClose={onClose} style={modalStyles}>
-        <CloseButton type="button" onClick={onClose}>
-          x
-        </CloseButton>
+        <CloseButton onClick={onClose} text={"x"} hasIcon={false}/>
+
         <TextContainer>
           <Title>{title}</Title>
           <Text>{message}</Text>
         </TextContainer>
 
         <ActionButtonsContainer>
-          <ActionButton
-            type="button"
-            onClick={onClose}
-            style={{ backgroundColor: 'var(--color--light-purple)' }}>
-            Cancel
-          </ActionButton>
-
-          <ActionButton type="button" onClick={onConfirm}>
-            Confirm
-          </ActionButton>
+          <CancelButton onClick={onClose} text={"Cancel"} hasIcon={false}/>
+          <ActionButton onClick={onConfirm} text={"Confirm"} hasIcon={false}/>
         </ActionButtonsContainer>
       </Modal>
     </div>

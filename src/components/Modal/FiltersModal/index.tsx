@@ -59,6 +59,10 @@ const ActionButtonsContainer = styled.div`
   margin-bottom: 9px;
 `;
 
+const CancelButton = styled(ActionButton)`
+  background-color: var(--color--light-purple);
+`;
+
 const mapOptions = (list: { id: number; name: string }[]): Option[] => {
   return list.map((item) => {
     return { value: item.id, label: item.name };
@@ -81,9 +85,7 @@ const FiltersModal = ({ show, onClose, onConfirm, title }: IFilterModalProps) =>
   return (
     <div>
       <Modal isOpen={show} onRequestClose={onClose} style={styles}>
-        <CloseButton type="button" onClick={onClose}>
-          x
-        </CloseButton>
+        <CloseButton onClick={onClose} text={"x"} hasIcon={false}/>
 
         <Content>
           <Title>{title}</Title>
@@ -139,16 +141,8 @@ const FiltersModal = ({ show, onClose, onConfirm, title }: IFilterModalProps) =>
         </Content>
 
         <ActionButtonsContainer>
-          <ActionButton
-            type="button"
-            onClick={onClose}
-            style={{ backgroundColor: 'var(--color--light-purple)' }}>
-            Cancel
-          </ActionButton>
-
-          <ActionButton type="button" onClick={onConfirm}>
-            Apply
-          </ActionButton>
+          <CancelButton onClick={onClose} text={"Cancel"} hasIcon={false}/>
+          <ActionButton onClick={onConfirm} text={"Apply"} hasIcon={false}/>
         </ActionButtonsContainer>
       </Modal>
     </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import SearchIcon from 'assets/icons/Search';
 import Button from 'components/Button';
 import Input from 'components/Input';
 
@@ -32,10 +31,15 @@ const SearchButton = styled(Button)`
 
 const Search = (props: IProps) => (
   <Container>
-    <SearchInput placeholder={'Find recipes by ingredients or name...'} />
-    <SearchButton type="button" onClick={props.handleClick}>
-      <SearchIcon />
-    </SearchButton>
+    <SearchInput placeholder={"Find recipes by ingredients or name..."}/>
+
+    <SearchButton
+      onClick={props.handleClick}
+      hasIcon={true}
+      icon={"search"}
+      iconWidth={"30px"}
+      iconHeight={"30px"}
+    />
   </Container>
 );
 

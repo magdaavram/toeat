@@ -58,6 +58,10 @@ const ActionButtonsContainer = styled.div`
   margin: 9px 0;
 `;
 
+const CancelButton = styled(ActionButton)`
+  background-color: var(--color--light-purple);
+`;
+
 const mapOptions = (list: { id: number; name: string }[]): Option[] => {
   return list.map((item) => {
     return { value: item.id, label: item.name };
@@ -65,7 +69,7 @@ const mapOptions = (list: { id: number; name: string }[]): Option[] => {
 };
 
 const servingOptions: Option[] = Array.from({ length: 25 }, (value: undefined, index: number) => {
-  return { value: index + 1, label: `${index + 1} ${index + 1 === 1 ? 'serving' : 'servings'}` };
+  return { value: index + 1, label: `${index + 1} ${index + 1 === 1 ? "serving" : "servings"}` };
 });
 
 const courseOptions: Option[] = mapOptions(getCourses());
@@ -162,23 +166,27 @@ const AddEditRecipeView = () => {
             required
           />
 
-          <SelectDropdown selected={0} options={unitOptions} width={'150px'} placeholder={'Unit'} />
+          <SelectDropdown selected={0} options={unitOptions} width={"150px"} placeholder={"Unit"}/>
 
           <CreatableSelect
             isClearable
             options={ingredientsOptions}
-            width={'200px'}
-            placeholder={'Type ingredient'}
+            width={"200px"}
+            placeholder={"Type ingredient"}
           />
 
-          <DeleteButton type="button" onClick={() => console.log('clicked delete ingredient')}>
-            x
-          </DeleteButton>
+          <DeleteButton
+            onClick={() => console.log("clicked delete ingredient")}
+            text={"x"}
+            hasIcon={false}
+          />
         </Item>
 
-        <AddButton type="button" onClick={() => console.log('clicked add ingredient')}>
-          +
-        </AddButton>
+        <AddButton
+          onClick={() => console.log("clicked add ingredient")}
+          text={"+"}
+          hasIcon={false}
+        />
       </AddItemsContainer>
 
       <AddItemsContainer>
@@ -198,18 +206,13 @@ const AddEditRecipeView = () => {
 
       <ActionButtonsContainer>
         <div>
-          <ActionButton
-            type="button"
-            style={{ backgroundColor: 'var(--color--light-purple)' }}
-            onClick={openModal}>
-            Cancel
-          </ActionButton>
+          <CancelButton onClick={openModal} text={"Cancel"} hasIcon={false}/>
 
           <ConfirmationModal {...modalData} />
         </div>
 
         <div>
-          <ActionButton onClick={() => console.log('pressed Save')}>Save</ActionButton>
+          <ActionButton onClick={() => console.log("pressed Save")} text={"Save"} hasIcon={false}/>
         </div>
       </ActionButtonsContainer>
     </Form>

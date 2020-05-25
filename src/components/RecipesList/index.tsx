@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import RecipeThumbnail from 'components//RecipeThumbnail';
 import getRecipes, { IRecipe } from 'api/recipes';
 import ActionButton from 'components/Button/Action';
-import FilterIcon from 'assets/icons/Filter';
 import FiltersModal, { IFilterModalProps } from 'components//Modal/FiltersModal';
 
 const Container = styled.div`
@@ -60,10 +59,15 @@ const RecipesList = () => {
   return (
     <Container>
       <FilterContainer>
-        <FilterButton type="button" onClick={openModal}>
-          <FilterIcon />
-          Filter
-        </FilterButton>
+        <FilterButton
+          onClick={openModal}
+          text={"Filter"}
+          hasIcon={true}
+          icon={"filter"}
+          iconWidth={"20px"}
+          iconHeight={"20px"}
+        />
+
         <FiltersModal {...modalData} />
       </FilterContainer>
       <RecipesContainer>{recipesList}</RecipesContainer>
