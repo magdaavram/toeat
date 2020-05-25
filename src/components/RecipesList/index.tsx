@@ -85,11 +85,11 @@ const RecipesList = () => {
       <FilterContainer>
         <FilterButton
           onClick={openModal}
-          text={'Filter'}
+          text={"Filter"}
           hasIcon={true}
-          icon={'filter'}
-          iconWidth={'20px'}
-          iconHeight={'20px'}
+          icon={"filter"}
+          iconWidth={20}
+          iconHeight={20}
         />
 
         <FiltersModal {...modalData} />

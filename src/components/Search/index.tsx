@@ -36,9 +36,9 @@ const Search = (props: IProps) => (
     <SearchButton
       onClick={props.handleClick}
       hasIcon={true}
-      icon={'search'}
-      iconWidth={'27px'}
-      iconHeight={'27px'}
+      icon={"search"}
+      iconWidth={27}
+      iconHeight={27}
     />
   </Container>
 );

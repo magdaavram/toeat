@@ -5,8 +5,8 @@ interface IProps extends InputHTMLAttributes<HTMLButtonElement> {
   text?: string;
   hasIcon: boolean;
   icon?: string;
-  iconWidth?: string;
-  iconHeight?: string;
+  iconWidth?: number;
+  iconHeight?: number;
 }
 
 const StyledButton = styled.button`

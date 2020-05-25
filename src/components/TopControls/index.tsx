@@ -19,9 +19,9 @@ const TopButton = styled(Button)`
 
 const buttonProps = {
   hasIcon: true,
-  iconWidth: '50px',
-  iconHeight: '50px',
-  className: 'top-icon',
+  iconWidth: 50,
+  iconHeight: 50,
+  className: "top-icon"
 };
 
 const TopControls = () => {
