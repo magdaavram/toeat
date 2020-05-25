@@ -31,14 +31,14 @@ const SearchButton = styled(Button)`
 
 const Search = (props: IProps) => (
   <Container>
-    <SearchInput placeholder={"Find recipes by ingredients or name..."}/>
+    <SearchInput placeholder={'Find recipes by ingredients or name...'} />
 
     <SearchButton
       onClick={props.handleClick}
       hasIcon={true}
-      icon={"search"}
-      iconWidth={"30px"}
-      iconHeight={"30px"}
+      icon={'search'}
+      iconWidth={'30px'}
+      iconHeight={'30px'}
     />
   </Container>
 );
