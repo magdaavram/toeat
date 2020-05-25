@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import RecipeThumbnail from 'components//RecipeThumbnail';
-import getRecipes, { IRecipe } from 'api/recipes';
+import Recipe, { IRecipe } from 'api/Recipe';
 import ActionButton from 'components/Button/Action';
 import FiltersModal, { IFilterModalProps } from 'components//Modal/FiltersModal';
 
@@ -30,11 +30,35 @@ const RecipesContainer = styled.div`
 `;
 
 const RecipesList = () => {
+  const api = new Recipe();
   const [recipes, setRecipes] = useState<IRecipe[]>([]);
+  const [page, setPage] = useState(1);
 
-  useEffect(() => {
-    setRecipes(getRecipes());
-  }, []);
+  const handleScroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop !==
+      document.documentElement.offsetHeight
+    ) {
+      return;
+    }
+
+    setPage(page + 1);
+  };
+
+  const loadRecipes = () => {
+    const newRecipes = api.getRecipes(page, 6);
+
+    if (newRecipes.length === 0) {
+      return;
+    }
+
+    setRecipes((existingRecipes) => [...existingRecipes, ...newRecipes]);
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  };
+
+  useEffect(loadRecipes, [page]);
 
   const recipesList = recipes.map((recipe, index) => (
     <RecipeThumbnail
@@ -61,11 +85,11 @@ const RecipesList = () => {
       <FilterContainer>
         <FilterButton
           onClick={openModal}
-          text={"Filter"}
+          text={'Filter'}
           hasIcon={true}
-          icon={"filter"}
-          iconWidth={"20px"}
-          iconHeight={"20px"}
+          icon={'filter'}
+          iconWidth={'20px'}
+          iconHeight={'20px'}
         />
 
         <FiltersModal {...modalData} />

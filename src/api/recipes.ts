@@ -272,9 +272,6 @@ const recipes: IRecipe[] = [
   },
 ];
 
-const getRecipes = () => recipes;
 export const getRecipe = (id: number): IRecipe | undefined => {
   return recipes.find((recipe: IRecipe) => recipe.id === id);
 };
-
-export default getRecipes;
