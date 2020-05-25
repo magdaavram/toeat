@@ -47,7 +47,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": "node ./node_modules/prettier/bin-prettier.js --write src/app"
+    "prettier": "node ./node_modules/prettier/bin-prettier.js --write src"
   },
   "eslintConfig": {
     "extends": "universe"
