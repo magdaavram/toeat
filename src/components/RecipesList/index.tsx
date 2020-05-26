@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import RecipeThumbnail from 'components//RecipeThumbnail';
-import Recipe, { IRecipe } from 'api/Recipe';
+import { IRecipe } from 'api/Recipe';
 import ActionButton from 'components/Button/Action';
 import FiltersModal, { IFilterModalProps } from 'components//Modal/FiltersModal';
+
+interface IProps {
+  recipes: IRecipe[];
+}
 
 const Container = styled.div`
   width: 70%;
@@ -29,36 +33,8 @@ const RecipesContainer = styled.div`
   padding-top: 27px;
 `;
 
-const RecipesList = () => {
-  const api = new Recipe();
-  const [recipes, setRecipes] = useState<IRecipe[]>([]);
-  const [page, setPage] = useState(1);
-
-  const handleScroll = () => {
-    if (
-      window.innerHeight + document.documentElement.scrollTop !==
-      document.documentElement.offsetHeight
-    ) {
-      return;
-    }
-
-    setPage(page + 1);
-  };
-
-  const loadRecipes = () => {
-    const newRecipes = api.getRecipes(page, 6);
-
-    if (newRecipes.length === 0) {
-      return;
-    }
-
-    setRecipes((existingRecipes) => [...existingRecipes, ...newRecipes]);
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  };
-
-  useEffect(loadRecipes, [page]);
+const RecipesList = (props: IProps) => {
+  const { recipes } = props;
 
   const recipesList = recipes.map((recipe, index) => (
     <RecipeThumbnail

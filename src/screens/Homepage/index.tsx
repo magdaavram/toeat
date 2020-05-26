@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import Recipe, { IRecipe } from 'api/Recipe';
 import Search from 'components/Search';
 import Filters from 'components/Filters';
 import RecipesList from 'components/RecipesList';
@@ -14,18 +15,46 @@ const ResultText = styled.span`
 `;
 
 const Homepage = () => {
+  const api = new Recipe();
+  const [recipes, setRecipes] = useState<IRecipe[]>([]);
+  const [page, setPage] = useState(1);
+
+  const handleScroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop !==
+      document.documentElement.offsetHeight
+    ) {
+      return;
+    }
+
+    setPage(page + 1);
+  };
+
+  const loadRecipes = () => {
+    const newRecipes = api.getRecipes(page, 6, searchTerm);
+
+    if (newRecipes.length === 0) {
+      return;
+    }
+
+    setRecipes((existingRecipes) => [...existingRecipes, ...newRecipes]);
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  };
+
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = (ev: React.KeyboardEvent<HTMLInputElement>) => {
     if (ev.key === 'Enter') {
+      setPage(1);
+      setRecipes([]);
       setSearchTerm(ev.currentTarget.value);
       ev.currentTarget.value = '';
     }
   };
 
-  useEffect(() => {
-    console.log(searchTerm);
-  }, [searchTerm]);
+  useEffect(loadRecipes, [searchTerm, page]);
 
   return (
     <>
@@ -38,7 +67,7 @@ const Homepage = () => {
       />
       <Filters />
       {searchTerm && <ResultText>Results for: "{searchTerm}"</ResultText>}
-      <RecipesList />
+      <RecipesList recipes={recipes} />
     </>
   );
 };

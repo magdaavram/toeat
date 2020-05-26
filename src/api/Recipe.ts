@@ -25,11 +25,16 @@ export interface IRecipe {
 export type Unit = 'grams' | 'kg' | 'l' | 'ml' | 'sp' | 'tsp' | 'pinch' | 'pieces' | 'bunch';
 
 export default class Recipe {
-  public getRecipes(page: number, pageLimit: number): IRecipe[] {
+  public getRecipes(page: number, pageLimit: number, searchTerms: string): IRecipe[] {
     const startIndex = (page - 1) * pageLimit;
     const endIndex = startIndex + pageLimit;
+    const filteredRecipes = recipes.filter(
+      (recipe) =>
+        recipe.title.toLowerCase().includes(searchTerms.toLowerCase()) ||
+        recipe.preparation.toLowerCase().includes(searchTerms.toLowerCase())
+    );
 
-    return recipes.slice(startIndex, endIndex);
+    return filteredRecipes.slice(startIndex, endIndex);
   }
 }
 
@@ -66,7 +71,7 @@ const recipes: IRecipe[] = [
     ],
     equipment: ['large pot', 'tongs', 'saute pan', 'ladle'],
     preparation:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ' +
+      'alabala ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ' +
       'tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ' +
       'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo ' +
       'consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse ' +
