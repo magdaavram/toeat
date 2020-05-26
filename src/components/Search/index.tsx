@@ -1,10 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { MouseEvent } from "react";
+import styled from "styled-components";
 import Button from 'components/Button';
 import Input from 'components/Input';
 
 interface IProps {
-  handleClick: () => void;
+  handleClick: (ev: MouseEvent<HTMLButtonElement>) => void;
+  handleKeyPress: (ev: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
 const Container = styled.div`
@@ -31,12 +32,16 @@ const SearchButton = styled(Button)`
 
 const Search = (props: IProps) => (
   <Container>
-    <SearchInput placeholder={'Find recipes by ingredients or name...'} />
+    <SearchInput
+      type="search"
+      placeholder={"Find recipes by ingredients or name..."}
+      onKeyPress={props.handleKeyPress}
+    />
 
     <SearchButton
       onClick={props.handleClick}
       hasIcon={true}
-      icon={'search'}
+      icon={"search"}
       iconWidth={27}
       iconHeight={27}
     />
