@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import Search from "components/Search";
-import Filters from "components/Filters";
-import RecipesList from "components/RecipesList";
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import Search from 'components/Search';
+import Filters from 'components/Filters';
+import RecipesList from 'components/RecipesList';
 
 const ResultText = styled.span`
   display: inline-block;
@@ -14,12 +14,12 @@ const ResultText = styled.span`
 `;
 
 const Homepage = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = (ev: React.KeyboardEvent<HTMLInputElement>) => {
-    if (ev.key === "Enter") {
+    if (ev.key === 'Enter') {
       setSearchTerm(ev.currentTarget.value);
-      ev.currentTarget.value = "";
+      ev.currentTarget.value = '';
     }
   };
 
@@ -32,13 +32,13 @@ const Homepage = () => {
       <Search
         handleClick={(ev) => {
           ev.preventDefault();
-          console.log("pressed search");
+          console.log('pressed search');
         }}
         handleKeyPress={handleSearch}
       />
-      <Filters/>
+      <Filters />
       {searchTerm && <ResultText>Results for: "{searchTerm}"</ResultText>}
-      <RecipesList/>
+      <RecipesList />
     </>
   );
 };
