@@ -21,7 +21,7 @@ const buttonProps = {
   hasIcon: true,
   iconWidth: 50,
   iconHeight: 50,
-  className: "top-icon"
+  className: 'top-icon',
 };
 
 const TopControls = () => {

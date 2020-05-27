@@ -85,7 +85,7 @@ const FiltersModal = ({ show, onClose, onConfirm, title }: IFilterModalProps) =>
   return (
     <div>
       <Modal isOpen={show} onRequestClose={onClose} style={styles}>
-        <CloseButton onClick={onClose} text={"x"} hasIcon={false}/>
+        <CloseButton onClick={onClose} text={'x'} hasIcon={false} />
 
         <Content>
           <Title>{title}</Title>
@@ -141,8 +141,8 @@ const FiltersModal = ({ show, onClose, onConfirm, title }: IFilterModalProps) =>
         </Content>
 
         <ActionButtonsContainer>
-          <CancelButton onClick={onClose} text={"Cancel"} hasIcon={false}/>
-          <ActionButton onClick={onConfirm} text={"Apply"} hasIcon={false}/>
+          <CancelButton onClick={onClose} text={'Cancel'} hasIcon={false} />
+          <ActionButton onClick={onConfirm} text={'Apply'} hasIcon={false} />
         </ActionButtonsContainer>
       </Modal>
     </div>
