@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Recipe, { IRecipe } from 'api/Recipe';
 import Search from 'components/Search';
-import Filters from 'components/Filters';
+import RecommendedFilters from 'components/Filters/Recommended';
 import RecipesList from 'components/RecipesList';
 
 const ResultText = styled.span`
@@ -59,7 +59,7 @@ const Homepage = () => {
   return (
     <>
       <Search handleSearch={handleSearch} />
-      <Filters />
+      <RecommendedFilters />
       {searchTerm && <ResultText>Results for: "{searchTerm}"</ResultText>}
       <RecipesList recipes={recipes} />
     </>

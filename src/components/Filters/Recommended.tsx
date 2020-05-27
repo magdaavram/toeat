@@ -23,7 +23,7 @@ const TagsContainer = styled.div`
   flex: flex wrap;
 `;
 
-const Filters = () => {
+const Recommended = () => {
   const [filters, setFilters] = useState<IFilter[]>([]);
 
   useEffect(() => {
@@ -47,4 +47,4 @@ const Filters = () => {
   );
 };
 
-export default Filters;
+export default Recommended;
