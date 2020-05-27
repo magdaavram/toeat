@@ -3,11 +3,17 @@ import styled from 'styled-components';
 import Recipe, { IRecipe } from 'api/Recipe';
 import Search from 'components/Search';
 import RecommendedFilters from 'components/Filters/Recommended';
+import Filters from 'components/Filters';
 import RecipesList from 'components/RecipesList';
+
+const RecipesContainer = styled.div`
+  width: 70%;
+  max-width: 1000px;
+  margin-top: 18px;
+`;
 
 const ResultText = styled.span`
   display: inline-block;
-  width: 70%;
   margin-top: 27px;
   font-size: var(--font-size--large);
   font-family: 'Roboto Medium';
@@ -60,8 +66,11 @@ const Homepage = () => {
     <>
       <Search handleSearch={handleSearch} />
       <RecommendedFilters />
-      {searchTerm && <ResultText>Results for: "{searchTerm}"</ResultText>}
-      <RecipesList recipes={recipes} />
+      <RecipesContainer>
+        <Filters />
+        {searchTerm && <ResultText>Results for: "{searchTerm}"</ResultText>}
+        <RecipesList recipes={recipes} />
+      </RecipesContainer>
     </>
   );
 };
