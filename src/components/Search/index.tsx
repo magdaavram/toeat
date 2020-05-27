@@ -1,14 +1,13 @@
-import React, { MouseEvent } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Button from 'components/Button';
 import Input from 'components/Input';
 
 interface IProps {
-  handleClick: (ev: MouseEvent<HTMLButtonElement>) => void;
-  handleKeyPress: (ev: React.KeyboardEvent<HTMLInputElement>) => void;
+  handleSearch: (term: string) => void;
 }
 
-const Container = styled.div`
+const Form = styled.form`
   display: flex;
   width: 70%;
   max-width: 1000px;
@@ -30,22 +29,22 @@ const SearchButton = styled(Button)`
   opacity: 0.6;
 `;
 
-const Search = (props: IProps) => (
-  <Container>
-    <SearchInput
-      type="search"
-      placeholder={'Find recipes by ingredients or name...'}
-      onKeyPress={props.handleKeyPress}
-    />
+const Search = (props: IProps) => {
+  const handleSearch = (e: any) => {
+    const [input] = e.target.children;
 
-    <SearchButton
-      onClick={props.handleClick}
-      hasIcon={true}
-      icon={'search'}
-      iconWidth={27}
-      iconHeight={27}
-    />
-  </Container>
-);
+    props.handleSearch(input.value);
+    input.value = '';
+
+    e.preventDefault();
+  };
+
+  return (
+    <Form onSubmit={handleSearch}>
+      <SearchInput type="search" placeholder={'Find recipes by ingredients or name...'} />
+      <SearchButton type="submit" hasIcon={true} icon={'search'} iconWidth={27} iconHeight={27} />
+    </Form>
+  );
+};
 
 export default Search;

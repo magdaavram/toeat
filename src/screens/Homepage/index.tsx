@@ -18,6 +18,7 @@ const Homepage = () => {
   const api = new Recipe();
   const [recipes, setRecipes] = useState<IRecipe[]>([]);
   const [page, setPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const handleScroll = () => {
     if (
@@ -43,33 +44,21 @@ const Homepage = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   };
 
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const handleSearch = (ev: React.KeyboardEvent<HTMLInputElement>) => {
-    if (ev.key === 'Enter') {
-      if (ev.currentTarget.value === searchTerm) {
-        ev.currentTarget.value = '';
-        return;
-      }
-
-      setPage(1);
-      setRecipes([]);
-      setSearchTerm(ev.currentTarget.value);
-      ev.currentTarget.value = '';
-    }
-  };
-
   useEffect(loadRecipes, [searchTerm, page]);
+
+  const handleSearch = (terms: string) => {
+    if (terms === searchTerm) {
+      return;
+    }
+
+    setPage(1);
+    setRecipes([]);
+    setSearchTerm(terms);
+  };
 
   return (
     <>
-      <Search
-        handleClick={(ev) => {
-          ev.preventDefault();
-          console.log('pressed search');
-        }}
-        handleKeyPress={handleSearch}
-      />
+      <Search handleSearch={handleSearch} />
       <Filters />
       {searchTerm && <ResultText>Results for: "{searchTerm}"</ResultText>}
       <RecipesList recipes={recipes} />

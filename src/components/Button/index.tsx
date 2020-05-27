@@ -33,9 +33,10 @@ const icons: any = {
 
 const Button = (props: IProps) => {
   const { className, onClick, text, hasIcon, icon, iconWidth, iconHeight } = props;
+  const type = (props.type as 'submit' | 'button') || 'button';
 
   return (
-    <StyledButton className={className} type="button" onClick={onClick}>
+    <StyledButton className={className} type={type} onClick={onClick}>
       {hasIcon && icon && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
