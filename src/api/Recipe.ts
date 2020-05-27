@@ -28,11 +28,15 @@ export default class Recipe {
   public getRecipes(page: number, pageLimit: number, searchTerms: string): IRecipe[] {
     const startIndex = (page - 1) * pageLimit;
     const endIndex = startIndex + pageLimit;
-    const filteredRecipes = recipes.filter(
-      (recipe) =>
-        recipe.title.toLowerCase().includes(searchTerms.toLowerCase()) ||
-        recipe.preparation.toLowerCase().includes(searchTerms.toLowerCase())
-    );
+
+    const terms = searchTerms.split(' ');
+    const filteredRecipes: IRecipe[] = recipes.filter((recipe) => {
+      const containsTerm = (term: string) =>
+        recipe.title.toLowerCase().includes(term.toLowerCase()) ||
+        recipe.preparation.toLowerCase().includes(term.toLowerCase());
+
+      return terms.some(containsTerm);
+    });
 
     return filteredRecipes.slice(startIndex, endIndex);
   }
