@@ -2,7 +2,7 @@
 
 exports[`should render correctly 1`] = `
 <div
-  className="sc-fzpans dfnlZo"
+  className="sc-fzoLag hhVJqd"
 >
   <a
     href="/recipe"
@@ -10,17 +10,17 @@ exports[`should render correctly 1`] = `
     title="Pasta"
   >
     <div
-      className="sc-fzplWN kOVwiM"
+      className="sc-fzoXzr kTgEsu"
     />
   </a>
   <div
-    className="sc-fznyAO flguBq"
+    className="sc-fzpjYC eNSNGf"
   >
     <div
-      className="sc-fznKkj kXNoFJ"
+      className="sc-fznxsB jSNgKC"
     >
       <div
-        className="sc-fzoLsD cUrqaJ"
+        className="sc-fzoyAV YXuwE"
       >
         <svg
           height="20"
@@ -46,10 +46,10 @@ exports[`should render correctly 1`] = `
       1h 18 min
     </div>
     <div
-      className="sc-fznKkj kXNoFJ"
+      className="sc-fznxsB jSNgKC"
     >
       <div
-        className="sc-fzozJi dQGQRf"
+        className="sc-fzqNJr skGAO"
       >
         <svg
           height="20"
@@ -81,7 +81,7 @@ exports[`should render correctly 1`] = `
     title="Pasta"
   >
     <span
-      className="sc-fznZeY imEnIf"
+      className="sc-fznJRM dNLTMg"
     >
       Pasta
     </span>

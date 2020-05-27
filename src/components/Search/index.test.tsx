@@ -4,16 +4,16 @@ import { mount } from 'enzyme';
 import Search from './index';
 
 it('should render component correctly', () => {
-  const onClick = jest.fn();
-  const tree = create(<Search handleClick={onClick} />);
+  const onSubmit = jest.fn();
+  const tree = create(<Search handleSearch={onSubmit} />);
 
   expect(tree.toJSON()).toMatchSnapshot();
 });
 
-it('should call the onClick function', () => {
-  const onClick = jest.fn();
-  const wrapper = mount(<Search handleClick={onClick} />);
+it('should call the onSubmit function', () => {
+  const onSubmit = jest.fn();
+  const wrapper = mount(<Search handleSearch={onSubmit} />);
 
-  wrapper.find('button').simulate('click');
-  expect(onClick).toHaveBeenCalledTimes(1);
+  wrapper.find('form').simulate('submit');
+  expect(onSubmit).toHaveBeenCalledTimes(1);
 });

@@ -2,7 +2,7 @@
 
 exports[`should render app correctly 1`] = `
 <div
-  className="sc-fzoVTD QlNhO"
+  className="sc-fzpisO VocwW"
 >
   <div
     className="sc-fzoLsD lgjcow"
@@ -70,19 +70,20 @@ exports[`should render app correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzpisO gCauuN"
+    className="sc-fznyYp jluQTi"
   >
-    <div
+    <form
       className="sc-fzplWN emtqnU"
+      onSubmit={[Function]}
     >
       <input
         className="sc-fzpans sc-fznyAO ggHIiT"
         placeholder="Find recipes by ingredients or name..."
+        type="search"
       />
       <button
         className="sc-AxjAm ewqDcP sc-fznKkj hmSzya"
-        onClick={[Function]}
-        type="button"
+        type="submit"
       >
         <svg
           height="27"
@@ -105,7 +106,7 @@ exports[`should render app correctly 1`] = `
           />
         </svg>
       </button>
-    </div>
+    </form>
     <div
       className="sc-fzokOt cLyWOW"
     >
@@ -119,13 +120,13 @@ exports[`should render app correctly 1`] = `
       />
     </div>
     <div
-      className="sc-fzoXWK fcvBj"
+      className="sc-fznMAR dHZGIM"
     >
       <div
-        className="sc-fzpmMD LQApm"
+        className="sc-fznJRM ZeGtB"
       >
         <button
-          className="sc-AxjAm ewqDcP sc-AxirZ sc-fznxKY hhAPVW"
+          className="sc-AxjAm ewqDcP sc-AxirZ sc-fznWqX cQTpMW"
           onClick={[Function]}
           type="button"
         >
@@ -153,8 +154,9 @@ exports[`should render app correctly 1`] = `
         </button>
         <div />
       </div>
+      
       <div
-        className="sc-fznMAR sXPit"
+        className="sc-fznxKY hsFyJB"
       />
     </div>
   </div>

@@ -1,17 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render component correctly 1`] = `
-<div
+<form
   className="sc-AxiKw gZTYQF"
+  onSubmit={[Function]}
 >
   <input
     className="sc-AxirZ sc-AxhCb bHWOmi"
     placeholder="Find recipes by ingredients or name..."
+    type="search"
   />
   <button
     className="sc-AxjAm ewqDcP sc-AxhUy dmKEVP"
-    onClick={[MockFunction]}
-    type="button"
+    type="submit"
   >
     <svg
       height="27"
@@ -34,5 +35,5 @@ exports[`should render component correctly 1`] = `
       />
     </svg>
   </button>
-</div>
+</form>
 `;
