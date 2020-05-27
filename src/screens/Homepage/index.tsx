@@ -47,6 +47,11 @@ const Homepage = () => {
 
   const handleSearch = (ev: React.KeyboardEvent<HTMLInputElement>) => {
     if (ev.key === 'Enter') {
+      if (ev.currentTarget.value === searchTerm) {
+        ev.currentTarget.value = '';
+        return;
+      }
+
       setPage(1);
       setRecipes([]);
       setSearchTerm(ev.currentTarget.value);
