@@ -126,7 +126,7 @@ exports[`should render app correctly 1`] = `
         className="sc-fznJRM ZeGtB"
       >
         <button
-          className="sc-AxjAm ewqDcP sc-AxirZ sc-fznWqX cQTpMW"
+          className="sc-AxjAm ewqDcP sc-AxirZ sc-fznWqX updjA"
           onClick={[Function]}
           type="button"
         >

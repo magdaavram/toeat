@@ -12,6 +12,7 @@ const Button = styled(ActionButton)`
   width: 108px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const Filters = () => {
