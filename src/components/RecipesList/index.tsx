@@ -13,6 +13,7 @@ const Container = styled.div`
 const RecipesList = ({ recipes }: { recipes: IRecipe[] }) => {
   const recipesList = recipes.map((recipe, index) => (
     <RecipeThumbnail
+      id={recipe.id}
       imageUrl={recipe.imageUrl}
       title={recipe.title}
       duration={recipe.duration}

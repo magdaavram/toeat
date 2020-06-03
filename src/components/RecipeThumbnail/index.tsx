@@ -9,6 +9,7 @@ interface IImageProps {
 }
 
 interface IProps {
+  id: number;
   imageUrl: string;
   title: string;
   duration: number;
@@ -59,11 +60,11 @@ const Title = styled.span`
 `;
 
 const RecipeThumbnail = (props: IProps) => {
-  const { imageUrl, title, duration, difficultyLevel } = props;
+  const { id, imageUrl, title, duration, difficultyLevel } = props;
 
   return (
     <Container>
-      <Link to="/recipe" title={title}>
+      <Link to={'/recipe/' + id} title={title}>
         <ImageContainer url={imageUrl} />
       </Link>
       <DetailsContainer>
@@ -74,7 +75,7 @@ const RecipeThumbnail = (props: IProps) => {
           <DifficultyLevel level={difficultyLevel} hasIcon={true} />
         </Detail>
       </DetailsContainer>
-      <Link to="/recipe" title={title}>
+      <Link to={'/recipe/' + id} title={title}>
         <Title>{title}</Title>
       </Link>
     </Container>
