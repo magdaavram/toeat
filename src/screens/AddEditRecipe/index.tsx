@@ -90,6 +90,10 @@ const AddEditRecipeView = () => {
     onClose: closeModal,
   };
 
+  const handleDeleteIngredient = (ev: any) => {
+    ev.target.parentNode.remove();
+  };
+
   return (
     <Form>
       <ImageUploader
@@ -136,51 +140,59 @@ const AddEditRecipeView = () => {
       <AddItemsContainer>
         <Subtitle>Ingredients</Subtitle>
 
-        <Item>
-          <NumberInput
-            style={{ width: '100px' }}
-            type="number"
-            min={0}
-            max={999}
-            placeholder={'Quantity'}
-            required
-          />
+        <div id="items">
+          <Item>
+            <NumberInput
+              style={{ width: '100px' }}
+              type="number"
+              min={0}
+              max={999}
+              placeholder={'Quantity'}
+              required
+            />
 
-          <SelectDropdown selected={0} options={unitOptions} width={'150px'} placeholder={'Unit'} />
+            <SelectDropdown
+              selected={0}
+              options={unitOptions}
+              width={'150px'}
+              placeholder={'Unit'}
+            />
 
-          <CreatableSelect
-            isClearable
-            options={ingredientsOptions}
-            width={'200px'}
-            placeholder={'Type ingredient'}
-          />
-        </Item>
+            <CreatableSelect
+              isClearable
+              options={ingredientsOptions}
+              width={'200px'}
+              placeholder={'Type ingredient'}
+            />
+          </Item>
 
-        <Item>
-          <NumberInput
-            style={{ width: '100px' }}
-            type="number"
-            min={0}
-            max={999}
-            placeholder={'Quantity'}
-            required
-          />
+          <Item>
+            <NumberInput
+              style={{ width: '100px' }}
+              type="number"
+              min={0}
+              max={999}
+              placeholder={'Quantity'}
+              required
+            />
 
-          <SelectDropdown selected={0} options={unitOptions} width={'150px'} placeholder={'Unit'} />
+            <SelectDropdown
+              selected={0}
+              options={unitOptions}
+              width={'150px'}
+              placeholder={'Unit'}
+            />
 
-          <CreatableSelect
-            isClearable
-            options={ingredientsOptions}
-            width={'200px'}
-            placeholder={'Type ingredient'}
-          />
+            <CreatableSelect
+              isClearable
+              options={ingredientsOptions}
+              width={'200px'}
+              placeholder={'Type ingredient'}
+            />
 
-          <DeleteButton
-            onClick={() => console.log('clicked delete ingredient')}
-            text={'x'}
-            hasIcon={false}
-          />
-        </Item>
+            <DeleteButton onClick={handleDeleteIngredient} text={'x'} hasIcon={false} />
+          </Item>
+        </div>
 
         <AddButton
           onClick={() => console.log('clicked add ingredient')}
