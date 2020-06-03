@@ -40,6 +40,10 @@ export default class Recipe {
 
     return filteredRecipes.slice(startIndex, endIndex);
   }
+
+  public getRecipe(id: number): IRecipe | undefined {
+    return recipes.find((recipe: IRecipe) => recipe.id === id);
+  }
 }
 
 const recipes: IRecipe[] = [

@@ -1,7 +1,7 @@
 import React, { InputHTMLAttributes } from 'react';
 import styled from 'styled-components';
 import TabView from 'components/TabView';
-import { IRecipe } from 'api/recipes';
+import { IRecipe } from 'api/Recipe';
 import DifficultyLevel from 'components/DifficultyLevel';
 import CookingTime from 'components/CookingTime';
 

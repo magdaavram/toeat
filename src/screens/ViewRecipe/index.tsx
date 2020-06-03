@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { IRecipe, getRecipe } from 'api/recipes';
-import Recipe from 'components/Recipe';
+import Recipe, { IRecipe } from 'api/Recipe';
+import RecipeDetails from 'components/Recipe';
 
 const Container = styled.div`
   width: 70%;
@@ -9,15 +9,16 @@ const Container = styled.div`
 `;
 
 const RecipeView = () => {
+  const api = new Recipe();
   const [recipe, setRecipe] = useState<IRecipe>();
 
   useEffect(() => {
-    setRecipe(getRecipe(2));
-  }, []);
+    setRecipe(api.getRecipe(2));
+  }, [api]);
 
   return (
     <Container>
-      {recipe ? <Recipe {...recipe} /> : <span>This recipe does not exist.</span>}
+      {recipe ? <RecipeDetails {...recipe} /> : <span>This recipe does not exist.</span>}
     </Container>
   );
 };

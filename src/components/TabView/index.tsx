@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
-import { IRecipe, Unit } from 'api/recipes';
+import { IRecipe, Unit } from 'api/Recipe';
 import SelectDropdown from 'components/Dropdown/SelectDropdown';
 import { Option } from 'components/Dropdown';
 import List from 'components/List';
