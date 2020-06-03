@@ -9,7 +9,13 @@ import RecipeThumbnail from './index';
 it('should render correctly', () => {
   const tree = create(
     <MemoryRouter>
-      <RecipeThumbnail imageURL={'image.png'} title={'Pasta'} duration={78} difficultyLevel={2} />
+      <RecipeThumbnail
+        id={2}
+        imageUrl={'image.png'}
+        title={'Pasta'}
+        duration={78}
+        difficultyLevel={2}
+      />
     </MemoryRouter>
   );
 
@@ -20,24 +26,36 @@ it('should change URL when clicking on image', () => {
   const history = createMemoryHistory();
   const wrapper = mount(
     <Router history={history}>
-      <RecipeThumbnail imageURL={'image.png'} title={'Pasta'} duration={78} difficultyLevel={2} />
+      <RecipeThumbnail
+        id={2}
+        imageUrl={'image.png'}
+        title={'Pasta'}
+        duration={78}
+        difficultyLevel={2}
+      />
       <Routes />
     </Router>
   );
 
   wrapper.find('a').at(0).simulate('click', { button: 0 });
-  expect(history.location.pathname).toEqual('/recipe');
+  expect(history.location.pathname).toEqual('/recipe/2');
 });
 
 it('should change URL when clicking on title', () => {
   const history = createMemoryHistory();
   const wrapper = mount(
     <Router history={history}>
-      <RecipeThumbnail imageURL={'image.png'} title={'Pasta'} duration={78} difficultyLevel={2} />
+      <RecipeThumbnail
+        id={2}
+        imageUrl={'image.png'}
+        title={'Pasta'}
+        duration={78}
+        difficultyLevel={2}
+      />
       <Routes />
     </Router>
   );
 
   wrapper.find('a').at(1).simulate('click', { button: 0 });
-  expect(history.location.pathname).toEqual('/recipe');
+  expect(history.location.pathname).toEqual('/recipe/2');
 });

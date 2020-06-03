@@ -5,12 +5,12 @@ exports[`should render correctly 1`] = `
   className="sc-fzoLag hhVJqd"
 >
   <a
-    href="/recipe"
+    href="/recipe/2"
     onClick={[Function]}
     title="Pasta"
   >
     <div
-      className="sc-fzoXzr kTgEsu"
+      className="sc-fzoXzr kEkepQ"
     />
   </a>
   <div
@@ -76,7 +76,7 @@ exports[`should render correctly 1`] = `
     </div>
   </div>
   <a
-    href="/recipe"
+    href="/recipe/2"
     onClick={[Function]}
     title="Pasta"
   >
