@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import { IRecipe, Unit } from 'api/Recipe';
@@ -52,6 +52,19 @@ const servingOptions: Option[] = Array.from({ length: 25 }, (value: undefined, i
 
 const TabView = (props: IRecipe) => {
   const { servings, ingredients, equipment, preparation } = props;
+  const [scaledIngredients, setScaledIngredients] = useState(ingredients);
+
+  const handleServingsChange = (option: Option) => {
+    const updatedIngredients = ingredients.map((ingredient) => {
+      const updatedIngredient = Object.assign({}, ingredient);
+      const updatedQuantity = (ingredient.quantity / servings) * option.value;
+      updatedIngredient.quantity = Math.round(updatedQuantity);
+
+      return updatedIngredient;
+    });
+
+    setScaledIngredients(updatedIngredients);
+  };
 
   return (
     <TabsContainer>
@@ -63,9 +76,14 @@ const TabView = (props: IRecipe) => {
 
       <TabPanel>
         <InfoTabPanel>
-          <SelectDropdown width={'300px'} selected={servings} options={servingOptions} />
+          <SelectDropdown
+            onChange={handleServingsChange}
+            width={'300px'}
+            selected={servings}
+            options={servingOptions}
+          />
           <List
-            items={ingredients}
+            items={scaledIngredients}
             renderItem={(ingredient: Ingredient) =>
               `${ingredient.quantity} ${ingredient.unit} of ${ingredient.ingredient}`
             }

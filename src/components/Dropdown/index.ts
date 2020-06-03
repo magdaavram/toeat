@@ -15,6 +15,7 @@ export interface IProps {
   backgroundColor?: string;
   isMulti?: boolean;
   isClearable?: boolean;
+  onChange?: (option: Option) => void;
 }
 
 const dropdownStyles = {
