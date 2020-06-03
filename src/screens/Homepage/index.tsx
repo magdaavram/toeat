@@ -20,6 +20,13 @@ const ResultText = styled.span`
   color: var(--color--medium-purple);
 `;
 
+const EmptyList = styled.div`
+  padding-top: 54px;
+  color: var(--color--light-purple);
+  text-align: center;
+  font-size: var(--font-size--large);
+`;
+
 const Homepage = () => {
   const api = new Recipe();
   const [recipes, setRecipes] = useState<IRecipe[]>([]);
@@ -69,7 +76,12 @@ const Homepage = () => {
       <RecipesContainer>
         <Filters />
         {searchTerm && <ResultText>Results for: "{searchTerm}"</ResultText>}
-        <RecipesList recipes={recipes} />
+
+        {recipes.length > 0 ? (
+          <RecipesList recipes={recipes} />
+        ) : (
+          <EmptyList>No recipes found</EmptyList>
+        )}
       </RecipesContainer>
     </>
   );

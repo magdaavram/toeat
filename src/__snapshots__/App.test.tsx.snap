@@ -2,7 +2,7 @@
 
 exports[`should render app correctly 1`] = `
 <div
-  className="sc-fzpisO VocwW"
+  className="sc-fznyYp dQMOKJ"
 >
   <div
     className="sc-fzoLsD lgjcow"
@@ -70,7 +70,7 @@ exports[`should render app correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznyYp jluQTi"
+    className="sc-fznLxA domtIr"
   >
     <form
       className="sc-fzplWN emtqnU"
@@ -156,8 +156,10 @@ exports[`should render app correctly 1`] = `
       </div>
       
       <div
-        className="sc-fznxKY hsFyJB"
-      />
+        className="sc-fzolEj koFjRo"
+      >
+        No recipes found
+      </div>
     </div>
   </div>
 </div>
