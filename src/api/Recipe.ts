@@ -13,13 +13,15 @@ export interface IRecipe {
   difficultyLevel: number;
   servings: number;
   course: string;
-  ingredients: {
-    ingredient: string;
-    quantity: number;
-    unit: Unit;
-  }[];
+  ingredients: IIngredient[];
   equipment: string[];
   preparation: string;
+}
+
+export interface IIngredient {
+  ingredient: string;
+  quantity: number;
+  unit: Unit;
 }
 
 export type Unit = 'grams' | 'kg' | 'l' | 'ml' | 'sp' | 'tsp' | 'pinch' | 'pieces' | 'bunch';

@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
-import { IRecipe, Unit } from 'api/Recipe';
+import { IRecipe, IIngredient } from 'api/Recipe';
 import SelectDropdown from 'components/Dropdown/SelectDropdown';
 import { Option } from 'components/Dropdown';
 import List from 'components/List';
-
-interface Ingredient {
-  ingredient: string;
-  quantity: number;
-  unit: Unit;
-}
 
 const TabsContainer = styled(Tabs)`
   max-width: 900px;
@@ -84,7 +78,7 @@ const TabView = (props: IRecipe) => {
           />
           <List
             items={scaledIngredients}
-            renderItem={(ingredient: Ingredient) =>
+            renderItem={(ingredient: IIngredient) =>
               `${ingredient.quantity} ${ingredient.unit} of ${ingredient.ingredient}`
             }
           />
