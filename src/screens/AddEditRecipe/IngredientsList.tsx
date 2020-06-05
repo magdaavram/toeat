@@ -69,7 +69,9 @@ const IngredientsList = ({ ingredients, onDelete, onChange, onAdd }: IProps) => 
           options={ingredientsOptions}
           width={'200px'}
           placeholder={'Type ingredient'}
-          onChange={(val) => onChange({ index: index, field: 'ingredient', value: val.label })}
+          onChange={(val) =>
+            onChange({ index: index, field: 'ingredient', value: val === null ? '' : val.label })
+          }
         />
 
         {index === 0 ? null : (
