@@ -2,7 +2,7 @@
 
 exports[`should render app correctly 1`] = `
 <div
-  className="sc-fznLxA eGagzI"
+  className="sc-fznXWL jFjWoO"
 >
   <div
     className="sc-fzoLsD lgjcow"
@@ -70,7 +70,7 @@ exports[`should render app correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznXWL bcnOnB"
+    className="sc-fzokvW fPUnEp"
   >
     <form
       className="sc-fzplWN emtqnU"
