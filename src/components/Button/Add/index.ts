@@ -17,4 +17,6 @@ const AddButton = styled(Button)`
   }
 `;
 
+AddButton.displayName = 'AddButton';
+
 export default AddButton;

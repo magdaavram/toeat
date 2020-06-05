@@ -17,4 +17,6 @@ const DeleteButton = styled(Button)`
   }
 `;
 
+DeleteButton.displayName = 'DeleteButton';
+
 export default DeleteButton;

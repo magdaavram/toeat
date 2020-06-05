@@ -12,4 +12,6 @@ const NumberInput = styled(Input)`
     margin: 0;
 `;
 
+NumberInput.displayName = 'NumberInput';
+
 export default NumberInput;

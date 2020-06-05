@@ -31,6 +31,8 @@ const Item = styled.div`
   }
 `;
 
+Item.displayName = 'Item';
+
 const mapOptions = (list: { id: number; name: string }[]): Option[] => {
   return list.map((item) => {
     return { value: item.id, label: item.name };
