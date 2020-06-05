@@ -69,3 +69,7 @@ If you want to contact me, you can reach me at magda.r.avram@gmail.com.
 
 ___
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Developed with [WebStorm](https://www.jetbrains.com/?from=toeat%20-%20recipe%20collection)
+
+<a href="https://www.jetbrains.com/?from=toeat%20-%20recipe%20collection">![JetBrains](jetbrains.svg)</a>
