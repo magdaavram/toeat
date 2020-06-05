@@ -72,4 +72,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Developed with [WebStorm](https://www.jetbrains.com/?from=toeat%20-%20recipe%20collection)
 
-<a href="https://www.jetbrains.com/?from=toeat%20-%20recipe%20collection">![JetBrains](jetbrains.svg)</a>
+<a href="https://www.jetbrains.com/?from=toeat%20-%20recipe%20collection">![JetBrains](./jetbrains.svg)</a>
