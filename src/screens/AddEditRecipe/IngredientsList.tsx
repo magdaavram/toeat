@@ -76,9 +76,7 @@ const IngredientsList = ({ ingredients, onDelete, onChange, onAdd }: IProps) => 
           }
         />
 
-        {index === 0 ? null : (
-          <DeleteButton onClick={() => onDelete(index)} text={'x'} hasIcon={false} />
-        )}
+        {index !== 0 && <DeleteButton onClick={() => onDelete(index)} text={'x'} hasIcon={false} />}
       </Item>
     ))}
 

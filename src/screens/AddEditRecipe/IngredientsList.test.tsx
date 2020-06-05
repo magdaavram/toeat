@@ -4,7 +4,9 @@ import { create } from 'react-test-renderer';
 import IngredientsList from './IngredientsList';
 import { IIngredientWithNullableUnit } from './index';
 
-let mockFunction: () => void, mockData: IIngredientWithNullableUnit[], wrapper: ShallowWrapper;
+let mockFunction: () => void;
+let mockData: IIngredientWithNullableUnit[];
+let wrapper: ShallowWrapper;
 
 beforeEach(() => {
   mockFunction = jest.fn();
@@ -32,6 +34,10 @@ it('should not render the delete button on the first item', () => {
   const firstIngredient = wrapper.find('Item').first();
 
   expect(firstIngredient.find('DeleteButton')).toHaveLength(0);
+});
+
+it('should render the correct number of delete buttons', () => {
+  expect(wrapper.find('Item DeleteButton')).toHaveLength(mockData.length - 1);
 });
 
 it('should render one add button', () => {
