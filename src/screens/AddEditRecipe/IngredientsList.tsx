@@ -43,7 +43,7 @@ const ingredientsOptions: Option[] = mapOptions(getIngredients());
 const IngredientsList = ({ ingredients, onDelete, onChange, onAdd }: IProps) => (
   <>
     {ingredients.map((ingredient: IIngredient, index: number) => (
-      <Item>
+      <Item key={`ingredient-${index}`}>
         <NumberInput
           style={{ width: '100px' }}
           type="number"
