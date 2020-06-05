@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IIngredient } from 'api/Recipe';
+import { IIngredientWithNullableUnit } from './index';
 import NumberInput from 'components/Input/Number';
 import SelectDropdown from 'components/Dropdown/SelectDropdown';
 import CreatableSelect from 'components/Dropdown/CreatableDropdown';
@@ -10,7 +10,7 @@ import { getIngredients, getUnits } from 'api/dropdownData';
 import AddButton from 'components/Button/Add';
 
 interface IProps {
-  ingredients: IIngredient[];
+  ingredients: IIngredientWithNullableUnit[];
   onDelete: (index: number) => void;
   onAdd: () => void;
   onChange: (options: ListOptions) => void;
@@ -42,8 +42,8 @@ const ingredientsOptions: Option[] = mapOptions(getIngredients());
 
 const IngredientsList = ({ ingredients, onDelete, onChange, onAdd }: IProps) => (
   <>
-    {ingredients.map((ingredient: IIngredient, index: number) => (
-      <Item key={`ingredient-${index}`}>
+    {ingredients.map((ingredient: IIngredientWithNullableUnit, index: number) => (
+      <Item key={ingredient.id}>
         <NumberInput
           style={{ width: '100px' }}
           type="number"

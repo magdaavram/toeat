@@ -24,7 +24,7 @@ export interface IIngredient {
   unit: Unit;
 }
 
-type Unit = 'grams' | 'kg' | 'l' | 'ml' | 'sp' | 'tsp' | 'pinch' | 'pieces' | 'bunch' | '';
+export type Unit = 'grams' | 'kg' | 'l' | 'ml' | 'sp' | 'tsp' | 'pinch' | 'pieces' | 'bunch';
 
 export default class Recipe {
   public getRecipes(page: number, pageLimit: number, searchTerms: string): IRecipe[] {

@@ -10,8 +10,8 @@ import Textarea from 'components/Textarea';
 import CreatableSelect from 'components/Dropdown/CreatableDropdown';
 import { getCourses, getDifficultyLevels, getEquipments } from 'api/dropdownData';
 import ConfirmationModal, { IModalProps } from 'components/Modal/ConfirmationModal';
-import { IIngredient } from 'api/Recipe';
 import IngredientsList, { ListOptions } from './IngredientsList';
+import { Unit } from 'api/Recipe';
 
 const Form = styled.form`
   width: 70%;
@@ -70,10 +70,31 @@ const courseOptions: Option[] = mapOptions(getCourses());
 const difficultyOptions: Option[] = mapOptions(getDifficultyLevels());
 const equipmentOptions: Option[] = mapOptions(getEquipments());
 
+export interface IIngredientWithNullableUnit {
+  id: string;
+  ingredient: string;
+  quantity: number;
+  unit?: Unit;
+}
+
 const AddEditRecipeView = () => {
-  const emptyIngredient: IIngredient = { ingredient: '', quantity: 0, unit: '' };
-  const initialIngredients: IIngredient[] = [emptyIngredient, emptyIngredient];
-  const [ingredients, setIngredients] = useState<IIngredient[]>(initialIngredients);
+  const getRandomId = () => {
+    const S4 = () => (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+
+    return S4() + S4() + '-' + S4() + '-' + S4() + '-' + S4() + '-' + S4() + S4() + S4();
+  };
+
+  const emptyIngredient: IIngredientWithNullableUnit = {
+    id: getRandomId(),
+    ingredient: '',
+    quantity: 0,
+  };
+
+  const initialIngredients: IIngredientWithNullableUnit[] = [
+    { id: getRandomId(), ingredient: '', quantity: 0 },
+    { id: getRandomId(), ingredient: '', quantity: 0 },
+  ];
+  const [ingredients, setIngredients] = useState<IIngredientWithNullableUnit[]>(initialIngredients);
 
   const handleIngredientChange = ({ index, field, value }: ListOptions) => {
     setIngredients((prevState) => {
