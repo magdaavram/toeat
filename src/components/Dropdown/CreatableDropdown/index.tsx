@@ -10,7 +10,7 @@ interface IProps {
   options: Option[];
   isClearable?: boolean;
   isMulti?: boolean;
-  onChange?: (option: Option | null) => void;
+  onChange?(option: Option | Option[] | null): void;
 }
 
 const CreatableSelect = ({ onChange, ...rest }: IProps) => {
@@ -19,8 +19,7 @@ const CreatableSelect = ({ onChange, ...rest }: IProps) => {
         if (action.action === 'clear') {
           onChange(null);
         } else {
-          const option: Option = { value: value.value, label: value.label };
-          onChange(option);
+          onChange(value);
         }
       }
     : undefined;

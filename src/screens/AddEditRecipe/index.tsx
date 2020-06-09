@@ -70,6 +70,12 @@ const courseOptions: Option[] = mapOptions(getCourses());
 const difficultyOptions: Option[] = mapOptions(getDifficultyLevels());
 const equipmentOptions: Option[] = mapOptions(getEquipments());
 
+const getRandomId = () => {
+  const S4 = () => (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+
+  return S4() + S4() + '-' + S4() + '-' + S4() + '-' + S4() + '-' + S4() + S4() + S4();
+};
+
 export interface IIngredientWithNullableUnit {
   id: string;
   ingredient: string;
@@ -78,12 +84,6 @@ export interface IIngredientWithNullableUnit {
 }
 
 const AddEditRecipeView = () => {
-  const getRandomId = () => {
-    const S4 = () => (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
-
-    return S4() + S4() + '-' + S4() + '-' + S4() + '-' + S4() + '-' + S4() + S4() + S4();
-  };
-
   const emptyIngredient: IIngredientWithNullableUnit = {
     id: getRandomId(),
     ingredient: '',
@@ -117,6 +117,13 @@ const AddEditRecipeView = () => {
     setIngredients((prevState) => {
       return [...prevState, emptyIngredient];
     });
+  };
+
+  const [equipments, setEquipments] = useState<string[]>([]);
+
+  const handleEquipmentChange = (value: Option[] | null) => {
+    const equipmentsList = value === null ? [] : value.map((equipment: Option) => equipment.label);
+    setEquipments(equipmentsList);
   };
 
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -193,6 +200,7 @@ const AddEditRecipeView = () => {
             options={equipmentOptions}
             width={'500px'}
             placeholder={'Type or select a tool'}
+            onChange={handleEquipmentChange}
           />
         </Item>
       </AddItemsContainer>

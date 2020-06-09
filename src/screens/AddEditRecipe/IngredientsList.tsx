@@ -63,7 +63,7 @@ const IngredientsList = ({ ingredients, onDelete, onChange, onAdd }: IProps) => 
           options={unitOptions}
           width={'150px'}
           placeholder={'Unit'}
-          onChange={(val) => onChange({ index: index, field: 'unit', value: val.label })}
+          onChange={(val: Option) => onChange({ index: index, field: 'unit', value: val.label })}
         />
 
         <CreatableSelect
@@ -71,7 +71,7 @@ const IngredientsList = ({ ingredients, onDelete, onChange, onAdd }: IProps) => 
           options={ingredientsOptions}
           width={'200px'}
           placeholder={'Type ingredient'}
-          onChange={(val) =>
+          onChange={(val: Option | null) =>
             onChange({ index: index, field: 'ingredient', value: val === null ? '' : val.label })
           }
         />
