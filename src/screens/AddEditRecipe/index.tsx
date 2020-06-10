@@ -76,6 +76,19 @@ const getRandomId = () => {
   return S4() + S4() + '-' + S4() + '-' + S4() + '-' + S4() + '-' + S4() + S4() + S4();
 };
 
+interface IRecipeWithNullableUnit {
+  id: string;
+  imageUrl: string;
+  title: string;
+  duration: number;
+  difficultyLevel: number;
+  servings: number;
+  course: string;
+  ingredients: IIngredientWithNullableUnit[];
+  equipment: string[];
+  preparation: string;
+}
+
 export interface IIngredientWithNullableUnit {
   id: string;
   ingredient: string;
@@ -84,46 +97,91 @@ export interface IIngredientWithNullableUnit {
 }
 
 const AddEditRecipeView = () => {
+  const emptyRecipe: IRecipeWithNullableUnit = {
+    id: getRandomId(),
+    imageUrl: '',
+    title: '',
+    duration: 0,
+    difficultyLevel: 0,
+    servings: 0,
+    course: '',
+    ingredients: [
+      { id: getRandomId(), ingredient: '', quantity: 0 },
+      { id: getRandomId(), ingredient: '', quantity: 0 },
+    ],
+    equipment: [],
+    preparation: '',
+  };
+
+  const [recipe, setRecipe] = useState<IRecipeWithNullableUnit>(emptyRecipe);
+
+  const handleTextInputChange = (ev: any, field: string) => {
+    ev.persist();
+    setRecipe((recipe) => {
+      return { ...recipe, [field]: ev.target.value };
+    });
+  };
+
+  const handleNumberInputChange = (ev: any, field: string) => {
+    ev.persist();
+    setRecipe((recipe) => {
+      return { ...recipe, [field]: Number(ev.target.value) };
+    });
+  };
+
+  const handleNumberSelectChange = (value: Option, field: string) => {
+    setRecipe((recipe) => {
+      return { ...recipe, [field]: value.value };
+    });
+  };
+
+  const handleTextSelectChange = (value: Option | Option[], field: string) => {
+    setRecipe((recipe) => {
+      if (Array.isArray(value)) {
+        const list = value.map((equipment: Option) => equipment.label);
+
+        return { ...recipe, [field]: list };
+      }
+
+      return { ...recipe, [field]: value.label };
+    });
+  };
+
+  const handleIngredientChange = ({ index, field, value }: ListOptions) => {
+    setRecipe((recipe) => {
+      const updatedIngredients = recipe.ingredients.map((ingredient, j) => {
+        if (j === index) {
+          return { ...recipe.ingredients[index], [field]: value };
+        }
+
+        return ingredient;
+      });
+
+      return { ...recipe, ingredients: updatedIngredients };
+    });
+  };
+
+  const handleDeleteIngredient = (index: number) => {
+    const updatedIngredients = recipe.ingredients.filter((ingredient, j) => j !== index);
+
+    setRecipe((recipe) => {
+      return { ...recipe, ingredients: updatedIngredients };
+    });
+  };
+
   const emptyIngredient: IIngredientWithNullableUnit = {
     id: getRandomId(),
     ingredient: '',
     quantity: 0,
   };
 
-  const initialIngredients: IIngredientWithNullableUnit[] = [
-    { id: getRandomId(), ingredient: '', quantity: 0 },
-    { id: getRandomId(), ingredient: '', quantity: 0 },
-  ];
-  const [ingredients, setIngredients] = useState<IIngredientWithNullableUnit[]>(initialIngredients);
-
-  const handleIngredientChange = ({ index, field, value }: ListOptions) => {
-    setIngredients((prevState) => {
-      return prevState.map((ingredient, j) => {
-        if (j === index) {
-          return { ...prevState[index], [field]: value };
-        }
-
-        return ingredient;
-      });
-    });
-  };
-
-  const handleDeleteIngredient = (index: number) => {
-    const updatedIngredients = ingredients.filter((ingredient, j) => j !== index);
-    setIngredients(updatedIngredients);
-  };
-
   const handleAddIngredient = () => {
-    setIngredients((prevState) => {
-      return [...prevState, emptyIngredient];
+    setRecipe((recipe) => {
+      return {
+        ...recipe,
+        ingredients: [...recipe.ingredients, emptyIngredient],
+      };
     });
-  };
-
-  const [equipments, setEquipments] = useState<string[]>([]);
-
-  const handleEquipmentChange = (value: Option[] | null) => {
-    const equipmentsList = value === null ? [] : value.map((equipment: Option) => equipment.label);
-    setEquipments(equipmentsList);
   };
 
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -150,7 +208,12 @@ const AddEditRecipeView = () => {
         withIcon={false}
       />
 
-      <TextInput type="text" placeholder={'Insert a recipe title'} required />
+      <TextInput
+        type="text"
+        placeholder={'Insert a recipe title'}
+        onChange={(ev: any) => handleTextInputChange(ev, 'title')}
+        required
+      />
 
       <DetailsContainer>
         <SelectDropdown
@@ -159,6 +222,7 @@ const AddEditRecipeView = () => {
           selected={0}
           options={servingOptions}
           placeholder={'Servings'}
+          onChange={(value: Option) => handleNumberSelectChange(value, 'servings')}
         />
 
         <SelectDropdown
@@ -167,6 +231,7 @@ const AddEditRecipeView = () => {
           selected={0}
           options={courseOptions}
           placeholder={'Course'}
+          onChange={(value: Option) => handleTextSelectChange(value, 'course')}
         />
 
         <SelectDropdown
@@ -175,16 +240,24 @@ const AddEditRecipeView = () => {
           selected={0}
           options={difficultyOptions}
           placeholder={'Difficulty'}
+          onChange={(value: Option) => handleNumberSelectChange(value, 'difficultyLevel')}
         />
 
-        <NumberInput type="number" min={0} max={1440} placeholder={'Minutes (cooking)'} required />
+        <NumberInput
+          type="number"
+          min={0}
+          max={1440}
+          placeholder={'Minutes (cooking)'}
+          onChange={(ev: any) => handleNumberInputChange(ev, 'duration')}
+          required
+        />
       </DetailsContainer>
 
       <AddItemsContainer>
         <Subtitle>Ingredients</Subtitle>
 
         <IngredientsList
-          ingredients={ingredients}
+          ingredients={recipe.ingredients}
           onDelete={handleDeleteIngredient}
           onAdd={handleAddIngredient}
           onChange={handleIngredientChange}
@@ -200,12 +273,19 @@ const AddEditRecipeView = () => {
             options={equipmentOptions}
             width={'500px'}
             placeholder={'Type or select a tool'}
-            onChange={handleEquipmentChange}
+            onChange={(value: Option[] | null) => {
+              const options = value === null ? [] : value;
+              handleTextSelectChange(options, 'equipment');
+            }}
           />
         </Item>
       </AddItemsContainer>
 
-      <Textarea placeholder={'Describe preparation details'} required />
+      <Textarea
+        placeholder={'Describe preparation details'}
+        onChange={(ev: any) => handleTextInputChange(ev, 'preparation')}
+        required
+      />
 
       <ActionButtonsContainer>
         <div>
