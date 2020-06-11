@@ -77,7 +77,6 @@ const getRandomId = () => {
 };
 
 interface IRecipeWithNullableUnit {
-  id: string;
   imageUrl: string;
   title: string;
   duration: number;
@@ -98,7 +97,6 @@ export interface IIngredientWithNullableUnit {
 
 const AddEditRecipeView = () => {
   const emptyRecipe: IRecipeWithNullableUnit = {
-    id: getRandomId(),
     imageUrl: '',
     title: '',
     duration: 0,
@@ -114,6 +112,18 @@ const AddEditRecipeView = () => {
   };
 
   const [recipe, setRecipe] = useState<IRecipeWithNullableUnit>(emptyRecipe);
+
+  const handleImageChange = (file: any) => {
+    if (file.length) {
+      setRecipe((recipe) => {
+        return { ...recipe, imageUrl: file[0].name };
+      });
+    } else {
+      setRecipe((recipe) => {
+        return { ...recipe, imageUrl: '' };
+      });
+    }
+  };
 
   const handleTextInputChange = (ev: any, field: string) => {
     ev.persist();
@@ -206,6 +216,7 @@ const AddEditRecipeView = () => {
         fileSizeError={'is too big. Please upload a file of maximum 2 MB.'}
         fileTypeError={'is not supported. Please upload a .png or .jpg file.'}
         withIcon={false}
+        onDrop={handleImageChange}
       />
 
       <TextInput
@@ -295,7 +306,12 @@ const AddEditRecipeView = () => {
         </div>
 
         <div>
-          <ActionButton onClick={() => console.log('pressed Save')} text={'Save'} hasIcon={false} />
+          <ActionButton
+            type="submit"
+            onClick={() => console.log('pressed Save')}
+            text={'Save'}
+            hasIcon={false}
+          />
         </div>
       </ActionButtonsContainer>
     </Form>
