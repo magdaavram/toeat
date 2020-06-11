@@ -59,8 +59,8 @@ const MainContainer = styled.div`
   margin-top: 36px;
 `;
 
-const Recipe = (props: IRecipe) => {
-  const { imageUrl, title, difficultyLevel, duration, course } = props;
+const Recipe = (recipe: IRecipe) => {
+  const { imageUrl, title, difficultyLevel, duration, course } = recipe;
 
   return (
     <>
@@ -93,7 +93,7 @@ const Recipe = (props: IRecipe) => {
       </TopContainer>
 
       <MainContainer>
-        <TabView {...props} />
+        <TabView {...recipe} />
       </MainContainer>
     </>
   );
