@@ -5,17 +5,30 @@ import { Router, MemoryRouter } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import Routes from 'routes';
 import RecipeThumbnail from './index';
+import { IRecipe } from 'api/Recipe';
+import RecipeContext from '../../RecipeContext';
+
+let recipe: IRecipe;
+
+beforeEach(() => {
+  recipe = {
+    id: 2,
+    imageUrl: 'image.png',
+    title: 'Pasta',
+    duration: 78,
+    difficultyLevel: 2,
+    servings: 2,
+    course: 'Breakfast',
+    ingredients: [],
+    equipment: [],
+    preparation: 'Lorem ipsum',
+  };
+});
 
 it('should render correctly', () => {
   const tree = create(
     <MemoryRouter>
-      <RecipeThumbnail
-        id={2}
-        imageUrl={'image.png'}
-        title={'Pasta'}
-        duration={78}
-        difficultyLevel={2}
-      />
+      <RecipeThumbnail {...recipe} />
     </MemoryRouter>
   );
 
@@ -24,17 +37,15 @@ it('should render correctly', () => {
 
 it('should change URL when clicking on image', () => {
   const history = createMemoryHistory();
+  const handleIdChange = jest.fn();
+
   const wrapper = mount(
-    <Router history={history}>
-      <RecipeThumbnail
-        id={2}
-        imageUrl={'image.png'}
-        title={'Pasta'}
-        duration={78}
-        difficultyLevel={2}
-      />
-      <Routes />
-    </Router>
+    <RecipeContext.Provider value={{ id: recipe.id, setId: handleIdChange }}>
+      <Router history={history}>
+        <RecipeThumbnail {...recipe} />
+        <Routes />
+      </Router>
+    </RecipeContext.Provider>
   );
 
   wrapper.find('a').at(0).simulate('click', { button: 0 });
@@ -43,17 +54,15 @@ it('should change URL when clicking on image', () => {
 
 it('should change URL when clicking on title', () => {
   const history = createMemoryHistory();
+  const handleIdChange = jest.fn();
+
   const wrapper = mount(
-    <Router history={history}>
-      <RecipeThumbnail
-        id={2}
-        imageUrl={'image.png'}
-        title={'Pasta'}
-        duration={78}
-        difficultyLevel={2}
-      />
-      <Routes />
-    </Router>
+    <RecipeContext.Provider value={{ id: recipe.id, setId: handleIdChange }}>
+      <Router history={history}>
+        <RecipeThumbnail {...recipe} />
+        <Routes />
+      </Router>
+    </RecipeContext.Provider>
   );
 
   wrapper.find('a').at(1).simulate('click', { button: 0 });
