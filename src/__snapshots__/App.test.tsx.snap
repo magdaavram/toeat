@@ -2,7 +2,7 @@
 
 exports[`should render app correctly 1`] = `
 <div
-  className="sc-fznXWL jFjWoO"
+  className="sc-fzokvW bdGjHe"
 >
   <div
     className="sc-fzoLsD lgjcow"
@@ -41,7 +41,6 @@ exports[`should render app correctly 1`] = `
         >
           <button
             className="sc-AxjAm ewqDcP sc-fzozJi Jilpr top-icon"
-            onClick={[Function]}
             type="button"
           >
             <svg
@@ -70,7 +69,7 @@ exports[`should render app correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzokvW fPUnEp"
+    className="sc-fzqzlV eWtFpN"
   >
     <form
       className="sc-fzplWN emtqnU"
@@ -120,7 +119,7 @@ exports[`should render app correctly 1`] = `
       />
     </div>
     <div
-      className="sc-fznMAR dHZGIM"
+      className="sc-fznWOq gpINEr"
     >
       <div
         className="sc-fznJRM ZeGtB"
@@ -156,7 +155,7 @@ exports[`should render app correctly 1`] = `
       </div>
       
       <div
-        className="sc-fzolEj koFjRo"
+        className="sc-fzqBkg kgLrKP"
       >
         No recipes found
       </div>
