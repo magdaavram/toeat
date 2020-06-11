@@ -67,6 +67,16 @@ If you want to contact me, you can reach me at magda.r.avram@gmail.com.
 
 **Filter icon** by Muhammad Tajudin from the Noun Project.
 
+**Dinner icon** by Adrien Coquet from the Noun Project.
+
+**Snack icon** by Jessica Lock from the Noun Project.
+
+**Breakfast icon** by Stan Diers from the Noun Project.
+
+**Brunch icon** by Konrad Michalik from the Noun Project.
+
+**Lunch icon** by K from the Noun Project.
+
 ___
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

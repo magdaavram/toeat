@@ -1,13 +1,10 @@
-import React, { InputHTMLAttributes } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import TabView from 'components/TabView';
 import { IRecipe } from 'api/Recipe';
 import DifficultyLevel from 'components/DifficultyLevel';
 import CookingTime from 'components/CookingTime';
-
-interface IImageProps extends InputHTMLAttributes<HTMLDivElement> {
-  url: string;
-}
+import Image from 'components/Image';
 
 const TopContainer = styled.div`
   height: auto;
@@ -17,15 +14,11 @@ const TopContainer = styled.div`
   align-items: flex-start;
 `;
 
-const Image = styled.div((props: IImageProps) => ({
-  maxWidth: '80%',
-  width: '400px',
-  minWidth: '360px',
-  height: '360px',
-  background: `url(${props.url}) no-repeat center`,
-  backgroundSize: 'cover',
-  margin: '0 27px 27px 0',
-}));
+const StyledImage = styled(Image)`
+  max-width: 80%;
+  min-width: 360px;
+  margin: 0 27px 27px 0;
+`;
 
 const DetailsContainer = styled.div`
   width: calc(100% - 430px);
@@ -72,7 +65,7 @@ const Recipe = (props: IRecipe) => {
   return (
     <>
       <TopContainer>
-        <Image url={imageUrl} />
+        <StyledImage url={imageUrl} course={course} className="recipe-image" />
 
         <DetailsContainer>
           <Title>{title}</Title>

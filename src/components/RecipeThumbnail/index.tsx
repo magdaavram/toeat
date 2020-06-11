@@ -3,29 +3,17 @@ import styled from 'styled-components';
 import DifficultyLevel from 'components/DifficultyLevel';
 import CookingTime from 'components/CookingTime';
 import { Link } from 'react-router-dom';
-
-interface IImageProps {
-  url: string;
-}
-
-interface IProps {
-  id: number;
-  imageUrl: string;
-  title: string;
-  duration: number;
-  difficultyLevel: number;
-}
+import Image from 'components/Image';
+import { IRecipe } from '../../api/Recipe';
 
 const Container = styled.div`
   max-width: 400px;
 `;
 
-const ImageContainer = styled.div((props: IImageProps) => ({
-  width: '100%',
-  height: '250px',
-  background: `url(${props.url}) no-repeat center`,
-  backgroundSize: 'cover',
-}));
+const StyledImage = styled(Image)`
+  width: 100%;
+  height: 250px;
+`;
 
 const DetailsContainer = styled.div`
   display: flex;
@@ -59,13 +47,13 @@ const Title = styled.span`
   }
 `;
 
-const RecipeThumbnail = (props: IProps) => {
-  const { id, imageUrl, title, duration, difficultyLevel } = props;
+const RecipeThumbnail = (recipe: IRecipe) => {
+  const { id, imageUrl, title, duration, difficultyLevel, course } = recipe;
 
   return (
     <Container>
       <Link to={'/recipe/' + id} title={title}>
-        <ImageContainer url={imageUrl} />
+        <StyledImage url={imageUrl} course={course} className="thumbnail-image" />
       </Link>
       <DetailsContainer>
         <Detail>
