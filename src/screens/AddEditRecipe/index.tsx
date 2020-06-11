@@ -194,8 +194,6 @@ const AddEditRecipeView = () => {
     });
   };
 
-  console.log(recipe);
-
   const [modalIsOpen, setIsOpen] = useState(false);
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
