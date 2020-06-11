@@ -194,6 +194,8 @@ const AddEditRecipeView = () => {
     });
   };
 
+  console.log(recipe);
+
   const [modalIsOpen, setIsOpen] = useState(false);
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
@@ -216,7 +218,7 @@ const AddEditRecipeView = () => {
         fileSizeError={'is too big. Please upload a file of maximum 2 MB.'}
         fileTypeError={'is not supported. Please upload a .png or .jpg file.'}
         withIcon={false}
-        onDrop={handleImageChange}
+        onChange={handleImageChange}
       />
 
       <TextInput
