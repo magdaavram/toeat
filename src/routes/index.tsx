@@ -10,7 +10,7 @@ const Routes = () => {
       <Route path="/" exact component={Homepage} />
       <Route path="/recipe/:id" component={RecipeView} />
       <Route path="/add-recipe" exact component={AddEditRecipeView} />
-      <Route path="/edit-recipe" exact component={AddEditRecipeView} />
+      <Route path="/edit-recipe/:id" component={AddEditRecipeView} />
 
       <Route component={Homepage} />
     </Switch>

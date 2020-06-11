@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Button from 'components/Button';
 import styled from 'styled-components';
 import ConfirmationModal, { IModalProps } from 'components/Modal/ConfirmationModal';
 import { Link, Route, Switch } from 'react-router-dom';
+import RecipeContext from 'RecipeContext';
 
 const ButtonsContainer = styled.div`
   display: flex;
@@ -25,6 +26,8 @@ const buttonProps = {
 };
 
 const TopControls = () => {
+  const { id: recipeId } = useContext(RecipeContext);
+
   const [modalIsOpen, setIsOpen] = useState(false);
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
@@ -42,7 +45,7 @@ const TopControls = () => {
         <Route exact path="/">
           <div>
             <Link to="/add-recipe">
-              <TopButton onClick={() => console.log('pressed add')} icon={'add'} {...buttonProps} />
+              <TopButton icon={'add'} {...buttonProps} />
             </Link>
           </div>
         </Route>
@@ -54,12 +57,8 @@ const TopControls = () => {
           </div>
 
           <div>
-            <Link to="/edit-recipe">
-              <TopButton
-                onClick={() => console.log('pressed edit')}
-                icon={'edit'}
-                {...buttonProps}
-              />
+            <Link to={'/edit-recipe/' + recipeId}>
+              <TopButton icon={'edit'} {...buttonProps} />
             </Link>
           </div>
         </Route>

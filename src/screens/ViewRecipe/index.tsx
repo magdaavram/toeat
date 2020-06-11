@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import styled from 'styled-components';
 import Recipe, { IRecipe } from 'api/Recipe';
 import RecipeDetails from 'components/Recipe';
 import { useParams } from 'react-router-dom';
+import RecipeContext from 'RecipeContext';
 
 const Container = styled.div`
   width: 70%;
@@ -16,12 +17,19 @@ const NoRecipe = styled.div`
 `;
 
 const RecipeView = () => {
-  const { id } = useParams();
+  const { id: stringId } = useParams();
+  const id = Number(stringId);
+
+  const { setId: setRecipeId } = useContext(RecipeContext);
+  useEffect(() => {
+    setRecipeId(id);
+  }, [setRecipeId, id]);
+
   const api = new Recipe();
   const [recipe, setRecipe] = useState<IRecipe>();
 
   useEffect(() => {
-    setRecipe(api.getRecipe(Number(id)));
+    setRecipe(api.getRecipe(id));
   }, [api, id]);
 
   return (

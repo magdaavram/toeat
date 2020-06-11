@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import ImageUploader from 'components/UploadImage';
 import NumberInput from 'components/Input/Number';
@@ -12,6 +12,7 @@ import { getCourses, getDifficultyLevels, getEquipments } from 'api/dropdownData
 import ConfirmationModal, { IModalProps } from 'components/Modal/ConfirmationModal';
 import IngredientsList, { ListOptions } from './IngredientsList';
 import Recipe, { IRecipe, Unit } from 'api/Recipe';
+import { useParams } from 'react-router-dom';
 
 const Form = styled.form`
   width: 70%;
@@ -96,6 +97,10 @@ export interface IIngredientWithNullableUnit {
 }
 
 const AddEditRecipeView = () => {
+  const { id: stringId } = useParams();
+  const id = Number(stringId);
+  const api = new Recipe();
+
   const emptyRecipe: IRecipeWithNullableUnit = {
     imageUrl: '',
     title: '',
@@ -112,6 +117,13 @@ const AddEditRecipeView = () => {
   };
 
   const [recipe, setRecipe] = useState<IRecipeWithNullableUnit>(emptyRecipe);
+
+  useEffect(() => {
+    if (id) {
+      const editedRecipe = api.getRecipe(id);
+      console.log(editedRecipe);
+    }
+  }, [api, id]);
 
   const handleImageChange = (file: any) => {
     if (file.length) {
@@ -196,7 +208,7 @@ const AddEditRecipeView = () => {
 
   const handleSubmit = (ev: any) => {
     const api = new Recipe();
-    const r: IRecipe = {
+    const processedRecipe: IRecipe = {
       id: 0,
       imageUrl: recipe.imageUrl,
       title: recipe.title,
@@ -215,7 +227,7 @@ const AddEditRecipeView = () => {
       preparation: recipe.preparation,
     };
 
-    api.saveRecipe(r);
+    api.saveRecipe(processedRecipe);
     ev.preventDefault();
   };
 
