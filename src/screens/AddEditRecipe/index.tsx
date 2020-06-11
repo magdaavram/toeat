@@ -11,7 +11,7 @@ import CreatableSelect from 'components/Dropdown/CreatableDropdown';
 import { getCourses, getDifficultyLevels, getEquipments } from 'api/dropdownData';
 import ConfirmationModal, { IModalProps } from 'components/Modal/ConfirmationModal';
 import IngredientsList, { ListOptions } from './IngredientsList';
-import { Unit } from 'api/Recipe';
+import Recipe, { IRecipe, Unit } from 'api/Recipe';
 
 const Form = styled.form`
   width: 70%;
@@ -194,6 +194,31 @@ const AddEditRecipeView = () => {
     });
   };
 
+  const handleSubmit = (ev: any) => {
+    const api = new Recipe();
+    const r: IRecipe = {
+      id: 0,
+      imageUrl: recipe.imageUrl,
+      title: recipe.title,
+      duration: recipe.duration,
+      difficultyLevel: recipe.difficultyLevel,
+      servings: recipe.servings,
+      course: recipe.course,
+      ingredients: recipe.ingredients.map((ingredient: IIngredientWithNullableUnit) => {
+        return {
+          ingredient: ingredient.ingredient,
+          quantity: ingredient.quantity,
+          unit: ingredient.unit === undefined ? 'bunch' : ingredient.unit,
+        };
+      }),
+      equipment: recipe.equipment,
+      preparation: recipe.preparation,
+    };
+
+    api.saveRecipe(r);
+    ev.preventDefault();
+  };
+
   const [modalIsOpen, setIsOpen] = useState(false);
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
@@ -206,7 +231,7 @@ const AddEditRecipeView = () => {
   };
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <ImageUploader
         singleImage={true}
         imgExtension={['.jpg', '.png']}
@@ -306,12 +331,7 @@ const AddEditRecipeView = () => {
         </div>
 
         <div>
-          <ActionButton
-            type="submit"
-            onClick={() => console.log('pressed Save')}
-            text={'Save'}
-            hasIcon={false}
-          />
+          <ActionButton type="submit" text={'Save'} hasIcon={false} />
         </div>
       </ActionButtonsContainer>
     </Form>

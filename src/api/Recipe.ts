@@ -46,6 +46,11 @@ export default class Recipe {
   public getRecipe(id: number): IRecipe | undefined {
     return recipes.find((recipe: IRecipe) => recipe.id === id);
   }
+
+  public saveRecipe(recipe: IRecipe) {
+    recipe.id = recipes.length + 1;
+    recipes.push(recipe);
+  }
 }
 
 const recipes: IRecipe[] = [
