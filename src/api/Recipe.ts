@@ -50,8 +50,14 @@ export default class Recipe {
   }
 
   public saveRecipe(recipe: IRecipe) {
-    recipe.id = Recipe.nextId++;
-    recipes.push(recipe);
+    if (recipe.id === undefined) {
+      recipe.id = Recipe.nextId++;
+      recipes.push(recipe);
+    } else {
+      const index = recipes.findIndex((r) => r.id === recipe.id);
+
+      recipes[index] = recipe;
+    }
   }
 }
 
