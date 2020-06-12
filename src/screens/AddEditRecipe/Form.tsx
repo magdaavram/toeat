@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import ActionButton from 'components/Button/Action';
 import { Option } from 'components/Dropdown';
 import { getCourses, getDifficultyLevels, getEquipments } from 'api/dropdownData';
@@ -128,15 +129,21 @@ const RecipeForm = ({ initialRecipe, onSubmit, createEmptyIngredient }: IProps) 
     ev.preventDefault();
   };
 
+  const [discarded, setDiscarded] = useState(false);
   const [modalIsOpen, setIsOpen] = useState(false);
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
+  const discardRecipe = () => {
+    closeModal();
+    setDiscarded(true);
+  };
 
   const modalData: IModalProps = {
     title: 'Discard changes',
     message: 'Are you sure you want to discard all changes?',
     show: modalIsOpen,
     onClose: closeModal,
+    onConfirm: discardRecipe,
   };
 
   return (
@@ -219,7 +226,7 @@ const RecipeForm = ({ initialRecipe, onSubmit, createEmptyIngredient }: IProps) 
             isMulti
             options={equipmentOptions}
             width={'500px'}
-            value={recipe.equipment.map((eq, index) => {
+            value={recipe.equipment?.map((eq, index) => {
               return { label: eq, value: index + 1 };
             })}
             placeholder={'Type or select a tool'}
@@ -243,6 +250,8 @@ const RecipeForm = ({ initialRecipe, onSubmit, createEmptyIngredient }: IProps) 
           <CancelButton onClick={openModal} text={'Cancel'} hasIcon={false} />
 
           <ConfirmationModal {...modalData} />
+
+          {discarded && <Redirect to={'/'} />}
         </div>
 
         <div>
