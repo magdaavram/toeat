@@ -18,7 +18,7 @@ const getRandomId = () => {
 
 export interface IRecipeRequest {
   id?: number;
-  imageUrl: string;
+  imageUrl?: string;
   title: string;
   duration: number;
   difficultyLevel: number;

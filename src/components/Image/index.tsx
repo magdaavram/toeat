@@ -7,8 +7,8 @@ import Lunch from './images/Lunch.png';
 import Snack from './images/Snack.png';
 
 interface IImageProps extends InputHTMLAttributes<HTMLDivElement> {
-  url: string;
   course: string;
+  url?: string;
 }
 
 const ImageStyle = styled.div(({ url }: IImageProps) => ({
@@ -19,15 +19,15 @@ const ImageStyle = styled.div(({ url }: IImageProps) => ({
 }));
 
 const Image = ({ url, course, className }: IImageProps) => {
-  return <ImageStyle className={className} url={getUrl(url, course)} course={course} />;
+  return <ImageStyle className={className} url={getUrl(course, url)} course={course} />;
 };
 
 export default Image;
 
-const getUrl = (url: string, course: string): string => {
-  let imageUrl = url;
+const getUrl = (course: string, url?: string): string => {
+  let imageUrl: string;
 
-  if (url === '') {
+  if (url === undefined) {
     const defaultImages: any = {
       Breakfast: Breakfast,
       Brunch: Brunch,
@@ -37,6 +37,8 @@ const getUrl = (url: string, course: string): string => {
     };
 
     imageUrl = defaultImages[course] || Lunch;
+  } else {
+    imageUrl = url;
   }
 
   return imageUrl;

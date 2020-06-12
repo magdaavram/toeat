@@ -7,7 +7,7 @@ import recipe6 from 'assets/images/recipe6.png';
 
 export interface IRecipe {
   id: number;
-  imageUrl: string;
+  imageUrl?: string;
   title: string;
   duration: number;
   difficultyLevel: number;

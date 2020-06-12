@@ -45,15 +45,17 @@ const RecipeForm = ({ initialRecipe, onSubmit, createEmptyIngredient }: IProps) 
   const [recipe, setRecipe] = useState<IRecipeRequest>(initialRecipe);
 
   const handleImageChange = (file: any) => {
-    if (file.length) {
-      setRecipe((recipe) => {
-        return { ...recipe, imageUrl: file[0].name };
-      });
-    } else {
-      setRecipe((recipe) => {
-        return { ...recipe, imageUrl: '' };
-      });
-    }
+    setRecipe((recipe) => {
+      const recipeCopy = { ...recipe };
+
+      if (file.length === 1) {
+        recipeCopy.imageUrl = file[0].name;
+      } else {
+        delete recipeCopy.imageUrl;
+      }
+
+      return recipeCopy;
+    });
   };
 
   const handleTextInputChange = (ev: any, field: string) => {
