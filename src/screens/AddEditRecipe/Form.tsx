@@ -156,6 +156,7 @@ const RecipeForm = ({ initialRecipe, onSubmit, createEmptyIngredient }: IProps) 
       <TextInput
         type="text"
         placeholder={'Insert a recipe title'}
+        value={recipe.title}
         onChange={(ev: any) => handleTextInputChange(ev, 'title')}
         required
       />
@@ -164,7 +165,7 @@ const RecipeForm = ({ initialRecipe, onSubmit, createEmptyIngredient }: IProps) 
         <SelectDropdown
           width={'150px'}
           margin={'0 9px 0 0'}
-          selected={0}
+          selected={recipe.servings}
           options={servingOptions}
           placeholder={'Servings'}
           onChange={(value: Option) => handleNumberSelectChange(value, 'servings')}
@@ -173,7 +174,7 @@ const RecipeForm = ({ initialRecipe, onSubmit, createEmptyIngredient }: IProps) 
         <SelectDropdown
           width={'150px'}
           margin={'0 9px 0 0'}
-          selected={0}
+          selected={courseOptions.findIndex((course) => course.label === recipe.course) + 1}
           options={courseOptions}
           placeholder={'Course'}
           onChange={(value: Option) => handleTextSelectChange(value, 'course')}
@@ -182,7 +183,7 @@ const RecipeForm = ({ initialRecipe, onSubmit, createEmptyIngredient }: IProps) 
         <SelectDropdown
           width={'150px'}
           margin={'0 9px 0 0'}
-          selected={0}
+          selected={recipe.difficultyLevel}
           options={difficultyOptions}
           placeholder={'Difficulty'}
           onChange={(value: Option) => handleNumberSelectChange(value, 'difficultyLevel')}
@@ -193,6 +194,7 @@ const RecipeForm = ({ initialRecipe, onSubmit, createEmptyIngredient }: IProps) 
           min={0}
           max={1440}
           placeholder={'Minutes (cooking)'}
+          value={recipe.duration}
           onChange={(ev: any) => handleNumberInputChange(ev, 'duration')}
           required
         />
@@ -217,6 +219,9 @@ const RecipeForm = ({ initialRecipe, onSubmit, createEmptyIngredient }: IProps) 
             isMulti
             options={equipmentOptions}
             width={'500px'}
+            value={recipe.equipment.map((eq, index) => {
+              return { label: eq, value: index + 1 };
+            })}
             placeholder={'Type or select a tool'}
             onChange={(value: Option[] | null) => {
               const options = value === null ? [] : value;
@@ -228,6 +233,7 @@ const RecipeForm = ({ initialRecipe, onSubmit, createEmptyIngredient }: IProps) 
 
       <Textarea
         placeholder={'Describe preparation details'}
+        value={recipe.preparation}
         onChange={(ev: any) => handleTextInputChange(ev, 'preparation')}
         required
       />

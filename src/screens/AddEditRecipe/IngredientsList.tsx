@@ -52,6 +52,7 @@ const IngredientsList = ({ ingredients, onDelete, onChange, onAdd }: IProps) => 
           min={0}
           max={999}
           placeholder={'Quantity'}
+          value={ingredient.quantity}
           onChange={(ev) =>
             onChange({ index: index, field: 'quantity', value: Number(ev.target.value) })
           }
@@ -59,7 +60,7 @@ const IngredientsList = ({ ingredients, onDelete, onChange, onAdd }: IProps) => 
         />
 
         <SelectDropdown
-          selected={0}
+          selected={unitOptions.findIndex((unit) => unit.label === ingredient.unit) + 1}
           options={unitOptions}
           width={'150px'}
           placeholder={'Unit'}
@@ -69,6 +70,7 @@ const IngredientsList = ({ ingredients, onDelete, onChange, onAdd }: IProps) => 
         <CreatableSelect
           isClearable
           options={ingredientsOptions}
+          value={{ label: ingredient.ingredient, value: index + 1 }}
           width={'200px'}
           placeholder={'Type ingredient'}
           onChange={(val: Option | null) =>

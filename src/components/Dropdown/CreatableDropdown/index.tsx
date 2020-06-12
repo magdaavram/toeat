@@ -8,6 +8,7 @@ interface IProps {
   backgroundColor?: string;
   placeholder?: string;
   options: Option[];
+  value?: Option | Option[];
   isClearable?: boolean;
   isMulti?: boolean;
   onChange?(option: Option | Option[] | null): void;
