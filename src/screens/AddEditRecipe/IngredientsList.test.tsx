@@ -2,10 +2,10 @@ import React from 'react';
 import { ShallowWrapper, shallow } from 'enzyme';
 import { create } from 'react-test-renderer';
 import IngredientsList from './IngredientsList';
-import { IIngredientWithNullableUnit } from './index';
+import { IIngredientRequest } from './index';
 
 let mockFunction: () => void;
-let mockData: IIngredientWithNullableUnit[];
+let mockData: IIngredientRequest[];
 let wrapper: ShallowWrapper;
 
 beforeEach(() => {

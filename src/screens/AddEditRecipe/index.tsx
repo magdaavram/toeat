@@ -14,6 +14,12 @@ import IngredientsList, { ListOptions } from './IngredientsList';
 import Recipe, { IRecipe, Unit } from 'api/Recipe';
 import { useParams } from 'react-router-dom';
 
+const Loading = styled.div`
+  padding-top: 54px;
+  color: var(--color--light-purple);
+  font-size: var(--font-size--large);
+`;
+
 const Form = styled.form`
   width: 70%;
   max-width: 700px;
@@ -77,23 +83,24 @@ const getRandomId = () => {
   return S4() + S4() + '-' + S4() + '-' + S4() + '-' + S4() + '-' + S4() + S4() + S4();
 };
 
-interface IRecipeWithNullableUnit {
+interface IRecipeRequest {
+  id?: number;
   imageUrl: string;
   title: string;
   duration: number;
   difficultyLevel: number;
   servings: number;
   course: string;
-  ingredients: IIngredientWithNullableUnit[];
+  ingredients: IIngredientRequest[];
   equipment: string[];
   preparation: string;
 }
 
-export interface IIngredientWithNullableUnit {
+export interface IIngredientRequest {
   id: string;
   ingredient: string;
   quantity: number;
-  unit?: Unit;
+  unit: Unit;
 }
 
 const AddEditRecipeView = () => {
@@ -101,29 +108,31 @@ const AddEditRecipeView = () => {
   const id = Number(stringId);
   const api = new Recipe();
 
-  const emptyRecipe: IRecipeWithNullableUnit = {
-    imageUrl: '',
-    title: '',
-    duration: 0,
-    difficultyLevel: 0,
-    servings: 0,
-    course: '',
-    ingredients: [
-      { id: getRandomId(), ingredient: '', quantity: 0 },
-      { id: getRandomId(), ingredient: '', quantity: 0 },
-    ],
-    equipment: [],
-    preparation: '',
+  const [loading, setLoading] = useState(true);
+  const [recipe, setRecipe] = useState<IRecipeRequest>({} as IRecipeRequest);
+
+  const setInitialRecipe = () => {
+    let initialRecipe: IRecipeRequest = {
+      ingredients: [
+        { id: getRandomId() } as IIngredientRequest,
+        { id: getRandomId() } as IIngredientRequest,
+      ],
+    } as IRecipeRequest;
+
+    if (id) {
+      const recipeToEdit = api.getRecipe(id) as IRecipeRequest;
+      recipeToEdit.ingredients = recipeToEdit?.ingredients.map((ingredient) => {
+        return { ...ingredient, id: getRandomId() };
+      });
+
+      initialRecipe = recipeToEdit;
+    }
+
+    setRecipe(initialRecipe);
+    setLoading(false);
   };
 
-  const [recipe, setRecipe] = useState<IRecipeWithNullableUnit>(emptyRecipe);
-
-  useEffect(() => {
-    if (id) {
-      const editedRecipe = api.getRecipe(id);
-      console.log(editedRecipe);
-    }
-  }, [api, id]);
+  useEffect(setInitialRecipe, []);
 
   const handleImageChange = (file: any) => {
     if (file.length) {
@@ -191,11 +200,11 @@ const AddEditRecipeView = () => {
     });
   };
 
-  const emptyIngredient: IIngredientWithNullableUnit = {
+  const emptyIngredient: IIngredientRequest = {
     id: getRandomId(),
     ingredient: '',
     quantity: 0,
-  };
+  } as IIngredientRequest;
 
   const handleAddIngredient = () => {
     setRecipe((recipe) => {
@@ -207,27 +216,7 @@ const AddEditRecipeView = () => {
   };
 
   const handleSubmit = (ev: any) => {
-    const api = new Recipe();
-    const processedRecipe: IRecipe = {
-      id: 0,
-      imageUrl: recipe.imageUrl,
-      title: recipe.title,
-      duration: recipe.duration,
-      difficultyLevel: recipe.difficultyLevel,
-      servings: recipe.servings,
-      course: recipe.course,
-      ingredients: recipe.ingredients.map((ingredient: IIngredientWithNullableUnit) => {
-        return {
-          ingredient: ingredient.ingredient,
-          quantity: ingredient.quantity,
-          unit: ingredient.unit === undefined ? 'bunch' : ingredient.unit,
-        };
-      }),
-      equipment: recipe.equipment,
-      preparation: recipe.preparation,
-    };
-
-    api.saveRecipe(processedRecipe);
+    api.saveRecipe({ ...(recipe as IRecipe) });
     ev.preventDefault();
   };
 
@@ -243,110 +232,115 @@ const AddEditRecipeView = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <ImageUploader
-        singleImage={true}
-        imgExtension={['.jpg', '.png']}
-        withPreview={true}
-        maxFileSize={2097152}
-        label={'Max. size: 2MB; File types: .png, .jpg'}
-        fileSizeError={'is too big. Please upload a file of maximum 2 MB.'}
-        fileTypeError={'is not supported. Please upload a .png or .jpg file.'}
-        withIcon={false}
-        onChange={handleImageChange}
-      />
-
-      <TextInput
-        type="text"
-        placeholder={'Insert a recipe title'}
-        onChange={(ev: any) => handleTextInputChange(ev, 'title')}
-        required
-      />
-
-      <DetailsContainer>
-        <SelectDropdown
-          width={'150px'}
-          margin={'0 9px 0 0'}
-          selected={0}
-          options={servingOptions}
-          placeholder={'Servings'}
-          onChange={(value: Option) => handleNumberSelectChange(value, 'servings')}
-        />
-
-        <SelectDropdown
-          width={'150px'}
-          margin={'0 9px 0 0'}
-          selected={0}
-          options={courseOptions}
-          placeholder={'Course'}
-          onChange={(value: Option) => handleTextSelectChange(value, 'course')}
-        />
-
-        <SelectDropdown
-          width={'150px'}
-          margin={'0 9px 0 0'}
-          selected={0}
-          options={difficultyOptions}
-          placeholder={'Difficulty'}
-          onChange={(value: Option) => handleNumberSelectChange(value, 'difficultyLevel')}
-        />
-
-        <NumberInput
-          type="number"
-          min={0}
-          max={1440}
-          placeholder={'Minutes (cooking)'}
-          onChange={(ev: any) => handleNumberInputChange(ev, 'duration')}
-          required
-        />
-      </DetailsContainer>
-
-      <AddItemsContainer>
-        <Subtitle>Ingredients</Subtitle>
-
-        <IngredientsList
-          ingredients={recipe.ingredients}
-          onDelete={handleDeleteIngredient}
-          onAdd={handleAddIngredient}
-          onChange={handleIngredientChange}
-        />
-      </AddItemsContainer>
-
-      <AddItemsContainer>
-        <Subtitle>Equipment</Subtitle>
-
-        <Item>
-          <CreatableSelect
-            isMulti
-            options={equipmentOptions}
-            width={'500px'}
-            placeholder={'Type or select a tool'}
-            onChange={(value: Option[] | null) => {
-              const options = value === null ? [] : value;
-              handleTextSelectChange(options, 'equipment');
-            }}
+    <>
+      {loading && <Loading>Loading...</Loading>}
+      {!loading && (
+        <Form onSubmit={handleSubmit}>
+          <ImageUploader
+            singleImage={true}
+            imgExtension={['.jpg', '.png']}
+            withPreview={true}
+            maxFileSize={2097152}
+            label={'Max. size: 2MB; File types: .png, .jpg'}
+            fileSizeError={'is too big. Please upload a file of maximum 2 MB.'}
+            fileTypeError={'is not supported. Please upload a .png or .jpg file.'}
+            withIcon={false}
+            onChange={handleImageChange}
           />
-        </Item>
-      </AddItemsContainer>
 
-      <Textarea
-        placeholder={'Describe preparation details'}
-        onChange={(ev: any) => handleTextInputChange(ev, 'preparation')}
-        required
-      />
+          <TextInput
+            type="text"
+            placeholder={'Insert a recipe title'}
+            onChange={(ev: any) => handleTextInputChange(ev, 'title')}
+            required
+          />
 
-      <ActionButtonsContainer>
-        <div>
-          <CancelButton onClick={openModal} text={'Cancel'} hasIcon={false} />
+          <DetailsContainer>
+            <SelectDropdown
+              width={'150px'}
+              margin={'0 9px 0 0'}
+              selected={0}
+              options={servingOptions}
+              placeholder={'Servings'}
+              onChange={(value: Option) => handleNumberSelectChange(value, 'servings')}
+            />
 
-          <ConfirmationModal {...modalData} />
-        </div>
+            <SelectDropdown
+              width={'150px'}
+              margin={'0 9px 0 0'}
+              selected={0}
+              options={courseOptions}
+              placeholder={'Course'}
+              onChange={(value: Option) => handleTextSelectChange(value, 'course')}
+            />
 
-        <div>
-          <ActionButton type="submit" text={'Save'} hasIcon={false} />
-        </div>
-      </ActionButtonsContainer>
-    </Form>
+            <SelectDropdown
+              width={'150px'}
+              margin={'0 9px 0 0'}
+              selected={0}
+              options={difficultyOptions}
+              placeholder={'Difficulty'}
+              onChange={(value: Option) => handleNumberSelectChange(value, 'difficultyLevel')}
+            />
+
+            <NumberInput
+              type="number"
+              min={0}
+              max={1440}
+              placeholder={'Minutes (cooking)'}
+              onChange={(ev: any) => handleNumberInputChange(ev, 'duration')}
+              required
+            />
+          </DetailsContainer>
+
+          <AddItemsContainer>
+            <Subtitle>Ingredients</Subtitle>
+
+            <IngredientsList
+              ingredients={recipe.ingredients}
+              onDelete={handleDeleteIngredient}
+              onAdd={handleAddIngredient}
+              onChange={handleIngredientChange}
+            />
+          </AddItemsContainer>
+
+          <AddItemsContainer>
+            <Subtitle>Equipment</Subtitle>
+
+            <Item>
+              <CreatableSelect
+                isMulti
+                options={equipmentOptions}
+                width={'500px'}
+                placeholder={'Type or select a tool'}
+                onChange={(value: Option[] | null) => {
+                  const options = value === null ? [] : value;
+                  handleTextSelectChange(options, 'equipment');
+                }}
+              />
+            </Item>
+          </AddItemsContainer>
+
+          <Textarea
+            placeholder={'Describe preparation details'}
+            onChange={(ev: any) => handleTextInputChange(ev, 'preparation')}
+            required
+          />
+
+          <ActionButtonsContainer>
+            <div>
+              <CancelButton onClick={openModal} text={'Cancel'} hasIcon={false} />
+
+              <ConfirmationModal {...modalData} />
+            </div>
+
+            <div>
+              <ActionButton type="submit" text={'Save'} hasIcon={false} />
+            </div>
+          </ActionButtonsContainer>
+        </Form>
+      )}
+    </>
   );
 };
 

@@ -27,6 +27,8 @@ export interface IIngredient {
 export type Unit = 'grams' | 'kg' | 'l' | 'ml' | 'sp' | 'tsp' | 'pinch' | 'pieces' | 'bunch';
 
 export default class Recipe {
+  private static nextId = 18;
+
   public getRecipes(page: number, pageLimit: number, searchTerms: string): IRecipe[] {
     const startIndex = (page - 1) * pageLimit;
     const endIndex = startIndex + pageLimit;
@@ -48,7 +50,7 @@ export default class Recipe {
   }
 
   public saveRecipe(recipe: IRecipe) {
-    recipe.id = recipes.length + 1;
+    recipe.id = Recipe.nextId++;
     recipes.push(recipe);
   }
 }
