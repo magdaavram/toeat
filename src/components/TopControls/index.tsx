@@ -1,9 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Button from 'components/Button';
 import styled from 'styled-components';
 import ConfirmationModal, { IModalProps } from 'components/Modal/ConfirmationModal';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch, Redirect } from 'react-router-dom';
 import RecipeContext from 'RecipeContext';
+import Recipe from 'api/Recipe';
 
 const ButtonsContainer = styled.div`
   display: flex;
@@ -27,17 +28,29 @@ const buttonProps = {
 
 const TopControls = () => {
   const { id: recipeId } = useContext(RecipeContext);
+  const api = new Recipe();
 
+  const [deleted, setDeleted] = useState(false);
   const [modalIsOpen, setIsOpen] = useState(false);
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
+  const deleteRecipe = () => {
+    api.deleteRecipe(recipeId);
+    closeModal();
+    setDeleted(true);
+  };
 
   const modalData: IModalProps = {
     title: 'Delete recipe',
     message: 'Are you sure you want to permanently delete this recipe?',
     show: modalIsOpen,
     onClose: closeModal,
+    onConfirm: deleteRecipe,
   };
+
+  useEffect(() => {
+    setDeleted(false);
+  }, [deleted]);
 
   return (
     <ButtonsContainer>
@@ -54,6 +67,7 @@ const TopControls = () => {
           <div>
             <TopButton onClick={openModal} icon={'delete'} {...buttonProps} />
             <ConfirmationModal {...modalData} />
+            {deleted && <Redirect to={'/'} />}
           </div>
 
           <div>

@@ -59,6 +59,12 @@ export default class Recipe {
       recipes[index] = recipe;
     }
   }
+
+  public deleteRecipe(id: number) {
+    const index = recipes.findIndex((recipe) => recipe.id === id);
+
+    recipes.splice(index, 1);
+  }
 }
 
 const recipes: IRecipe[] = [
