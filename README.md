@@ -29,7 +29,7 @@ See the [application framework](./toeat-framework.png).
 ### Install
 ```shell script
 git clone git@github.com:magdaavram/toeat.git
-cd toeat
+cd toeat/client
 npm install
 ```
 
