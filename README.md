@@ -21,9 +21,15 @@ and/or degree of **difficulty**;
 
 See the [application framework](./toeat-framework.png).
 
-## Requirements 
+## Requirements
+### Client 
 * Node.js
 * npm
+
+### Server
+* Node.js
+* npm
+* MongoDB
 
 ## Setup
 ### Install
