@@ -17,8 +17,7 @@ const NoRecipe = styled.div`
 `;
 
 const RecipeView = () => {
-  const { id: stringId } = useParams();
-  const id = Number(stringId);
+  const { id } = useParams();
 
   const { setId: setRecipeId } = useContext(RecipeContext);
   useEffect(() => {
@@ -27,10 +26,13 @@ const RecipeView = () => {
 
   const api = new Recipe();
   const [recipe, setRecipe] = useState<IRecipe>();
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    setRecipe(api.getRecipe(id));
-  }, [api, id]);
+    api.getRecipe(id)
+      .then((recipe: IRecipe) => setRecipe(recipe))
+      .catch(err => setError(err));
+  }, []);
 
   return (
     <Container>

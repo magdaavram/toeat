@@ -31,15 +31,19 @@ const TopControls = () => {
   const api = new Recipe();
 
   const [deleted, setDeleted] = useState(false);
+  const [error, setError] = useState('');
   const [modalIsOpen, setIsOpen] = useState(false);
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
   const deleteRecipe = () => {
-    api.deleteRecipe(recipeId);
-    closeModal();
-    setDeleted(true);
-  };
+    api.deleteRecipe(recipeId)
+      .then(() => {})
+      .catch(err => setError(err));
 
+    setDeleted(true);
+    closeModal();
+  };
+  console.log(deleted);
   const modalData: IModalProps = {
     title: 'Delete recipe',
     message: 'Are you sure you want to permanently delete this recipe?',

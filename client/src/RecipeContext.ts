@@ -1,8 +1,8 @@
 import React from 'react';
 
 interface IRecipeContext {
-  id: number;
-  setId: (id: number) => void;
+  id: string;
+  setId: (id: string) => void;
 }
 
 const RecipeContext = React.createContext({} as IRecipeContext);

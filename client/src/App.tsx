@@ -18,8 +18,8 @@ const Main = styled.div`
 `;
 
 const App = () => {
-  const [id, setId] = useState(0);
-  const handleIdChange = (id: number) => setId(id);
+  const [id, setId] = useState('');
+  const handleIdChange = (id: string) => setId(id);
 
   return (
     <Container>

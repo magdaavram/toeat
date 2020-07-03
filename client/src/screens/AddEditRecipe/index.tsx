@@ -17,7 +17,7 @@ const getRandomId = () => {
 };
 
 export interface IRecipeRequest {
-  id?: number;
+  id?: string;
   imageUrl?: string;
   title: string;
   duration: number;
@@ -41,12 +41,13 @@ const createEmptyIngredient = (): IIngredientRequest => {
 };
 
 const AddEditRecipeView = () => {
-  const { id: stringId } = useParams();
-  const id = Number(stringId);
+  const { id } = useParams();
   const api = new Recipe();
 
   const [loading, setLoading] = useState(true);
   const [recipe, setRecipe] = useState<IRecipeRequest>({} as IRecipeRequest);
+  const [error, setError] = useState('');
+
 
   const setInitialRecipe = () => {
     let initialRecipe: IRecipeRequest = {
@@ -54,12 +55,14 @@ const AddEditRecipeView = () => {
     } as IRecipeRequest;
 
     if (id) {
-      const recipeToEdit = api.getRecipe(id) as IRecipeRequest;
-      recipeToEdit.ingredients = recipeToEdit?.ingredients.map((ingredient) => {
-        return { ...ingredient, id: getRandomId() };
-      });
+      api.getRecipe(id).then((recipe) => {
+        const recipeToEdit = recipe as IRecipeRequest;
+        recipeToEdit.ingredients = recipeToEdit?.ingredients.map((ingredient) => {
+          return { ...ingredient, id: getRandomId() };
+        });
 
-      initialRecipe = recipeToEdit;
+        initialRecipe = recipeToEdit;
+      }).catch(err => setError(err));
     }
 
     setRecipe(initialRecipe);

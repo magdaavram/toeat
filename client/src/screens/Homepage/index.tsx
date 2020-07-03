@@ -32,6 +32,7 @@ const Homepage = () => {
   const [recipes, setRecipes] = useState<IRecipe[]>([]);
   const [page, setPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
+  const [error, setError] = useState('');
 
   const handleScroll = () => {
     if (
@@ -45,13 +46,14 @@ const Homepage = () => {
   };
 
   const loadRecipes = () => {
-    const newRecipes = api.getRecipes(page, 6, searchTerm);
+    api.getRecipes(page, 6, searchTerm)
+      .then((newRecipes) => {
+        if (newRecipes.length > 0) {
+          setRecipes((existingRecipes) => [...existingRecipes, ...newRecipes]);
+        }
+      })
+      .catch(err => setError(err));
 
-    if (newRecipes.length === 0) {
-      return;
-    }
-
-    setRecipes((existingRecipes) => [...existingRecipes, ...newRecipes]);
     window.addEventListener('scroll', handleScroll);
 
     return () => window.removeEventListener('scroll', handleScroll);
