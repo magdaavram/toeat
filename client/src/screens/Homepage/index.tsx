@@ -46,13 +46,14 @@ const Homepage = () => {
   };
 
   const loadRecipes = () => {
-    api.getRecipes(page, 6, searchTerm)
+    api
+      .getRecipes(page, 6, searchTerm)
       .then((newRecipes) => {
         if (newRecipes.length > 0) {
           setRecipes((existingRecipes) => [...existingRecipes, ...newRecipes]);
         }
       })
-      .catch(err => setError(err));
+      .catch((err) => setError(err));
 
     window.addEventListener('scroll', handleScroll);
 

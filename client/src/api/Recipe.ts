@@ -22,7 +22,11 @@ export type Unit = 'grams' | 'kg' | 'l' | 'ml' | 'sp' | 'tsp' | 'pinch' | 'piece
 const apiUrl = 'http://localhost:4000';
 
 export default class Recipe {
-  public async getRecipes(page: number, pageLimit: number, searchTerms: string): Promise<IRecipe[]> {
+  public async getRecipes(
+    page: number,
+    pageLimit: number,
+    searchTerms: string
+  ): Promise<IRecipe[]> {
     const startIndex = (page - 1) * pageLimit;
     const endIndex = startIndex + pageLimit;
 
@@ -42,7 +46,7 @@ export default class Recipe {
   }
 
   public async getRecipe(id: string): Promise<IRecipe> {
-    const response = await fetch(`${apiUrl}/recipes/${id}`)
+    const response = await fetch(`${apiUrl}/recipes/${id}`);
     const recipe = await response.json();
 
     if (recipe === undefined) {
@@ -64,7 +68,7 @@ export default class Recipe {
   }
 
   public async deleteRecipe(id: string): Promise<void> {
-    const response = await fetch(`${apiUrl}/recipes/${id}`, {method: 'DELETE'})
+    const response = await fetch(`${apiUrl}/recipes/${id}`, { method: 'DELETE' });
     const status = await response.json();
 
     if (status !== 'success') {
@@ -485,5 +489,5 @@ const recipes: IRecipe[] = [
       'consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse ' +
       'cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat ' +
       'non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  }
+  },
 ];

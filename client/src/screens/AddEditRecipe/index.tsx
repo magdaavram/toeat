@@ -48,21 +48,23 @@ const AddEditRecipeView = () => {
   const [recipe, setRecipe] = useState<IRecipeRequest>({} as IRecipeRequest);
   const [error, setError] = useState('');
 
-
   const setInitialRecipe = () => {
     let initialRecipe: IRecipeRequest = {
       ingredients: [createEmptyIngredient(), createEmptyIngredient()],
     } as IRecipeRequest;
 
     if (id) {
-      api.getRecipe(id).then((recipe) => {
-        const recipeToEdit = recipe as IRecipeRequest;
-        recipeToEdit.ingredients = recipeToEdit?.ingredients.map((ingredient) => {
-          return { ...ingredient, id: getRandomId() };
-        });
+      api
+        .getRecipe(id)
+        .then((recipe) => {
+          const recipeToEdit = recipe as IRecipeRequest;
+          recipeToEdit.ingredients = recipeToEdit?.ingredients.map((ingredient) => {
+            return { ...ingredient, id: getRandomId() };
+          });
 
-        initialRecipe = recipeToEdit;
-      }).catch(err => setError(err));
+          initialRecipe = recipeToEdit;
+        })
+        .catch((err) => setError(err));
     }
 
     setRecipe(initialRecipe);
