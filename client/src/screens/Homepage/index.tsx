@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Recipe, { IRecipe } from 'api/Recipe';
+import { IRecipe } from 'api/Recipe';
+import API from 'api';
 import Search from 'components/Search';
 import RecommendedFilters from 'components/Filters/Recommended';
 import Filters from 'components/Filters';
@@ -28,7 +29,6 @@ const EmptyList = styled.div`
 `;
 
 const Homepage = () => {
-  const api = new Recipe();
   const [recipes, setRecipes] = useState<IRecipe[]>([]);
   const [page, setPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
@@ -46,7 +46,7 @@ const Homepage = () => {
   };
 
   const loadRecipes = () => {
-    api
+    API.Recipe
       .getRecipes(page, 6, searchTerm)
       .then((newRecipes) => {
         if (newRecipes.length > 0) {

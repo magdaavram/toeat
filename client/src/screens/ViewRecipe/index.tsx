@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import styled from 'styled-components';
-import Recipe, { IRecipe } from 'api/Recipe';
+import { IRecipe } from 'api/Recipe';
+import API from 'api';
 import RecipeDetails from 'components/Recipe';
 import { useParams } from 'react-router-dom';
 import RecipeContext from 'RecipeContext';
@@ -24,16 +25,15 @@ const RecipeView = () => {
     setRecipeId(id);
   }, [setRecipeId, id]);
 
-  const api = new Recipe();
   const [recipe, setRecipe] = useState<IRecipe>();
   const [error, setError] = useState('');
 
   useEffect(() => {
-    api
+    API.Recipe
       .getRecipe(id)
       .then((recipe: IRecipe) => setRecipe(recipe))
       .catch((err) => setError(err));
-  }, []);
+  }, [id]);
 
   return (
     <Container>

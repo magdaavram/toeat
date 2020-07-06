@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Form from './Form';
-import Recipe, { IRecipe, Unit } from 'api/Recipe';
+import { IRecipe, Unit } from 'api/Recipe';
+import API from 'api';
 import { useParams } from 'react-router-dom';
 
 const Loading = styled.div`
@@ -42,7 +43,6 @@ const createEmptyIngredient = (): IIngredientRequest => {
 
 const AddEditRecipeView = () => {
   const { id } = useParams();
-  const api = new Recipe();
 
   const [loading, setLoading] = useState(true);
   const [recipe, setRecipe] = useState<IRecipeRequest>({} as IRecipeRequest);
@@ -54,7 +54,7 @@ const AddEditRecipeView = () => {
     } as IRecipeRequest;
 
     if (id) {
-      api
+      API.Recipe
         .getRecipe(id)
         .then((recipe) => {
           const recipeToEdit = recipe as IRecipeRequest;
@@ -74,7 +74,7 @@ const AddEditRecipeView = () => {
   useEffect(setInitialRecipe, []);
 
   const onSubmit = (recipe: IRecipeRequest) => {
-    api.saveRecipe(recipe as IRecipe);
+    API.Recipe.saveRecipe(recipe as IRecipe);
   };
 
   return (

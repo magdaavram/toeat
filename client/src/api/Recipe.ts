@@ -50,7 +50,7 @@ export default class Recipe {
     const recipe = await response.json();
 
     if (recipe === undefined) {
-      throw 'err';
+      throw new Error('err');
     }
 
     return recipe;

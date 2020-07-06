@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import ConfirmationModal, { IModalProps } from 'components/Modal/ConfirmationModal';
 import { Link, Route, Switch, Redirect } from 'react-router-dom';
 import RecipeContext from 'RecipeContext';
-import Recipe from 'api/Recipe';
+import API from 'api';
 
 const ButtonsContainer = styled.div`
   display: flex;
@@ -28,7 +28,6 @@ const buttonProps = {
 
 const TopControls = () => {
   const { id: recipeId } = useContext(RecipeContext);
-  const api = new Recipe();
 
   const [deleted, setDeleted] = useState(false);
   const [error, setError] = useState('');
@@ -36,7 +35,7 @@ const TopControls = () => {
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
   const deleteRecipe = () => {
-    api
+    API.Recipe
       .deleteRecipe(recipeId)
       .then(() => {
         setDeleted(true);
