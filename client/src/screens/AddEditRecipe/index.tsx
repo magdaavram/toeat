@@ -17,8 +17,6 @@ const getRandomId = () => {
   return S4() + S4() + '-' + S4() + '-' + S4() + '-' + S4() + '-' + S4() + S4() + S4();
 };
 
-
-
 const createEmptyIngredient = (): IIngredientRequest => {
   return { id: getRandomId() } as IIngredientRequest;
 };
@@ -59,7 +57,7 @@ const AddEditRecipeView = () => {
     //API.Recipe.saveRecipe(recipe as IRecipe);
     API.Recipe.create(recipe)
       .then((recipe) => setSavedId(recipe.id))
-      .catch(err => setError(err));
+      .catch((err) => setError(err));
   };
 
   return (

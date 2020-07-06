@@ -42,11 +42,7 @@ export interface IIngredientRequest {
 const apiUrl = 'http://localhost:4000';
 
 export default class Recipe {
-  public async getAll(
-    page: number,
-    pageLimit: number,
-    searchTerms: string
-  ): Promise<IRecipe[]> {
+  public async getAll(page: number, pageLimit: number, searchTerms: string): Promise<IRecipe[]> {
     const startIndex = (page - 1) * pageLimit;
     const endIndex = startIndex + pageLimit;
 
@@ -88,9 +84,13 @@ export default class Recipe {
   }
 
   public async create(recipe: IRecipeRequest): Promise<IRecipe> {
-    const request = {method: 'POST', body: JSON.stringify(recipe), headers: {
-        'Content-Type': 'application/json'
-      }};
+    const request = {
+      method: 'POST',
+      body: JSON.stringify(recipe),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
     const response = await fetch(`${apiUrl}/recipes`, request);
 
     return await response.json();
