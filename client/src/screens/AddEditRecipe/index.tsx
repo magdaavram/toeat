@@ -54,8 +54,7 @@ const AddEditRecipeView = () => {
     } as IRecipeRequest;
 
     if (id) {
-      API.Recipe
-        .getRecipe(id)
+      API.Recipe.getRecipe(id)
         .then((recipe) => {
           const recipeToEdit = recipe as IRecipeRequest;
           recipeToEdit.ingredients = recipeToEdit?.ingredients.map((ingredient) => {

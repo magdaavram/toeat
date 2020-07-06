@@ -35,8 +35,7 @@ const TopControls = () => {
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
   const deleteRecipe = () => {
-    API.Recipe
-      .deleteRecipe(recipeId)
+    API.Recipe.deleteRecipe(recipeId)
       .then(() => {
         setDeleted(true);
         closeModal();

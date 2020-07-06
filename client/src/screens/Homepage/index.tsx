@@ -46,8 +46,7 @@ const Homepage = () => {
   };
 
   const loadRecipes = () => {
-    API.Recipe
-      .getRecipes(page, 6, searchTerm)
+    API.Recipe.getRecipes(page, 6, searchTerm)
       .then((newRecipes) => {
         if (newRecipes.length > 0) {
           setRecipes((existingRecipes) => [...existingRecipes, ...newRecipes]);
