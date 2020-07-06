@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IIngredientRequest } from './index';
+import { IIngredientRequest } from 'api/Recipe';
 import NumberInput from 'components/Input/Number';
 import SelectDropdown from 'components/Dropdown/SelectDropdown';
 import CreatableSelect from 'components/Dropdown/CreatableDropdown';

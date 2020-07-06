@@ -28,7 +28,7 @@ app.use(express.json());
 
 app.post('/recipes', (req, res) => {
   collection.insertOne(req.body, () => {
-    res.json(req.body);
+    res.json(parseRecipe(req.body));
   });
 });
 
@@ -57,10 +57,12 @@ app.delete('/recipes/:id', (req, res) => {
 });
 
 app.put('/recipes/:id', (req, res) => {
-  collection.updateOne({ "_id": mongodb.ObjectId(req.params.id) }, { $set: req.body }, () => {
+  // collection.updateOne({ "_id": mongodb.ObjectId(req.params.id) }, { $set: req.body }, () => {
+  //
+  //   res.json(req.body);
+  // });
 
-    res.json(req.body);
-  });
+  res.json(req.body);
 });
 
 

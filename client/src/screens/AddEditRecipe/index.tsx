@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Form from './Form';
-import { IRecipe, Unit } from 'api/Recipe';
+import { IIngredientRequest, IRecipeRequest } from 'api/Recipe';
 import API from 'api';
-import { useParams } from 'react-router-dom';
+import { useParams, Redirect } from 'react-router-dom';
 
 const Loading = styled.div`
   padding-top: 54px;
@@ -17,25 +17,7 @@ const getRandomId = () => {
   return S4() + S4() + '-' + S4() + '-' + S4() + '-' + S4() + '-' + S4() + S4() + S4();
 };
 
-export interface IRecipeRequest {
-  id?: string;
-  imageUrl?: string;
-  title: string;
-  duration: number;
-  difficultyLevel: number;
-  servings: number;
-  course: string;
-  ingredients: IIngredientRequest[];
-  equipment: string[];
-  preparation: string;
-}
 
-export interface IIngredientRequest {
-  id: string;
-  ingredient: string;
-  quantity: number;
-  unit: Unit;
-}
 
 const createEmptyIngredient = (): IIngredientRequest => {
   return { id: getRandomId() } as IIngredientRequest;
@@ -46,6 +28,7 @@ const AddEditRecipeView = () => {
 
   const [loading, setLoading] = useState(true);
   const [recipe, setRecipe] = useState<IRecipeRequest>({} as IRecipeRequest);
+  const [savedId, setSavedId] = useState('');
   const [error, setError] = useState('');
 
   const setInitialRecipe = () => {
@@ -54,7 +37,7 @@ const AddEditRecipeView = () => {
     } as IRecipeRequest;
 
     if (id) {
-      API.Recipe.getRecipe(id)
+      API.Recipe.get(id)
         .then((recipe) => {
           const recipeToEdit = recipe as IRecipeRequest;
           recipeToEdit.ingredients = recipeToEdit?.ingredients.map((ingredient) => {
@@ -73,7 +56,10 @@ const AddEditRecipeView = () => {
   useEffect(setInitialRecipe, []);
 
   const onSubmit = (recipe: IRecipeRequest) => {
-    API.Recipe.saveRecipe(recipe as IRecipe);
+    //API.Recipe.saveRecipe(recipe as IRecipe);
+    API.Recipe.create(recipe)
+      .then((recipe) => setSavedId(recipe.id))
+      .catch(err => setError(err));
   };
 
   return (
@@ -86,6 +72,7 @@ const AddEditRecipeView = () => {
           createEmptyIngredient={createEmptyIngredient}
         />
       )}
+      {savedId && <Redirect to={`/recipe/${savedId}`} />}
     </>
   );
 };

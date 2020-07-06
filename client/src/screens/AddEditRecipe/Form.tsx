@@ -11,7 +11,7 @@ import SelectDropdown from 'components/Dropdown/SelectDropdown';
 import NumberInput from 'components/Input/Number';
 import CreatableSelect from 'components/Dropdown/CreatableDropdown';
 import Textarea from 'components/Textarea';
-import { IRecipeRequest, IIngredientRequest } from './index';
+import { IRecipeRequest, IIngredientRequest } from 'api/Recipe';
 import {
   Form,
   DetailsContainer,
