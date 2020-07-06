@@ -69,9 +69,9 @@ export default class Recipe {
 
   public async deleteRecipe(id: string): Promise<void> {
     const response = await fetch(`${apiUrl}/recipes/${id}`, { method: 'DELETE' });
-    const status = await response.json();
+    const data = await response.json();
 
-    if (status !== 'success') {
+    if (data.status !== 'success') {
       throw new Error('error');
     }
   }
