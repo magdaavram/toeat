@@ -60,7 +60,7 @@ const AddEditRecipeView = () => {
         .then((recipe) => {
           setSavedId(recipe.id);
         })
-        .catch(err => setError(err));
+        .catch((err) => setError(err));
     } else {
       API.Recipe.create(recipe)
         .then((recipe) => setSavedId(recipe.id))
