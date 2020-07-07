@@ -26,11 +26,6 @@ client.connect(function(err) {
 
 app.use(express.json());
 
-app.post('/recipes', (req, res) => {
-  collection.insertOne(req.body, () => {
-    res.json(parseRecipe(req.body));
-  });
-});
 
 app.get('/recipes', (req, res) => {
   collection.find({}).toArray((err, docs) => {
@@ -48,6 +43,12 @@ app.get('/recipes/:id', (req, res) => {
   });
 });
 
+app.post('/recipes', (req, res) => {
+  collection.insertOne(req.body, () => {
+    res.json(parseRecipe(req.body));
+  });
+});
+
 app.delete('/recipes/:id', (req, res) => {
   collection.deleteOne({ "_id": mongodb.ObjectId(req.params.id) }, (err) => {
     const response = {status: err ? 'failed' : 'success'};
@@ -57,12 +58,12 @@ app.delete('/recipes/:id', (req, res) => {
 });
 
 app.put('/recipes/:id', (req, res) => {
-  // collection.updateOne({ "_id": mongodb.ObjectId(req.params.id) }, { $set: req.body }, () => {
-  //
-  //   res.json(req.body);
-  // });
+  delete req.body.imageUrl;
 
-  res.json(req.body);
+  collection.updateOne({ "_id": mongodb.ObjectId(req.params.id) }, { $set: req.body }, () => {
+
+    res.json(req.body);
+  });
 });
 
 
@@ -74,6 +75,6 @@ const parseRecipe = recipe => {
   delete recipe._id;
 
   return recipe;
-}
+};
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));

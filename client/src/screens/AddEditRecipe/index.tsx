@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Form from './Form';
-import { IIngredientRequest, IRecipeRequest } from 'api/Recipe';
+import { IRecipe, IIngredientRequest, IRecipeRequest } from 'api/Recipe';
 import API from 'api';
 import { useParams, Redirect } from 'react-router-dom';
 
@@ -22,7 +22,7 @@ const createEmptyIngredient = (): IIngredientRequest => {
 };
 
 const AddEditRecipeView = () => {
-  const { id } = useParams();
+  const { id: recipeIdToEdit } = useParams();
 
   const [loading, setLoading] = useState(true);
   const [recipe, setRecipe] = useState<IRecipeRequest>({} as IRecipeRequest);
@@ -34,8 +34,8 @@ const AddEditRecipeView = () => {
       ingredients: [createEmptyIngredient(), createEmptyIngredient()],
     } as IRecipeRequest;
 
-    if (id) {
-      API.Recipe.get(id)
+    if (recipeIdToEdit) {
+      API.Recipe.get(recipeIdToEdit)
         .then((recipe) => {
           const recipeToEdit = recipe as IRecipeRequest;
           recipeToEdit.ingredients = recipeToEdit?.ingredients.map((ingredient) => {
@@ -43,21 +43,29 @@ const AddEditRecipeView = () => {
           });
 
           initialRecipe = recipeToEdit;
+          setRecipe(initialRecipe);
+          setLoading(false);
         })
         .catch((err) => setError(err));
+    } else {
+      setLoading(false);
     }
-
-    setRecipe(initialRecipe);
-    setLoading(false);
   };
 
   useEffect(setInitialRecipe, []);
 
   const onSubmit = (recipe: IRecipeRequest) => {
-    //API.Recipe.saveRecipe(recipe as IRecipe);
-    API.Recipe.create(recipe)
-      .then((recipe) => setSavedId(recipe.id))
-      .catch((err) => setError(err));
+    if (recipeIdToEdit) {
+      API.Recipe.update(recipe as IRecipe)
+        .then((recipe) => {
+          setSavedId(recipe.id);
+        })
+        .catch(err => setError(err));
+    } else {
+      API.Recipe.create(recipe)
+        .then((recipe) => setSavedId(recipe.id))
+        .catch((err) => setError(err));
+    }
   };
 
   return (
