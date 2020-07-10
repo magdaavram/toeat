@@ -12,7 +12,7 @@ let recipe: IRecipe;
 
 beforeEach(() => {
   recipe = {
-    id: 2,
+    id: '2',
     imageUrl: 'image.png',
     title: 'Pasta',
     duration: 78,
