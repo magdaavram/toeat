@@ -25,7 +25,7 @@ const RecipeForm = ({ recipe, onSubmit }: IProps) => {
   const onFormSubmit = async (recipe: IRecipeRequest) => {
     try {
       setSavedId(await onSubmit(recipe));
-    } catch(err) {
+    } catch (err) {
       setError(err);
       console.log(error);
     }
@@ -33,11 +33,11 @@ const RecipeForm = ({ recipe, onSubmit }: IProps) => {
 
   return (
     <>
-        <Form
-          initialRecipe={recipe}
-          onSubmit={onFormSubmit}
-          createEmptyIngredient={createEmptyIngredient}
-        />
+      <Form
+        initialRecipe={recipe}
+        onSubmit={onFormSubmit}
+        createEmptyIngredient={createEmptyIngredient}
+      />
 
       {savedId && <Redirect to={`/recipe/${savedId}`} />}
     </>

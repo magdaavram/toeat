@@ -52,7 +52,10 @@ const Homepage = () => {
           setRecipes((existingRecipes) => [...existingRecipes, ...newRecipes]);
         }
       })
-      .catch((err) => setError(err));
+      .catch((err) => {
+        setError(err);
+        console.log(error);
+      });
 
     window.addEventListener('scroll', handleScroll);
 

@@ -6,7 +6,7 @@ import { createMemoryHistory } from 'history';
 import Routes from 'routes';
 import RecipeThumbnail from './index';
 import { IRecipe } from 'api/Recipe';
-import RecipeContext from '../../RecipeContext';
+import RecipeContext from 'RecipeContext';
 
 let recipe: IRecipe;
 

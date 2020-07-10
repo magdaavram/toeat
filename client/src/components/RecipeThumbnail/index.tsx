@@ -4,7 +4,7 @@ import DifficultyLevel from 'components/DifficultyLevel';
 import CookingTime from 'components/CookingTime';
 import { Link } from 'react-router-dom';
 import Image from 'components/Image';
-import { IRecipe } from '../../api/Recipe';
+import { IRecipe } from 'api/Recipe';
 
 const Container = styled.div`
   max-width: 400px;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ActionButton from '../../components/Button/Action';
+import ActionButton from 'components/Button/Action';
 
 export const Form = styled.form`
   width: 70%;

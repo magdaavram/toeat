@@ -28,11 +28,16 @@ const RecipeView = () => {
   const [recipe, setRecipe] = useState<IRecipe>();
   const [error, setError] = useState('');
 
-  useEffect(() => {
+  const fetchAndSetRecipe = () => {
     API.Recipe.get(id)
       .then((recipe: IRecipe) => setRecipe(recipe))
-      .catch((err) => setError(err));
-  }, [id]);
+      .catch((err) => {
+        setError(err);
+        console.log(error);
+      });
+  };
+
+  useEffect(fetchAndSetRecipe, []);
 
   return (
     <Container>

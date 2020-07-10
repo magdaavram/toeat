@@ -40,7 +40,10 @@ const TopControls = () => {
         setDeleted(true);
         closeModal();
       })
-      .catch((err) => setError(err));
+      .catch((err) => {
+        setError(err);
+        console.log(error);
+      });
   };
 
   const modalData: IModalProps = {
