@@ -18,7 +18,7 @@ const EditRecipeView = () => {
   const { id: recipeIdToEdit } = useParams();
 
   const onSubmit = async (recipe: IRecipeRequest): Promise<string> => {
-    const editedRecipe = await API.Recipe.update(recipe as IRecipe)
+    const editedRecipe = await API.Recipe.update(recipe as IRecipe);
 
     return editedRecipe.id;
   };
@@ -39,16 +39,16 @@ const EditRecipeView = () => {
         setError(err);
         console.log(error);
       });
-  }
+  };
 
   useEffect(fetchAndSetRecipeToEdit, []);
 
   return (
     <>
       {loading && <Loading>Loading...</Loading>}
-      {!loading && (<RecipeForm recipe={recipeToEdit} onSubmit={onSubmit} />)}
+      {!loading && <RecipeForm recipe={recipeToEdit} onSubmit={onSubmit} />}
     </>
-  )
-}
+  );
+};
 
 export default EditRecipeView;
