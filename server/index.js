@@ -70,7 +70,7 @@ app.put('/recipes/:id', (req, res) => {
 app.use(express.static('public'));
 
 const parseRecipe = recipe => {
-  recipe.imageUrl = `${apiUrl}/images/${recipe.imageUrl}`;
+  recipe.imageUrl = recipe.imageUrl && `${apiUrl}/images/${recipe.imageUrl}`;
   recipe.id = recipe._id;
   delete recipe._id;
 
