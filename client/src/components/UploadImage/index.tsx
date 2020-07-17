@@ -10,7 +10,7 @@ interface IProps {
   fileTypeError: string;
   imgExtension: string[];
   withIcon: boolean;
-  onChange: (file: any) => void;
+  onChange: (file: any, data: string[]) => void;
 }
 
 const containerStyle = {
@@ -58,7 +58,7 @@ const UploadImage = (props: IProps) => {
       labelStyles={labelStyle}
       errorStyle={errorStyle}
       buttonStyles={buttonStyle}
-      onChange={(file: any) => onChange(file)}
+      onChange={(file: any, data: string[]) => onChange(file, data)}
       {...rest}
     />
   );

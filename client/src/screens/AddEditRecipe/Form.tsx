@@ -45,7 +45,7 @@ const equipmentOptions: Option[] = mapOptions(getEquipments());
 const RecipeForm = ({ initialRecipe, onSubmit, createEmptyIngredient }: IProps) => {
   const [recipe, setRecipe] = useState<IRecipeRequest>(initialRecipe);
 
-  const handleImageChange = (file: any) => {
+  const handleImageChange = (file: any, data: string[]) => {
     setRecipe((recipe) => {
       const recipeCopy = { ...recipe };
 
