@@ -72,7 +72,7 @@ export default class Recipe {
     return recipe;
   }
 
-  public async update(recipe: IRecipe): Promise<IRecipe> {
+  public async update(recipe: IRecipeRequest): Promise<IRecipe> {
     const request = {
       method: 'PUT',
       body: JSON.stringify(recipe),
