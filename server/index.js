@@ -7,6 +7,7 @@ const dbName = 'toeat';
 const url = 'mongodb://toeat:toeat@localhost:27017';
 const client = new MongoClient(url, { useUnifiedTopology: true } );
 const apiUrl = `http://localhost:${port}`;
+const fs = require('fs');
 
 const cors = require('cors');
 app.use(cors());
@@ -44,9 +45,24 @@ app.get('/recipes/:id', (req, res) => {
 });
 
 app.post('/recipes', (req, res) => {
-  collection.insertOne(req.body, () => {
-    res.json(parseRecipe(req.body));
-  });
+  const startIndex = req.body.imageData.indexOf(',');
+  const imageData = req.body.imageData.slice(startIndex + 1);
+  const buff = Buffer.from(imageData, 'base64');
+  const currentTime = Math.floor(Date.now() / 1000);
+  const imageTitle = `recipe-${currentTime}.png`;
+
+  fs.writeFile(`public/images/${imageTitle}`, buff, (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      delete req.body.imageData;
+      req.body.imageUrl = imageTitle;
+
+      collection.insertOne(req.body, () => {
+        res.json(parseRecipe(req.body));
+      });
+    }
+  })
 });
 
 app.delete('/recipes/:id', (req, res) => {

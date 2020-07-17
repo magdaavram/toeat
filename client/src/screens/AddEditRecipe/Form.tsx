@@ -50,9 +50,9 @@ const RecipeForm = ({ initialRecipe, onSubmit, createEmptyIngredient }: IProps) 
       const recipeCopy = { ...recipe };
 
       if (file.length === 1) {
-        recipeCopy.imageUrl = file[0].name;
+        recipeCopy.imageData = data[0];
       } else {
-        delete recipeCopy.imageUrl;
+        delete recipeCopy.imageData;
       }
 
       return recipeCopy;

@@ -21,7 +21,7 @@ export type Unit = 'grams' | 'kg' | 'l' | 'ml' | 'sp' | 'tsp' | 'pinch' | 'piece
 
 export interface IRecipeRequest {
   id?: string;
-  imageUrl?: string;
+  imageData?: string;
   title: string;
   duration: number;
   difficultyLevel: number;
