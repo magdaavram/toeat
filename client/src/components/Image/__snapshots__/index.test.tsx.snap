@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Image /> should render correctly should render default image (breakfast) 1`] = `
+<Image
+  course="Breakfast"
+>
+  <styled.div
+    course="Breakfast"
+    url="Breakfast.png"
+  >
+    <div
+      className="sc-AxjAm cOFEbK"
+    />
+  </styled.div>
+</Image>
+`;
+
+exports[`<Image /> should render correctly should render default image (brunch) 1`] = `
+<Image
+  course="Brunch"
+>
+  <styled.div
+    course="Brunch"
+    url="Brunch.png"
+  >
+    <div
+      className="sc-AxjAm iZspXd"
+    />
+  </styled.div>
+</Image>
+`;
+
+exports[`<Image /> should render correctly should render default image (course not declared) 1`] = `
+<Image
+  course="Supper"
+>
+  <styled.div
+    course="Supper"
+    url="Lunch.png"
+  >
+    <div
+      className="sc-AxjAm gtwHQd"
+    />
+  </styled.div>
+</Image>
+`;
+
+exports[`<Image /> should render correctly should render default image (dinner) 1`] = `
+<Image
+  course="Dinner"
+>
+  <styled.div
+    course="Dinner"
+    url="Dinner.png"
+  >
+    <div
+      className="sc-AxjAm lnDKUf"
+    />
+  </styled.div>
+</Image>
+`;
+
+exports[`<Image /> should render correctly should render default image (lunch) 1`] = `
+<Image
+  course="Lunch"
+>
+  <styled.div
+    course="Lunch"
+    url="Lunch.png"
+  >
+    <div
+      className="sc-AxjAm gtwHQd"
+    />
+  </styled.div>
+</Image>
+`;
+
+exports[`<Image /> should render correctly should render default image (snack) 1`] = `
+<Image
+  course="Snack"
+>
+  <styled.div
+    course="Snack"
+    url="Snack.png"
+  >
+    <div
+      className="sc-AxjAm lbdUsR"
+    />
+  </styled.div>
+</Image>
+`;
+
+exports[`<Image /> should render correctly should render given image 1`] = `
+<Image
+  course="Breakfast"
+  url="image.png"
+>
+  <styled.div
+    course="Breakfast"
+    url="image.png"
+  >
+    <div
+      className="sc-AxjAm gXdLeG"
+    />
+  </styled.div>
+</Image>
+`;
