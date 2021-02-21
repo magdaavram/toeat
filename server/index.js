@@ -45,24 +45,34 @@ app.get('/recipes/:id', (req, res) => {
 });
 
 app.post('/recipes', (req, res) => {
-  const startIndex = req.body.imageData.indexOf(',');
-  const imageData = req.body.imageData.slice(startIndex + 1);
-  const buff = Buffer.from(imageData, 'base64');
-  const currentTime = Math.floor(Date.now() / 1000);
-  const imageTitle = `recipe-${currentTime}.png`;
+  const imageContent = req.body.imageData;
 
-  fs.writeFile(`public/images/${imageTitle}`, buff, (err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      delete req.body.imageData;
-      req.body.imageUrl = imageTitle;
+  delete req.body.imageData;
 
-      collection.insertOne(req.body, () => {
-        res.json(parseRecipe(req.body));
-      });
+  collection.insertOne(req.body, () => {
+    if(!imageContent) {
+      res.json(parseRecipe(req.body));
+      return;
     }
-  })
+
+    const startIndex = imageContent.indexOf(',');
+    const imageData = imageContent.slice(startIndex + 1);
+    const buff = Buffer.from(imageData, 'base64');
+    const currentTime = Math.floor(Date.now() / 1000);
+    const imageTitle = `recipe-${currentTime}.png`;
+
+    fs.writeFile(`public/images/${imageTitle}`, buff, (err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        req.body.imageUrl = imageTitle;
+
+        collection.updateOne({ "_id": mongodb.ObjectId(req.body._id) }, { $set: { imageUrl: imageTitle } }, () => {
+          res.json(parseRecipe(req.body));
+        });
+      }
+    });
+  });
 });
 
 app.delete('/recipes/:id', (req, res) => {
@@ -77,7 +87,6 @@ app.put('/recipes/:id', (req, res) => {
   delete req.body.imageUrl;
 
   collection.updateOne({ "_id": mongodb.ObjectId(req.params.id) }, { $set: req.body }, () => {
-
     res.json(req.body);
   });
 });
