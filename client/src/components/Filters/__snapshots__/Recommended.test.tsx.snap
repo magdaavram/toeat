@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<Recommended>
+  <styled.div>
+    <div
+      className="sc-AxirZ xjolV"
+    >
+      <styled.h3>
+        <h3
+          className="sc-AxiKw gUYhqW"
+        >
+          Recommended ingredients
+        </h3>
+      </styled.h3>
+      <styled.div>
+        <div
+          className="sc-AxhCb bxdZFX"
+        >
+          <Tag
+            active={true}
+            key="filter-0"
+            name="tomatoes"
+            onClick={[Function]}
+          >
+            <styled.div
+              active={true}
+              name="tomatoes"
+              onClick={[Function]}
+            >
+              <div
+                className="sc-AxjAm caFkQs"
+                name="tomatoes"
+                onClick={[Function]}
+              >
+                <span>
+                  tomatoes
+                </span>
+              </div>
+            </styled.div>
+          </Tag>
+          <Tag
+            active={false}
+            key="filter-1"
+            name="potatoes"
+            onClick={[Function]}
+          >
+            <styled.div
+              active={false}
+              name="potatoes"
+              onClick={[Function]}
+            >
+              <div
+                className="sc-AxjAm YZIJc"
+                name="potatoes"
+                onClick={[Function]}
+              >
+                <span>
+                  potatoes
+                </span>
+              </div>
+            </styled.div>
+          </Tag>
+          <Tag
+            active={true}
+            key="filter-2"
+            name="garlic"
+            onClick={[Function]}
+          >
+            <styled.div
+              active={true}
+              name="garlic"
+              onClick={[Function]}
+            >
+              <div
+                className="sc-AxjAm caFkQs"
+                name="garlic"
+                onClick={[Function]}
+              >
+                <span>
+                  garlic
+                </span>
+              </div>
+            </styled.div>
+          </Tag>
+          <Tag
+            active={false}
+            key="filter-3"
+            name="spinach"
+            onClick={[Function]}
+          >
+            <styled.div
+              active={false}
+              name="spinach"
+              onClick={[Function]}
+            >
+              <div
+                className="sc-AxjAm YZIJc"
+                name="spinach"
+                onClick={[Function]}
+              >
+                <span>
+                  spinach
+                </span>
+              </div>
+            </styled.div>
+          </Tag>
+        </div>
+      </styled.div>
+    </div>
+  </styled.div>
+</Recommended>
+`;
