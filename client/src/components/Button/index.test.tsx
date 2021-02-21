@@ -30,11 +30,21 @@ describe('<Button /> renders correctly', () => {
     }
   ];
 
-  tests.forEach(test => {
+  tests.forEach((test) => {
     it(test.description, () => {
-      const wrapper = mount(<Button {...test.props} />);
+      const wrapper = mount(<Button { ...test.props } />);
 
       expect(wrapper).toMatchSnapshot();
     });
   });
+});
+
+describe('<Button /> calls onClick callback', () => {
+  const onClick = jest.fn();
+  const wrapper = mount(<Button hasIcon={ false } text={ 'Click me!' } onClick={ onClick }/>);
+  const button = wrapper.find('button');
+
+  button.simulate('click');
+
+  expect(wrapper.props().onClick).toHaveBeenCalledTimes(1);
 });
