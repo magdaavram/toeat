@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<List
+  items={
+    Array [
+      Object {
+        "ingredient": "tomatoes",
+        "quantity": 200,
+        "unit": "grams",
+      },
+      Object {
+        "ingredient": "potatoes",
+        "quantity": 500,
+        "unit": "grams",
+      },
+    ]
+  }
+  renderItem={[Function]}
+>
+  <styled.ul>
+    <ul
+      className="sc-AxjAm ksBuCE"
+    >
+      <styled.li
+        key="item-0"
+      >
+        <li
+          className="sc-AxirZ frEcip"
+        >
+          200 grams of tomatoes
+        </li>
+      </styled.li>
+      <styled.li
+        key="item-1"
+      >
+        <li
+          className="sc-AxirZ frEcip"
+        >
+          500 grams of potatoes
+        </li>
+      </styled.li>
+    </ul>
+  </styled.ul>
+</List>
+`;
