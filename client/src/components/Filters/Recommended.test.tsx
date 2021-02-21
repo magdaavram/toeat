@@ -1,5 +1,5 @@
 import React from 'react';
-import {mount} from 'enzyme';
+import { mount } from 'enzyme';
 import Recommended from './Recommended';
 
 it('should render correctly', () => {
