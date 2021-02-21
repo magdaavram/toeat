@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Image /> should render correctly should render default image (breakfast) 1`] = `
+exports[`Image component should render correctly should render default image (breakfast) 1`] = `
 <Image
   course="Breakfast"
 >
@@ -15,7 +15,7 @@ exports[`<Image /> should render correctly should render default image (breakfas
 </Image>
 `;
 
-exports[`<Image /> should render correctly should render default image (brunch) 1`] = `
+exports[`Image component should render correctly should render default image (brunch) 1`] = `
 <Image
   course="Brunch"
 >
@@ -30,7 +30,7 @@ exports[`<Image /> should render correctly should render default image (brunch) 
 </Image>
 `;
 
-exports[`<Image /> should render correctly should render default image (course not declared) 1`] = `
+exports[`Image component should render correctly should render default image (course not declared) 1`] = `
 <Image
   course="Supper"
 >
@@ -45,7 +45,7 @@ exports[`<Image /> should render correctly should render default image (course n
 </Image>
 `;
 
-exports[`<Image /> should render correctly should render default image (dinner) 1`] = `
+exports[`Image component should render correctly should render default image (dinner) 1`] = `
 <Image
   course="Dinner"
 >
@@ -60,7 +60,7 @@ exports[`<Image /> should render correctly should render default image (dinner) 
 </Image>
 `;
 
-exports[`<Image /> should render correctly should render default image (lunch) 1`] = `
+exports[`Image component should render correctly should render default image (lunch) 1`] = `
 <Image
   course="Lunch"
 >
@@ -75,7 +75,7 @@ exports[`<Image /> should render correctly should render default image (lunch) 1
 </Image>
 `;
 
-exports[`<Image /> should render correctly should render default image (snack) 1`] = `
+exports[`Image component should render correctly should render default image (snack) 1`] = `
 <Image
   course="Snack"
 >
@@ -90,7 +90,7 @@ exports[`<Image /> should render correctly should render default image (snack) 1
 </Image>
 `;
 
-exports[`<Image /> should render correctly should render given image 1`] = `
+exports[`Image component should render correctly should render given image 1`] = `
 <Image
   course="Breakfast"
   url="image.png"
