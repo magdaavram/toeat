@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<Filters>
+  <styled.div>
+    <div
+      className="sc-AxmLO iUTjrd"
+    >
+      <Styled(Styled(Button))
+        hasIcon={true}
+        icon="filter"
+        iconHeight={20}
+        iconWidth={20}
+        onClick={[Function]}
+        text="Filter"
+      >
+        <Button
+          className="sc-AxirZ sc-fzozJi iFcHca"
+          hasIcon={true}
+          icon="filter"
+          iconHeight={20}
+          iconWidth={20}
+          onClick={[Function]}
+          text="Filter"
+        >
+          <styled.button
+            className="sc-AxirZ sc-fzozJi iFcHca"
+            onClick={[Function]}
+            type="button"
+          >
+            <button
+              className="sc-AxjAm ewqDcP sc-AxirZ sc-fzozJi iFcHca"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                height="20"
+                viewBox="0 0 20 20"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <image
+                    height="20"
+                    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAAXNSR0IB2cksfwAAAQ5QTFRF8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unkQ40o0AAAAFp0Uk5TADnX8/KwE4j/9lWN+VoshozL/LSLSeL90vcbYma6+5xlMQZ6sbOTEYX1UjyEHp7GB0YUh7lZKMzg/jWsz1Mrd3lqGkKOFtQPvtwm378ELzPmMg7h7Nn62CW1Gbu+JwAAAQ5JREFUeJxjYCAMGJmYQYCFlY0IxRDAzgEBnFxEa+GGauHhHX5a+PgFCAFBqBYhYSBHRJRBjINEIM4gQaoWSQYpaRlCQBaqWE4eyFFQHLyBPHBalJRVVEFATR3M1YBq0dTCrUVbHKpIB8zV1dMHA2UD3FoMYdGmRrTjh6oWIy5eDGAM02KCKWdqxmBOauJnZrAgVYslgxU7Zs61hknbYMqJ2A7eQKanFjt7BxBwdALznGFaXHDrcHWDqrEGc909IBnG0wu3Fi9vqBYfoh0/TLT4+vn7+2sFQLWY+xMCgUEMKqQm/mCGEFK1cDCYSoSGhnqHQbmaoYRAOPvgDWQ6aomAafEgWotBJESHJT8RigH0OlVdPf84OAAAAABJRU5ErkJggg=="
+                    id="filter-icon"
+                    width="20"
+                  />
+                </defs>
+                <use
+                  href="#filter-icon"
+                  x="0"
+                  y="0"
+                />
+              </svg>
+              Filter
+            </button>
+          </styled.button>
+        </Button>
+      </Styled(Styled(Button))>
+      <FiltersModal
+        onClose={[Function]}
+        show={false}
+        title="Filter recipes"
+      >
+        <div>
+          <Modal
+            ariaHideApp={true}
+            bodyOpenClassName="ReactModal__Body--open"
+            closeTimeoutMS={0}
+            isOpen={false}
+            onRequestClose={[Function]}
+            parentSelector={[Function]}
+            portalClassName="ReactModalPortal"
+            role="dialog"
+            shouldCloseOnEsc={true}
+            shouldCloseOnOverlayClick={true}
+            shouldFocusAfterRender={true}
+            shouldReturnFocusAfterClose={true}
+            style={
+              Object {
+                "content": Object {
+                  "border": "1px solid var(--color--light-purple)",
+                  "borderRadius": "6px",
+                  "bottom": "auto",
+                  "left": "50%",
+                  "marginRight": "-50%",
+                  "maxWidth": "800px",
+                  "padding": "27px",
+                  "right": "auto",
+                  "top": "40%",
+                  "transform": "translate(-50%, -40%)",
+                  "width": "80%",
+                },
+              }
+            }
+          >
+            <Portal
+              containerInfo={
+                <div
+                  class="ReactModalPortal"
+                />
+              }
+            >
+              <ModalPortal
+                ariaHideApp={true}
+                bodyOpenClassName="ReactModal__Body--open"
+                closeTimeoutMS={0}
+                defaultStyles={
+                  Object {
+                    "content": Object {
+                      "WebkitOverflowScrolling": "touch",
+                      "background": "#fff",
+                      "border": "1px solid #ccc",
+                      "borderRadius": "4px",
+                      "bottom": "40px",
+                      "left": "40px",
+                      "outline": "none",
+                      "overflow": "auto",
+                      "padding": "20px",
+                      "position": "absolute",
+                      "right": "40px",
+                      "top": "40px",
+                    },
+                    "overlay": Object {
+                      "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                      "bottom": 0,
+                      "left": 0,
+                      "position": "fixed",
+                      "right": 0,
+                      "top": 0,
+                    },
+                  }
+                }
+                isOpen={false}
+                onRequestClose={[Function]}
+                parentSelector={[Function]}
+                portalClassName="ReactModalPortal"
+                role="dialog"
+                shouldCloseOnEsc={true}
+                shouldCloseOnOverlayClick={true}
+                shouldFocusAfterRender={true}
+                shouldReturnFocusAfterClose={true}
+                style={
+                  Object {
+                    "content": Object {
+                      "border": "1px solid var(--color--light-purple)",
+                      "borderRadius": "6px",
+                      "bottom": "auto",
+                      "left": "50%",
+                      "marginRight": "-50%",
+                      "maxWidth": "800px",
+                      "padding": "27px",
+                      "right": "auto",
+                      "top": "40%",
+                      "transform": "translate(-50%, -40%)",
+                      "width": "80%",
+                    },
+                  }
+                }
+              />
+            </Portal>
+          </Modal>
+        </div>
+      </FiltersModal>
+    </div>
+  </styled.div>
+</Filters>
+`;
