@@ -16,10 +16,11 @@ it('should render correctly', () => {
         unit: 'grams',
       },
     ],
-    renderItem: (ingredient) => `${ingredient.quantity} ${ingredient.unit} of ${ingredient.ingredient}`,
+    renderItem: (ingredient) =>
+      `${ingredient.quantity} ${ingredient.unit} of ${ingredient.ingredient}`,
   };
 
-  const wrapper = mount(<List {...props}/>);
+  const wrapper = mount(<List {...props} />);
 
   expect(wrapper).toMatchSnapshot();
 });
