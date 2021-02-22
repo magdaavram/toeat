@@ -1,0 +1,892 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "3fn86t",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "3fn86t",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <RecipesList
+    recipes={
+      Array [
+        Object {
+          "course": "Breakfast",
+          "difficultyLevel": 2,
+          "duration": 30,
+          "equipment": Array [
+            "pan",
+          ],
+          "id": "recipe1",
+          "imageUrl": "recipe1-image.png",
+          "ingredients": Array [
+            Object {
+              "ingredient": "eggs",
+              "quantity": 3,
+              "unit": "pieces",
+            },
+          ],
+          "preparation": "This is the preparation description.",
+          "servings": 4,
+          "title": "Recipe 1 Title",
+        },
+        Object {
+          "course": "Dinner",
+          "difficultyLevel": 3,
+          "duration": 60,
+          "equipment": Array [
+            "tongues",
+          ],
+          "id": "recipe2",
+          "imageUrl": "recipe2-image.png",
+          "ingredients": Array [
+            Object {
+              "ingredient": "tomatoes",
+              "quantity": 300,
+              "unit": "grams",
+            },
+          ],
+          "preparation": "This is the preparation description.",
+          "servings": 6,
+          "title": "Recipe 2 Title",
+        },
+      ]
+    }
+  >
+    <styled.div>
+      <div
+        className="sc-AxmLO beDGjK"
+      >
+        <RecipeThumbnail
+          course="Breakfast"
+          difficultyLevel={2}
+          duration={30}
+          equipment={
+            Array [
+              "pan",
+            ]
+          }
+          id="recipe1"
+          imageUrl="recipe1-image.png"
+          ingredients={
+            Array [
+              Object {
+                "ingredient": "eggs",
+                "quantity": 3,
+                "unit": "pieces",
+              },
+            ]
+          }
+          key="recipe-0"
+          preparation="This is the preparation description."
+          servings={4}
+          title="Recipe 1 Title"
+        >
+          <styled.div>
+            <div
+              className="sc-AxhCb ivleYs"
+            >
+              <Link
+                title="Recipe 1 Title"
+                to="/recipe/recipe1"
+              >
+                <LinkAnchor
+                  href="/recipe/recipe1"
+                  navigate={[Function]}
+                  title="Recipe 1 Title"
+                >
+                  <a
+                    href="/recipe/recipe1"
+                    onClick={[Function]}
+                    title="Recipe 1 Title"
+                  >
+                    <Styled(Image)
+                      className="thumbnail-image"
+                      course="Breakfast"
+                      url="recipe1-image.png"
+                    >
+                      <Image
+                        className="sc-AxhUy eUTjlb thumbnail-image"
+                        course="Breakfast"
+                        url="recipe1-image.png"
+                      >
+                        <styled.div
+                          className="sc-AxhUy eUTjlb thumbnail-image"
+                          course="Breakfast"
+                          url="recipe1-image.png"
+                        >
+                          <div
+                            className="sc-AxiKw lnIUGN sc-AxhUy eUTjlb thumbnail-image"
+                          />
+                        </styled.div>
+                      </Image>
+                    </Styled(Image)>
+                  </a>
+                </LinkAnchor>
+              </Link>
+              <styled.div>
+                <div
+                  className="sc-AxgMl bWOUKg"
+                >
+                  <styled.div>
+                    <div
+                      className="sc-AxheI eCqBcY"
+                    >
+                      <CookingTime
+                        duration={30}
+                        hasIcon={true}
+                      >
+                        <styled.div>
+                          <div
+                            className="sc-AxirZ jzRXrV"
+                          >
+                            <DurationIcon>
+                              <svg
+                                height="20"
+                                viewBox="0 0 20 20"
+                                width="20"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <defs>
+                                  <image
+                                    height="20"
+                                    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAAXNSR0IB2cksfwAAAOpQTFRFAAAASk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pfrZ05wAAAE50Uk5TAAESOGim1O73I3G94/z/CFnJ/dKzpySR+sdwE5Cs9dx2IAar4m4JVQREiz7C9g1ByvmuEAJSGJnr+A+Wz2Kk8B0Hc8MLh+BbJm93yCJYgSwx+QAAAWlJREFUeJx9k+l2gjAQhQMIBJBBgigCoiCiXe1i99rW7nV5/9dpWQMe6fxKzpdzM8sdhNJgWK7BCyLGosA3OJZB1ZBkpalCEmpTkaUK1Fo6BiBG2zTbBgHAekujtNO1gPRsJ705do+A5RYCnb4Hg6Ef5PfAHw7AG2Vc63oQjqPyZ9E4BM9N9VsWhJNpNdPpJASrFVck6TAYZzQ6ODxKa5qOB6BLDGJlTIa5Mnd8wp9mL4cEyyziFOj5uebs7PziMjv7PVA41GiCHezDgQxhA/EqcdA+jByi8kgAA+3HyAABidCuw20QEQazDpuAK3h+Zezisvj1ze1d/74iXkpt/uDB44K2N06NFuY8ATy/0ESSwoq2LF8t8ragNG1L0dT3D/j8oh9nTS1Gwnz/zJaURiuCbbY6UBrxQNebeLi1dtgmR83910xIGu1acVWy4h93K0aWq0beswbrbWkNULJEYb5EoWJvdgqpWcFfq5ArMTOrWiwAAAAASUVORK5CYII="
+                                    id="clock-icon"
+                                    width="20"
+                                  />
+                                </defs>
+                                <use
+                                  href="#clock-icon"
+                                  x="0"
+                                  y="0"
+                                />
+                              </svg>
+                            </DurationIcon>
+                          </div>
+                        </styled.div>
+                        30 min
+                      </CookingTime>
+                    </div>
+                  </styled.div>
+                  <styled.div>
+                    <div
+                      className="sc-AxheI eCqBcY"
+                    >
+                      <DifficultyLevel
+                        hasIcon={true}
+                        level={2}
+                      >
+                        <styled.div>
+                          <div
+                            className="sc-AxjAm gXQDyK"
+                          >
+                            <DifficultyIcon
+                              level={2}
+                            >
+                              <svg
+                                height="20"
+                                viewBox="0 0 20 20"
+                                width="20"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <defs>
+                                  <image
+                                    height="20"
+                                    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAcCAMAAABBJv+bAAAAAXNSR0IB2cksfwAAAexQTFRFAAAASk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk1oSU1qSk5pSk5pSk5pR1JmUFBwSk5pSk5pSU1pSU9qSk5pSk5pRlFoTk5iSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pS0tpSExrSk1oSk5qS01qSU1oTExmSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSU9qSU5pSU1pS05qSk9pSk5pSk5pSk5pSk1pTFBoAAAASk5pSk5pSk5pTU1mSk1pSUltSk5pSk5pTExrSVBmSk5pSk5pSk5pSk5pSk5pSk1qSk5nSk5pSk5pSk5pSk5pSk5pSk5pSk5qSU9qQFVqR1VjSk9pSU5oSk5pS09oRkZ0S0tpS01p0U8fqgAAAKR0Uk5TAFhSFODcEXK9xWoN5UBH4gogQmWMv7gDBL68i2RBH8Puro9xJSiQr+/hYGY9Ot9s3jU/REzGNDvEBTLMFRorVdFiws5h00/0Ww8QXsgOZ11GXUYZ6dkZEHr/el4W2hYNIkNojrqKYx4iQ466Y0Iez/b+9bZN7ElN7ElB4O02Ae02Ad3JBxTJB+QjMiP8+7vHRWBFgPdXDBL4gFcMEmRiC0cLEWbeEiVEAAABdklEQVR4nGNgQAGMTAx4ADMLKxseaXYOTi7cstw8vHz8AlilBIWERUTFxCUkpaRlZOUwpOUVFJWUVRgYVNnV1DU4MKSFNLXEISxxbRYdTNN19fTB8uLsBobYbDdiNQZRJqy6WB0nYGoGoswtLLFKW1nbSMhoidta22GVtndwdBB1cnZxdcMqze5u6uHp5e3jro9VWlbGF0R5+mF6yz8AlR8YhMwLDgn1QuaHhYSGI3EjIiO9kaWjIiOjEbwYhcjIWG4EPw7EjwczExKTki0igSAlNU0onYEhIzMpC8zPTs3JzWPIL4iEgcKiYgZ0fkkpnBvJX8bAUF6BxK8EehcuzyILsq0KLl9dBeKX1UB4mrV1YNdU1kP5DY0gLnMThNvcAnF3K5Tf1g7mWkF1d3RCpLuguju6wVytnsjevv6eyIIJEOmJMP4kMHfyFM6p06bL5M9whEjPnMI5a/acufkz5oG5fN7zQRSbdi1EekH0QhC1aHEDAwMAujBwrZPrJrUAAAAASUVORK5CYII="
+                                    id="medium-icon"
+                                    width="20"
+                                  />
+                                </defs>
+                                <use
+                                  href="#medium-icon"
+                                  x="0"
+                                  y="1"
+                                />
+                              </svg>
+                            </DifficultyIcon>
+                          </div>
+                        </styled.div>
+                        Medium
+                      </DifficultyLevel>
+                    </div>
+                  </styled.div>
+                </div>
+              </styled.div>
+              <Link
+                title="Recipe 1 Title"
+                to="/recipe/recipe1"
+              >
+                <LinkAnchor
+                  href="/recipe/recipe1"
+                  navigate={[Function]}
+                  title="Recipe 1 Title"
+                >
+                  <a
+                    href="/recipe/recipe1"
+                    onClick={[Function]}
+                    title="Recipe 1 Title"
+                  >
+                    <styled.span>
+                      <span
+                        className="sc-Axmtr jNnjUt"
+                      >
+                        Recipe 1 Title
+                      </span>
+                    </styled.span>
+                  </a>
+                </LinkAnchor>
+              </Link>
+            </div>
+          </styled.div>
+        </RecipeThumbnail>
+        <RecipeThumbnail
+          course="Dinner"
+          difficultyLevel={3}
+          duration={60}
+          equipment={
+            Array [
+              "tongues",
+            ]
+          }
+          id="recipe2"
+          imageUrl="recipe2-image.png"
+          ingredients={
+            Array [
+              Object {
+                "ingredient": "tomatoes",
+                "quantity": 300,
+                "unit": "grams",
+              },
+            ]
+          }
+          key="recipe-1"
+          preparation="This is the preparation description."
+          servings={6}
+          title="Recipe 2 Title"
+        >
+          <styled.div>
+            <div
+              className="sc-AxhCb ivleYs"
+            >
+              <Link
+                title="Recipe 2 Title"
+                to="/recipe/recipe2"
+              >
+                <LinkAnchor
+                  href="/recipe/recipe2"
+                  navigate={[Function]}
+                  title="Recipe 2 Title"
+                >
+                  <a
+                    href="/recipe/recipe2"
+                    onClick={[Function]}
+                    title="Recipe 2 Title"
+                  >
+                    <Styled(Image)
+                      className="thumbnail-image"
+                      course="Dinner"
+                      url="recipe2-image.png"
+                    >
+                      <Image
+                        className="sc-AxhUy eUTjlb thumbnail-image"
+                        course="Dinner"
+                        url="recipe2-image.png"
+                      >
+                        <styled.div
+                          className="sc-AxhUy eUTjlb thumbnail-image"
+                          course="Dinner"
+                          url="recipe2-image.png"
+                        >
+                          <div
+                            className="sc-AxiKw iwMUgm sc-AxhUy eUTjlb thumbnail-image"
+                          />
+                        </styled.div>
+                      </Image>
+                    </Styled(Image)>
+                  </a>
+                </LinkAnchor>
+              </Link>
+              <styled.div>
+                <div
+                  className="sc-AxgMl bWOUKg"
+                >
+                  <styled.div>
+                    <div
+                      className="sc-AxheI eCqBcY"
+                    >
+                      <CookingTime
+                        duration={60}
+                        hasIcon={true}
+                      >
+                        <styled.div>
+                          <div
+                            className="sc-AxirZ jzRXrV"
+                          >
+                            <DurationIcon>
+                              <svg
+                                height="20"
+                                viewBox="0 0 20 20"
+                                width="20"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <defs>
+                                  <image
+                                    height="20"
+                                    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAAXNSR0IB2cksfwAAAOpQTFRFAAAASk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pfrZ05wAAAE50Uk5TAAESOGim1O73I3G94/z/CFnJ/dKzpySR+sdwE5Cs9dx2IAar4m4JVQREiz7C9g1ByvmuEAJSGJnr+A+Wz2Kk8B0Hc8MLh+BbJm93yCJYgSwx+QAAAWlJREFUeJx9k+l2gjAQhQMIBJBBgigCoiCiXe1i99rW7nV5/9dpWQMe6fxKzpdzM8sdhNJgWK7BCyLGosA3OJZB1ZBkpalCEmpTkaUK1Fo6BiBG2zTbBgHAekujtNO1gPRsJ705do+A5RYCnb4Hg6Ef5PfAHw7AG2Vc63oQjqPyZ9E4BM9N9VsWhJNpNdPpJASrFVck6TAYZzQ6ODxKa5qOB6BLDGJlTIa5Mnd8wp9mL4cEyyziFOj5uebs7PziMjv7PVA41GiCHezDgQxhA/EqcdA+jByi8kgAA+3HyAABidCuw20QEQazDpuAK3h+Zezisvj1ze1d/74iXkpt/uDB44K2N06NFuY8ATy/0ESSwoq2LF8t8ragNG1L0dT3D/j8oh9nTS1Gwnz/zJaURiuCbbY6UBrxQNebeLi1dtgmR83910xIGu1acVWy4h93K0aWq0beswbrbWkNULJEYb5EoWJvdgqpWcFfq5ArMTOrWiwAAAAASUVORK5CYII="
+                                    id="clock-icon"
+                                    width="20"
+                                  />
+                                </defs>
+                                <use
+                                  href="#clock-icon"
+                                  x="0"
+                                  y="0"
+                                />
+                              </svg>
+                            </DurationIcon>
+                          </div>
+                        </styled.div>
+                        1h
+                      </CookingTime>
+                    </div>
+                  </styled.div>
+                  <styled.div>
+                    <div
+                      className="sc-AxheI eCqBcY"
+                    >
+                      <DifficultyLevel
+                        hasIcon={true}
+                        level={3}
+                      >
+                        <styled.div>
+                          <div
+                            className="sc-AxjAm gXQDyK"
+                          >
+                            <DifficultyIcon
+                              level={3}
+                            >
+                              <svg
+                                height="20"
+                                viewBox="0 0 20 20"
+                                width="20"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <defs>
+                                  <image
+                                    height="20"
+                                    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAcCAMAAABBJv+bAAAAAXNSR0IB2cksfwAAAdFQTFRFAAAAR01lSU1qPVJmSU5oSU5pUFBwR0tpSk5pR09qRkZdSk1pSk1oOztOS0tpRUhrSkxnSktmSU1oSU1qSk5nS0tqRklkRERmSk5pSk5pSU1oSk1oSU1oSUxqSE5pSU5pRk1pS0tqSk9pSUxoSk1oTExoAAAATU1mSk1pSkxoSUlJR0dmSk1oSUlmSEpoSk5oSU1pSk5pSU1oSk5kSk5qSU1oSk5pRkxqQFVVR1VVSk1pSU1pSUtlSEtlRkZ0S0tpS0tpSk5pSk5pSk1oSk5pSk5pSk5pSk5pR1JmSk5pSk5pSU1pSU9qSk5pSk5pSk5pSk5pRlFoTk5iSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSExrSk1oSk5qS01qSU1oTExmSk5pSk5pSk5pSk5pSk5pSk5pSk5pSU9qSU5pSU1pSk5pSk5pS05qSk5pSk5pSk5pSk5pSk1pTFBoSk5pSk5pSk5pSk5pSk1pSUltSk5pSk5pSk5pTExrSVBmSk5pSk5pSk5pSk5pSk5pSk1qSk5nSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSU9qQFVqR1VjSk9pSU5oSk5pSk5pSk5pSk5pS09oS01pWQeURQAAAJt0Uk5TAF1GGenZEHr/Xhbu2g0iQ2iOxLqKY0Iez/b+9bZN7OJJQeDt4TYBFN3JBzLkI2D8+7vHRYD3xVcMEmT4YkcLEWZdRl0Z6dkQGXpeel4W7toNFg0iQ2iOxLqKY0IeQ466Y0Ie/vW2TeziSU3sSUHgQe3hNgHtNhTdyQfJBzLkIzIjYPz7x0VgRYD3VwwSZPhiVwwSZGJHCxFmR2aW7AlVAAABWUlEQVR4nGNgQAGMTAx4ADMLKxseaXYODk7cslzcHBw8vFil+PgFBIU4gEBYRFRMHENaQpIDBqSkZTCkZeXg0hzyCpimK8LllRSx2a6gDJFVUVXDJq2uAZHW1MLqdm2obh1drNJ6+hwGhkb6HJLGWKVNTM3MLSytJKxtsErbctqBKHsHVQwpRydUvjNKzLm4urkj8z1c3ZBjzpODwwtZ2puDwwfB8/Xj4PAPQPADQfwgMDM4JDQsHOTdiMio6BhgzMWGxoH58ZEJiUnIMZWcksqAzk9LR8RURiYDQ1Y2Ej+HgSEXLp+XC7ItHy6vlA/iZxZAeIVFxWDX5JRA+aXgmCsrh3ArKiHuVofyq6rB3Bqo7to6iHQ9VHdtA5jb2MTRbNjSxCHZCpFug/HbwdyOTrOu7p5eib5+iLRJp9mEiZMmS/RNAXOnek0DUdNnFEGkZ/pAYm5WKQMDAHcQRUbtjZYeAAAAAElFTkSuQmCC"
+                                    id="complex-icon"
+                                    width="20"
+                                  />
+                                </defs>
+                                <use
+                                  href="#complex-icon"
+                                  x="0"
+                                  y="1"
+                                />
+                              </svg>
+                            </DifficultyIcon>
+                          </div>
+                        </styled.div>
+                        Complex
+                      </DifficultyLevel>
+                    </div>
+                  </styled.div>
+                </div>
+              </styled.div>
+              <Link
+                title="Recipe 2 Title"
+                to="/recipe/recipe2"
+              >
+                <LinkAnchor
+                  href="/recipe/recipe2"
+                  navigate={[Function]}
+                  title="Recipe 2 Title"
+                >
+                  <a
+                    href="/recipe/recipe2"
+                    onClick={[Function]}
+                    title="Recipe 2 Title"
+                  >
+                    <styled.span>
+                      <span
+                        className="sc-Axmtr jNnjUt"
+                      >
+                        Recipe 2 Title
+                      </span>
+                    </styled.span>
+                  </a>
+                </LinkAnchor>
+              </Link>
+            </div>
+          </styled.div>
+        </RecipeThumbnail>
+      </div>
+    </styled.div>
+  </RecipesList>
+  <Routes>
+    <Switch>
+      <Route
+        component={[Function]}
+        computedMatch={
+          Object {
+            "isExact": true,
+            "params": Object {},
+            "path": "/",
+            "url": "/",
+          }
+        }
+        exact={true}
+        location={
+          Object {
+            "hash": "",
+            "key": "3fn86t",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          }
+        }
+        path="/"
+      >
+        <Homepage
+          history={
+            Object {
+              "action": "POP",
+              "block": [Function],
+              "canGo": [Function],
+              "createHref": [Function],
+              "entries": Array [
+                Object {
+                  "hash": "",
+                  "key": "3fn86t",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                },
+              ],
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "index": 0,
+              "length": 1,
+              "listen": [Function],
+              "location": Object {
+                "hash": "",
+                "key": "3fn86t",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              },
+              "push": [Function],
+              "replace": [Function],
+            }
+          }
+          location={
+            Object {
+              "hash": "",
+              "key": "3fn86t",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            }
+          }
+          match={
+            Object {
+              "isExact": true,
+              "params": Object {},
+              "path": "/",
+              "url": "/",
+            }
+          }
+        >
+          <Search
+            handleSearch={[Function]}
+          >
+            <styled.form
+              onSubmit={[Function]}
+            >
+              <form
+                className="sc-fzpans bBiHDh"
+                onSubmit={[Function]}
+              >
+                <Styled(styled.input)
+                  placeholder="Find recipes by ingredients or name..."
+                  type="search"
+                >
+                  <input
+                    className="sc-fzoLsD sc-fzplWN cBBicj"
+                    placeholder="Find recipes by ingredients or name..."
+                    type="search"
+                  />
+                </Styled(styled.input)>
+                <Styled(Button)
+                  hasIcon={true}
+                  icon="search"
+                  iconHeight={27}
+                  iconWidth={27}
+                  type="submit"
+                >
+                  <Button
+                    className="sc-fznyAO chhpsv"
+                    hasIcon={true}
+                    icon="search"
+                    iconHeight={27}
+                    iconWidth={27}
+                    type="submit"
+                  >
+                    <styled.button
+                      className="sc-fznyAO chhpsv"
+                      type="submit"
+                    >
+                      <button
+                        className="sc-fzozJi jPLxGe sc-fznyAO chhpsv"
+                        type="submit"
+                      >
+                        <svg
+                          height="27"
+                          viewBox="0 0 27 27"
+                          width="27"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <defs>
+                            <image
+                              height="27"
+                              href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAAXNSR0IB2cksfwAAARRQTFRFAAAASk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pSk5pVwjv/QAAAFx0Uk5TADWDv+P19ufLh0YFAyuM2vr/++GfOQJf1/7qUFvYWDIvTHX590sBMLQ8IKruPhG34pmlTdMWLOvoKRnzMxg0JuUbi6gE0E61/Mx5VBKakwv9DT+QsQeSdwgPsNTBV9X7AAABhUlEQVR4nHWS61aCQBSF8RokBhutxJq0TNRMK6+V3bQ0ukMqqb3/ezQ1BjhrsX/tMx+Lc+bsEQSmUDgSjcXXRGk9IfCSkxuKij9pqfTmFoe3Mzo8ZXdWf7Cr0UMi7eXy+wdiATgM+7i8TSkpGqwySmUdmiS7OJkBxIrbzziqAsc1F2/oIBV/rzoBTv6LkAIUV2ctnkIPLX1YBTFWL2KcAY1l9wgg8Xtoqmi1mY0CezzudHF+wWwMyPH4kqB3xWwcyPP4OoPeDbNrQJPHt3foJpkVgQMe1+JQ+sxKGkT+YgPg/oH59RQKpVVeGkIfLX0iDTwe+elW2cSTm8lmFnq17qPPOswXr9w5pIHu+wMFefU+T4Rp4NG3Zufy+rY2GJr0bajvHz4uHf8edUnmji4JJlFhpW2Py58n7mPTn15e3y1YY984NPZG67zX6yr3IzrzR9qCNpn6udy+uLpJ9tk27LEGy7GFINUnFtSvWSCfOnQ+Zx7I7S8L5iIQCzPHhBqMhflC/f4BU6Uw/3BpkC8AAAAASUVORK5CYII="
+                              id="search-icon"
+                              width="27"
+                            />
+                          </defs>
+                          <use
+                            href="#search-icon"
+                            x="0"
+                            y="0"
+                          />
+                        </svg>
+                      </button>
+                    </styled.button>
+                  </Button>
+                </Styled(Button)>
+              </form>
+            </styled.form>
+          </Search>
+          <Recommended>
+            <styled.div>
+              <div
+                className="sc-fznZeY dteejt"
+              >
+                <styled.h3>
+                  <h3
+                    className="sc-fzokOt jQZbjR"
+                  >
+                    Recommended ingredients
+                  </h3>
+                </styled.h3>
+                <styled.div>
+                  <div
+                    className="sc-fzqBZW ivnciF"
+                  >
+                    <Tag
+                      active={true}
+                      key="filter-0"
+                      name="tomatoes"
+                      onClick={[Function]}
+                    >
+                      <styled.div
+                        active={true}
+                        name="tomatoes"
+                        onClick={[Function]}
+                      >
+                        <div
+                          className="sc-fznKkj cBEGcv"
+                          name="tomatoes"
+                          onClick={[Function]}
+                        >
+                          <span>
+                            tomatoes
+                          </span>
+                        </div>
+                      </styled.div>
+                    </Tag>
+                    <Tag
+                      active={false}
+                      key="filter-1"
+                      name="potatoes"
+                      onClick={[Function]}
+                    >
+                      <styled.div
+                        active={false}
+                        name="potatoes"
+                        onClick={[Function]}
+                      >
+                        <div
+                          className="sc-fznKkj dDkijL"
+                          name="potatoes"
+                          onClick={[Function]}
+                        >
+                          <span>
+                            potatoes
+                          </span>
+                        </div>
+                      </styled.div>
+                    </Tag>
+                    <Tag
+                      active={true}
+                      key="filter-2"
+                      name="garlic"
+                      onClick={[Function]}
+                    >
+                      <styled.div
+                        active={true}
+                        name="garlic"
+                        onClick={[Function]}
+                      >
+                        <div
+                          className="sc-fznKkj cBEGcv"
+                          name="garlic"
+                          onClick={[Function]}
+                        >
+                          <span>
+                            garlic
+                          </span>
+                        </div>
+                      </styled.div>
+                    </Tag>
+                    <Tag
+                      active={false}
+                      key="filter-3"
+                      name="spinach"
+                      onClick={[Function]}
+                    >
+                      <styled.div
+                        active={false}
+                        name="spinach"
+                        onClick={[Function]}
+                      >
+                        <div
+                          className="sc-fznKkj dDkijL"
+                          name="spinach"
+                          onClick={[Function]}
+                        >
+                          <span>
+                            spinach
+                          </span>
+                        </div>
+                      </styled.div>
+                    </Tag>
+                  </div>
+                </styled.div>
+              </div>
+            </styled.div>
+          </Recommended>
+          <styled.div>
+            <div
+              className="sc-fzqARJ blAbbs"
+            >
+              <Filters>
+                <styled.div>
+                  <div
+                    className="sc-fznWqX kBBOny"
+                  >
+                    <Styled(Styled(Button))
+                      hasIcon={true}
+                      icon="filter"
+                      iconHeight={20}
+                      iconWidth={20}
+                      onClick={[Function]}
+                      text="Filter"
+                    >
+                      <Button
+                        className="sc-fzqNJr sc-fzoiQi JtDcy"
+                        hasIcon={true}
+                        icon="filter"
+                        iconHeight={20}
+                        iconWidth={20}
+                        onClick={[Function]}
+                        text="Filter"
+                      >
+                        <styled.button
+                          className="sc-fzqNJr sc-fzoiQi JtDcy"
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          <button
+                            className="sc-fzozJi jPLxGe sc-fzqNJr sc-fzoiQi JtDcy"
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            <svg
+                              height="20"
+                              viewBox="0 0 20 20"
+                              width="20"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <defs>
+                                <image
+                                  height="20"
+                                  href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAAXNSR0IB2cksfwAAAQ5QTFRF8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unk8unkQ40o0AAAAFp0Uk5TADnX8/KwE4j/9lWN+VoshozL/LSLSeL90vcbYma6+5xlMQZ6sbOTEYX1UjyEHp7GB0YUh7lZKMzg/jWsz1Mrd3lqGkKOFtQPvtwm378ELzPmMg7h7Nn62CW1Gbu+JwAAAQ5JREFUeJxjYCAMGJmYQYCFlY0IxRDAzgEBnFxEa+GGauHhHX5a+PgFCAFBqBYhYSBHRJRBjINEIM4gQaoWSQYpaRlCQBaqWE4eyFFQHLyBPHBalJRVVEFATR3M1YBq0dTCrUVbHKpIB8zV1dMHA2UD3FoMYdGmRrTjh6oWIy5eDGAM02KCKWdqxmBOauJnZrAgVYslgxU7Zs61hknbYMqJ2A7eQKanFjt7BxBwdALznGFaXHDrcHWDqrEGc909IBnG0wu3Fi9vqBYfoh0/TLT4+vn7+2sFQLWY+xMCgUEMKqQm/mCGEFK1cDCYSoSGhnqHQbmaoYRAOPvgDWQ6aomAafEgWotBJESHJT8RigH0OlVdPf84OAAAAABJRU5ErkJggg=="
+                                  id="filter-icon"
+                                  width="20"
+                                />
+                              </defs>
+                              <use
+                                href="#filter-icon"
+                                x="0"
+                                y="0"
+                              />
+                            </svg>
+                            Filter
+                          </button>
+                        </styled.button>
+                      </Button>
+                    </Styled(Styled(Button))>
+                    <FiltersModal
+                      onClose={[Function]}
+                      show={false}
+                      title="Filter recipes"
+                    >
+                      <div>
+                        <Modal
+                          ariaHideApp={true}
+                          bodyOpenClassName="ReactModal__Body--open"
+                          closeTimeoutMS={0}
+                          isOpen={false}
+                          onRequestClose={[Function]}
+                          parentSelector={[Function]}
+                          portalClassName="ReactModalPortal"
+                          role="dialog"
+                          shouldCloseOnEsc={true}
+                          shouldCloseOnOverlayClick={true}
+                          shouldFocusAfterRender={true}
+                          shouldReturnFocusAfterClose={true}
+                          style={
+                            Object {
+                              "content": Object {
+                                "border": "1px solid var(--color--light-purple)",
+                                "borderRadius": "6px",
+                                "bottom": "auto",
+                                "left": "50%",
+                                "marginRight": "-50%",
+                                "maxWidth": "800px",
+                                "padding": "27px",
+                                "right": "auto",
+                                "top": "40%",
+                                "transform": "translate(-50%, -40%)",
+                                "width": "80%",
+                              },
+                            }
+                          }
+                        >
+                          <Portal
+                            containerInfo={
+                              <div
+                                class="ReactModalPortal"
+                              />
+                            }
+                          >
+                            <ModalPortal
+                              ariaHideApp={true}
+                              bodyOpenClassName="ReactModal__Body--open"
+                              closeTimeoutMS={0}
+                              defaultStyles={
+                                Object {
+                                  "content": Object {
+                                    "WebkitOverflowScrolling": "touch",
+                                    "background": "#fff",
+                                    "border": "1px solid #ccc",
+                                    "borderRadius": "4px",
+                                    "bottom": "40px",
+                                    "left": "40px",
+                                    "outline": "none",
+                                    "overflow": "auto",
+                                    "padding": "20px",
+                                    "position": "absolute",
+                                    "right": "40px",
+                                    "top": "40px",
+                                  },
+                                  "overlay": Object {
+                                    "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "fixed",
+                                    "right": 0,
+                                    "top": 0,
+                                  },
+                                }
+                              }
+                              isOpen={false}
+                              onRequestClose={[Function]}
+                              parentSelector={[Function]}
+                              portalClassName="ReactModalPortal"
+                              role="dialog"
+                              shouldCloseOnEsc={true}
+                              shouldCloseOnOverlayClick={true}
+                              shouldFocusAfterRender={true}
+                              shouldReturnFocusAfterClose={true}
+                              style={
+                                Object {
+                                  "content": Object {
+                                    "border": "1px solid var(--color--light-purple)",
+                                    "borderRadius": "6px",
+                                    "bottom": "auto",
+                                    "left": "50%",
+                                    "marginRight": "-50%",
+                                    "maxWidth": "800px",
+                                    "padding": "27px",
+                                    "right": "auto",
+                                    "top": "40%",
+                                    "transform": "translate(-50%, -40%)",
+                                    "width": "80%",
+                                  },
+                                }
+                              }
+                            />
+                          </Portal>
+                        </Modal>
+                      </div>
+                    </FiltersModal>
+                  </div>
+                </styled.div>
+              </Filters>
+              <styled.div>
+                <div
+                  className="sc-fzoyTs ldYrsV"
+                >
+                  No recipes found
+                </div>
+              </styled.div>
+            </div>
+          </styled.div>
+        </Homepage>
+      </Route>
+    </Switch>
+  </Routes>
+</Router>
+`;
