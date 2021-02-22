@@ -15,7 +15,7 @@ describe('<ConfirmationModal />', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(<ConfirmationModal {...props}/>);
+    wrapper = mount(<ConfirmationModal {...props} />);
   });
 
   it('should render correctly when shown', () => {
@@ -25,7 +25,7 @@ describe('<ConfirmationModal />', () => {
   it('should render correctly when not shown', () => {
     const newProps = {
       ...props,
-      show: false
+      show: false,
     };
     wrapper = mount(<ConfirmationModal {...newProps} />);
 
