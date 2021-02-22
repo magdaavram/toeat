@@ -16,12 +16,12 @@ it('should render correctly', () => {
         ingredient: 'eggs',
         quantity: 3,
         unit: 'pieces',
-      }
+      },
     ],
     equipment: ['pan'],
     preparation: 'This is the preparation description.',
   };
-  const wrapper = mount(<Recipe { ...recipe } />);
+  const wrapper = mount(<Recipe {...recipe} />);
 
   expect(wrapper).toMatchSnapshot();
 });
