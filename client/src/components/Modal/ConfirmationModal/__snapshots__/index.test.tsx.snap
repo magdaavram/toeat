@@ -1,0 +1,411 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ConfirmationModal /> should render correctly when not shown 1`] = `
+<ConfirmationModal
+  message="Message"
+  onClose={[MockFunction]}
+  onConfirm={[MockFunction]}
+  show={false}
+  title="Title"
+>
+  <div>
+    <Modal
+      ariaHideApp={true}
+      bodyOpenClassName="ReactModal__Body--open"
+      closeTimeoutMS={0}
+      isOpen={false}
+      onRequestClose={[MockFunction]}
+      parentSelector={[Function]}
+      portalClassName="ReactModalPortal"
+      role="dialog"
+      shouldCloseOnEsc={true}
+      shouldCloseOnOverlayClick={true}
+      shouldFocusAfterRender={true}
+      shouldReturnFocusAfterClose={true}
+      style={
+        Object {
+          "content": Object {
+            "border": "1px solid var(--color--light-purple)",
+            "borderRadius": "6px",
+            "bottom": "auto",
+            "left": "50%",
+            "marginRight": "-50%",
+            "padding": "27px",
+            "right": "auto",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)",
+          },
+        }
+      }
+    >
+      <Portal
+        containerInfo={
+          <div
+            class="ReactModalPortal"
+          />
+        }
+      >
+        <ModalPortal
+          ariaHideApp={true}
+          bodyOpenClassName="ReactModal__Body--open"
+          closeTimeoutMS={0}
+          defaultStyles={
+            Object {
+              "content": Object {
+                "WebkitOverflowScrolling": "touch",
+                "background": "#fff",
+                "border": "1px solid #ccc",
+                "borderRadius": "4px",
+                "bottom": "40px",
+                "left": "40px",
+                "outline": "none",
+                "overflow": "auto",
+                "padding": "20px",
+                "position": "absolute",
+                "right": "40px",
+                "top": "40px",
+              },
+              "overlay": Object {
+                "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                "bottom": 0,
+                "left": 0,
+                "position": "fixed",
+                "right": 0,
+                "top": 0,
+              },
+            }
+          }
+          isOpen={false}
+          onRequestClose={[MockFunction]}
+          parentSelector={[Function]}
+          portalClassName="ReactModalPortal"
+          role="dialog"
+          shouldCloseOnEsc={true}
+          shouldCloseOnOverlayClick={true}
+          shouldFocusAfterRender={true}
+          shouldReturnFocusAfterClose={true}
+          style={
+            Object {
+              "content": Object {
+                "border": "1px solid var(--color--light-purple)",
+                "borderRadius": "6px",
+                "bottom": "auto",
+                "left": "50%",
+                "marginRight": "-50%",
+                "padding": "27px",
+                "right": "auto",
+                "top": "50%",
+                "transform": "translate(-50%, -50%)",
+              },
+            }
+          }
+        />
+      </Portal>
+    </Modal>
+  </div>
+</ConfirmationModal>
+`;
+
+exports[`<ConfirmationModal /> should render correctly when shown 1`] = `
+<ConfirmationModal
+  message="Message"
+  onClose={[MockFunction]}
+  onConfirm={[MockFunction]}
+  show={true}
+  title="Title"
+>
+  <div>
+    <Modal
+      ariaHideApp={true}
+      bodyOpenClassName="ReactModal__Body--open"
+      closeTimeoutMS={0}
+      isOpen={true}
+      onRequestClose={[MockFunction]}
+      parentSelector={[Function]}
+      portalClassName="ReactModalPortal"
+      role="dialog"
+      shouldCloseOnEsc={true}
+      shouldCloseOnOverlayClick={true}
+      shouldFocusAfterRender={true}
+      shouldReturnFocusAfterClose={true}
+      style={
+        Object {
+          "content": Object {
+            "border": "1px solid var(--color--light-purple)",
+            "borderRadius": "6px",
+            "bottom": "auto",
+            "left": "50%",
+            "marginRight": "-50%",
+            "padding": "27px",
+            "right": "auto",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)",
+          },
+        }
+      }
+    >
+      <Portal
+        containerInfo={
+          <div
+            class="ReactModalPortal"
+          >
+            <div
+              class="ReactModal__Overlay ReactModal__Overlay--after-open"
+              style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75);"
+            >
+              <div
+                class="ReactModal__Content ReactModal__Content--after-open"
+                role="dialog"
+                style="position: absolute; top: 50%; left: 50%; background: rgb(255, 255, 255); overflow: auto; border-radius: 6px; outline: none; padding: 27px; margin-right: -50%; transform: translate(-50%, -50%);"
+                tabindex="-1"
+              >
+                <button
+                  class="sc-AxjAm ewqDcP sc-AxiKw dsqQEH"
+                  type="button"
+                >
+                  x
+                </button>
+                <div
+                  class="sc-AxhCb fRlwsK"
+                >
+                  <h3
+                    class="sc-AxhUy BbauZ"
+                  >
+                    Title
+                  </h3>
+                  <p
+                    class="sc-AxgMl kBjpdS"
+                  >
+                    Message
+                  </p>
+                </div>
+                <div
+                  class="sc-AxheI iuroNF"
+                >
+                  <button
+                    class="sc-AxjAm ewqDcP sc-AxirZ sc-Axmtr gRfyqp"
+                    type="button"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    class="sc-AxjAm ewqDcP sc-AxirZ dxGCtZ"
+                    type="button"
+                  >
+                    Confirm
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      >
+        <ModalPortal
+          ariaHideApp={true}
+          bodyOpenClassName="ReactModal__Body--open"
+          closeTimeoutMS={0}
+          defaultStyles={
+            Object {
+              "content": Object {
+                "WebkitOverflowScrolling": "touch",
+                "background": "#fff",
+                "border": "1px solid #ccc",
+                "borderRadius": "4px",
+                "bottom": "40px",
+                "left": "40px",
+                "outline": "none",
+                "overflow": "auto",
+                "padding": "20px",
+                "position": "absolute",
+                "right": "40px",
+                "top": "40px",
+              },
+              "overlay": Object {
+                "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                "bottom": 0,
+                "left": 0,
+                "position": "fixed",
+                "right": 0,
+                "top": 0,
+              },
+            }
+          }
+          isOpen={true}
+          onRequestClose={[MockFunction]}
+          parentSelector={[Function]}
+          portalClassName="ReactModalPortal"
+          role="dialog"
+          shouldCloseOnEsc={true}
+          shouldCloseOnOverlayClick={true}
+          shouldFocusAfterRender={true}
+          shouldReturnFocusAfterClose={true}
+          style={
+            Object {
+              "content": Object {
+                "border": "1px solid var(--color--light-purple)",
+                "borderRadius": "6px",
+                "bottom": "auto",
+                "left": "50%",
+                "marginRight": "-50%",
+                "padding": "27px",
+                "right": "auto",
+                "top": "50%",
+                "transform": "translate(-50%, -50%)",
+              },
+            }
+          }
+        >
+          <div
+            className="ReactModal__Overlay ReactModal__Overlay--after-open"
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            style={
+              Object {
+                "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                "bottom": 0,
+                "left": 0,
+                "position": "fixed",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <div
+              className="ReactModal__Content ReactModal__Content--after-open"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              role="dialog"
+              style={
+                Object {
+                  "WebkitOverflowScrolling": "touch",
+                  "background": "#fff",
+                  "border": "1px solid var(--color--light-purple)",
+                  "borderRadius": "6px",
+                  "bottom": "auto",
+                  "left": "50%",
+                  "marginRight": "-50%",
+                  "outline": "none",
+                  "overflow": "auto",
+                  "padding": "27px",
+                  "position": "absolute",
+                  "right": "auto",
+                  "top": "50%",
+                  "transform": "translate(-50%, -50%)",
+                }
+              }
+              tabIndex="-1"
+            >
+              <Styled(Button)
+                hasIcon={false}
+                onClick={[MockFunction]}
+                text="x"
+              >
+                <Button
+                  className="sc-AxiKw dsqQEH"
+                  hasIcon={false}
+                  onClick={[MockFunction]}
+                  text="x"
+                >
+                  <styled.button
+                    className="sc-AxiKw dsqQEH"
+                    onClick={[MockFunction]}
+                    type="button"
+                  >
+                    <button
+                      className="sc-AxjAm ewqDcP sc-AxiKw dsqQEH"
+                      onClick={[MockFunction]}
+                      type="button"
+                    >
+                      x
+                    </button>
+                  </styled.button>
+                </Button>
+              </Styled(Button)>
+              <styled.div>
+                <div
+                  className="sc-AxhCb fRlwsK"
+                >
+                  <styled.h3>
+                    <h3
+                      className="sc-AxhUy BbauZ"
+                    >
+                      Title
+                    </h3>
+                  </styled.h3>
+                  <styled.p>
+                    <p
+                      className="sc-AxgMl kBjpdS"
+                    >
+                      Message
+                    </p>
+                  </styled.p>
+                </div>
+              </styled.div>
+              <styled.div>
+                <div
+                  className="sc-AxheI iuroNF"
+                >
+                  <Styled(Styled(Button))
+                    hasIcon={false}
+                    onClick={[MockFunction]}
+                    text="Cancel"
+                  >
+                    <Button
+                      className="sc-AxirZ sc-Axmtr gRfyqp"
+                      hasIcon={false}
+                      onClick={[MockFunction]}
+                      text="Cancel"
+                    >
+                      <styled.button
+                        className="sc-AxirZ sc-Axmtr gRfyqp"
+                        onClick={[MockFunction]}
+                        type="button"
+                      >
+                        <button
+                          className="sc-AxjAm ewqDcP sc-AxirZ sc-Axmtr gRfyqp"
+                          onClick={[MockFunction]}
+                          type="button"
+                        >
+                          Cancel
+                        </button>
+                      </styled.button>
+                    </Button>
+                  </Styled(Styled(Button))>
+                  <Styled(Button)
+                    hasIcon={false}
+                    onClick={[MockFunction]}
+                    text="Confirm"
+                  >
+                    <Button
+                      className="sc-AxirZ dxGCtZ"
+                      hasIcon={false}
+                      onClick={[MockFunction]}
+                      text="Confirm"
+                    >
+                      <styled.button
+                        className="sc-AxirZ dxGCtZ"
+                        onClick={[MockFunction]}
+                        type="button"
+                      >
+                        <button
+                          className="sc-AxjAm ewqDcP sc-AxirZ dxGCtZ"
+                          onClick={[MockFunction]}
+                          type="button"
+                        >
+                          Confirm
+                        </button>
+                      </styled.button>
+                    </Button>
+                  </Styled(Button)>
+                </div>
+              </styled.div>
+            </div>
+          </div>
+        </ModalPortal>
+      </Portal>
+    </Modal>
+  </div>
+</ConfirmationModal>
+`;
