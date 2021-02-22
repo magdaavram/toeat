@@ -1,0 +1,241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UploadImage /> should render correctly 1`] = `
+<UploadImage
+  fileSizeError="File size error"
+  fileTypeError="File type error"
+  imgExtension={
+    Array [
+      ".png",
+      ".jpg",
+    ]
+  }
+  label="Label"
+  maxFileSize={200}
+  onChange={[MockFunction]}
+  singleImage={true}
+  withIcon={true}
+  withPreview={true}
+>
+  <ReactImageUploadComponent
+    accept="image/*"
+    buttonClassName=""
+    buttonStyles={
+      Object {
+        "borderRadius": "50%",
+        "color": "var(--color--beige)",
+        "fontFamily": "Roboto Regular",
+        "fontSize": "var(--font-size--xxlarge)",
+        "height": "60px",
+        "margin": "18px 0",
+        "padding": "0",
+        "width": "60px",
+      }
+    }
+    buttonText="+"
+    buttonType="button"
+    className=""
+    defaultImages={Array []}
+    errorClass=""
+    errorStyle={
+      Object {
+        "color": "var(--color--burgundy)",
+        "fontFamily": "Roboto Medium",
+        "fontSize": "var(--font-size--small)",
+        "textAlign": "center",
+      }
+    }
+    fileContainerStyle={
+      Object {
+        "backgroundColor": "var(--color--light-brown)",
+        "borderRadius": "9px",
+        "height": "300px",
+        "justifyContent": "flex-start",
+        "margin": 0,
+        "padding": "36px 21px 21px 21px",
+        "width": "300px",
+      }
+    }
+    fileSizeError="File size error"
+    fileTypeError="File type error"
+    imgExtension={
+      Array [
+        ".png",
+        ".jpg",
+      ]
+    }
+    label="Label"
+    labelClass=""
+    labelStyles={
+      Object {
+        "color": "var(--color--dark-purple)",
+        "fontFamily": "Suisse Bold",
+        "fontSize": "var(--font-size--small)",
+        "marginTop": "9px",
+      }
+    }
+    maxFileSize={200}
+    name=""
+    onChange={[Function]}
+    singleImage={true}
+    style={Object {}}
+    withIcon={true}
+    withLabel={true}
+    withPreview={true}
+  >
+    <div
+      className="fileUploader "
+      style={Object {}}
+    >
+      <div
+        className="fileContainer"
+        style={
+          Object {
+            "backgroundColor": "var(--color--light-brown)",
+            "borderRadius": "9px",
+            "height": "300px",
+            "justifyContent": "flex-start",
+            "margin": 0,
+            "padding": "36px 21px 21px 21px",
+            "width": "300px",
+          }
+        }
+      >
+        <img
+          alt="Upload Icon"
+          className="uploadIcon"
+          src="UploadIcon.svg"
+        />
+        <p
+          className=""
+          style={
+            Object {
+              "color": "var(--color--dark-purple)",
+              "fontFamily": "Suisse Bold",
+              "fontSize": "var(--font-size--small)",
+              "marginTop": "9px",
+            }
+          }
+        >
+          Label
+        </p>
+        <div
+          className="errorsContainer"
+        />
+        <button
+          className="chooseFileButton "
+          onClick={[Function]}
+          style={
+            Object {
+              "borderRadius": "50%",
+              "color": "var(--color--beige)",
+              "fontFamily": "Roboto Regular",
+              "fontSize": "var(--font-size--xxlarge)",
+              "height": "60px",
+              "margin": "18px 0",
+              "padding": "0",
+              "width": "60px",
+            }
+          }
+          type="button"
+        >
+          +
+        </button>
+        <input
+          accept="image/*"
+          multiple={false}
+          name=""
+          onChange={[Function]}
+          onClick={[Function]}
+          type="file"
+        />
+        <div
+          className="uploadPicturesWrapper"
+        >
+          <FlipMovePropConverter
+            delay={0}
+            disableAllAnimations={false}
+            duration={350}
+            easing="ease-in-out"
+            enterAnimation="fade"
+            getPosition={[Function]}
+            leaveAnimation="fade"
+            maintainContainerHeight={false}
+            staggerDelayBy={0}
+            staggerDurationBy={0}
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "flexWrap": "wrap",
+                "justifyContent": "center",
+                "width": "100%",
+              }
+            }
+            typeName="div"
+            verticalAlignment="top"
+          >
+            <FlipMove
+              delay={0}
+              delegated={
+                Object {
+                  "style": Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexWrap": "wrap",
+                    "justifyContent": "center",
+                    "position": "relative",
+                    "width": "100%",
+                  },
+                }
+              }
+              disableAllAnimations={false}
+              duration={350}
+              easing="ease-in-out"
+              enterAnimation={
+                Object {
+                  "from": Object {
+                    "opacity": "0",
+                  },
+                  "to": Object {
+                    "opacity": "",
+                  },
+                }
+              }
+              getPosition={[Function]}
+              leaveAnimation={
+                Object {
+                  "from": Object {
+                    "opacity": "1",
+                  },
+                  "to": Object {
+                    "opacity": "0",
+                  },
+                }
+              }
+              maintainContainerHeight={false}
+              staggerDelayBy={0}
+              staggerDurationBy={0}
+              typeName="div"
+              verticalAlignment="top"
+            >
+              <div
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexWrap": "wrap",
+                    "justifyContent": "center",
+                    "position": "relative",
+                    "width": "100%",
+                  }
+                }
+              />
+            </FlipMove>
+          </FlipMovePropConverter>
+        </div>
+      </div>
+    </div>
+  </ReactImageUploadComponent>
+</UploadImage>
+`;
