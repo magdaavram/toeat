@@ -47,11 +47,11 @@ it('should render correctly', () => {
 
   const history = createMemoryHistory();
   const wrapper = mount(
-      <Router history={history}>
-        <RecipesList recipes={recipes}/>
-        <Routes />
-      </Router>
-    );
+    <Router history={history}>
+      <RecipesList recipes={recipes} />
+      <Routes />
+    </Router>
+  );
 
   expect(wrapper).toMatchSnapshot();
 });
