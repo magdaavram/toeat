@@ -299,12 +299,14 @@ exports[`<ConfirmationModal /> should render correctly when shown 1`] = `
             >
               <Styled(Button)
                 hasIcon={false}
+                id="close-button"
                 onClick={[MockFunction]}
                 text="x"
               >
                 <Button
                   className="sc-AxiKw dsqQEH"
                   hasIcon={false}
+                  id="close-button"
                   onClick={[MockFunction]}
                   text="x"
                 >
@@ -349,12 +351,14 @@ exports[`<ConfirmationModal /> should render correctly when shown 1`] = `
                 >
                   <Styled(Styled(Button))
                     hasIcon={false}
+                    id="cancel-button"
                     onClick={[MockFunction]}
                     text="Cancel"
                   >
                     <Button
                       className="sc-AxirZ sc-Axmtr gRfyqp"
                       hasIcon={false}
+                      id="cancel-button"
                       onClick={[MockFunction]}
                       text="Cancel"
                     >
@@ -375,12 +379,14 @@ exports[`<ConfirmationModal /> should render correctly when shown 1`] = `
                   </Styled(Styled(Button))>
                   <Styled(Button)
                     hasIcon={false}
+                    id="confirm-button"
                     onClick={[MockFunction]}
                     text="Confirm"
                   >
                     <Button
                       className="sc-AxirZ dxGCtZ"
                       hasIcon={false}
+                      id="confirm-button"
                       onClick={[MockFunction]}
                       text="Confirm"
                     >

@@ -8,8 +8,8 @@ export interface IModalProps {
   title: string;
   message: string;
   show: boolean;
-  onClose?: () => void;
-  onConfirm?: () => void;
+  onClose: () => void;
+  onConfirm: () => void;
 }
 
 const modalStyles = {
@@ -57,7 +57,7 @@ const ConfirmationModal = ({ show, onClose, onConfirm, title, message }: IModalP
   return (
     <div>
       <Modal isOpen={show} onRequestClose={onClose} style={modalStyles}>
-        <CloseButton onClick={onClose} text={'x'} hasIcon={false} />
+        <CloseButton onClick={onClose} text={'x'} hasIcon={false} id="close-button" />
 
         <TextContainer>
           <Title>{title}</Title>
@@ -65,8 +65,8 @@ const ConfirmationModal = ({ show, onClose, onConfirm, title, message }: IModalP
         </TextContainer>
 
         <ActionButtonsContainer>
-          <CancelButton onClick={onClose} text={'Cancel'} hasIcon={false} />
-          <ActionButton onClick={onConfirm} text={'Confirm'} hasIcon={false} />
+          <CancelButton onClick={onClose} text={'Cancel'} hasIcon={false} id="cancel-button" />
+          <ActionButton onClick={onConfirm} text={'Confirm'} hasIcon={false} id="confirm-button" />
         </ActionButtonsContainer>
       </Modal>
     </div>
